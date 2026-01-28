@@ -1,0 +1,41 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { 
+	title = 'IEEE Computer Society PUCV',
+	description = 'Capítulo Estudiantil de IEEE Computer Society en la Pontificia Universidad Católica de Valparaíso. Innovación, Comunidad y Tecnología.'
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content={description} />
+		
+		<!-- Favicon -->
+		<link rel="icon" type="image/webp" href="/csociety_logo.webp" />
+		
+		<!-- Inter Font -->
+		<link rel="preconnect" href="https://rsms.me/" />
+		<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+		
+		<!-- Open Graph -->
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content="/csociety_logo.webp" />
+		<meta property="og:type" content="website" />
+		
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body class="min-h-screen bg-neutral-50 text-neutral-900 antialiased">
+		<slot />
+	</body>
+</html>

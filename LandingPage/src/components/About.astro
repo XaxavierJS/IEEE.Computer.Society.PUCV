@@ -1,0 +1,95 @@
+---
+import Container from './ui/Container.astro';
+import Card from './ui/Card.astro';
+---
+
+<section id="nosotros" class="py-20 lg:py-28 bg-white">
+  <Container>
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <!-- Left content -->
+      <div>
+        <span class="text-ieee-orange font-semibold text-sm uppercase tracking-wider">
+          Sobre Nosotros
+        </span>
+        <h2 class="text-3xl lg:text-5xl font-bold text-neutral-900 mt-4 mb-6 leading-tight">
+          ¿Qué es IEEE 
+          <span class="text-ieee-orange">Computer Society</span>?
+        </h2>
+        
+        <div class="space-y-4 text-neutral-600 leading-relaxed">
+          <p>
+            <strong class="text-neutral-900">IEEE Computer Society</strong> es la comunidad líder mundial 
+            de profesionales de la computación. Con más de <strong class="text-ieee-orange">375,000 miembros</strong> 
+            en más de 157 países, impulsamos la innovación tecnológica y el avance de la profesión.
+          </p>
+          <p>
+            En <strong class="text-neutral-900">PUCV</strong>, nuestro capítulo estudiantil conecta a 
+            estudiantes apasionados por la tecnología, ofreciendo oportunidades de aprendizaje, 
+            networking y desarrollo profesional.
+          </p>
+        </div>
+
+        <!-- Info box with founding year option -->
+        <div class="mt-8 p-6 bg-neutral-50 rounded-2xl border border-neutral-200">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-12 h-12 bg-ieee-orange/10 rounded-xl flex items-center justify-center">
+              <svg class="w-6 h-6 text-ieee-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-neutral-900">Capítulo Estudiantil PUCV</h3>
+              <p class="text-sm text-neutral-500 mt-1">
+                Parte de la Escuela de Ingeniería Informática, conectando teoría con práctica profesional.
+              </p>
+            <p class="text-sm text-ieee-orange mt-2 font-medium">Fundado en agosto de 2024</p> 
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right side - Visual cards -->
+      <div class="grid grid-cols-2 gap-2 sm:gap-4">
+        <Card class="p-3 sm:p-6 text-center" hover={true}>
+          <div class="w-10 h-10 sm:w-14 sm:h-14 bg-ieee-orange/10 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-2 sm:mb-4">
+            <svg class="w-5 h-5 sm:w-7 sm:h-7 text-ieee-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+            </svg>
+          </div>
+          <div class="text-base sm:text-2xl font-bold text-neutral-900">Global</div>
+          <div class="text-xs sm:text-sm text-neutral-500 mt-1">Presencia mundial</div>
+        </Card>
+
+        <Card class="p-3 sm:p-6 text-center lg:translate-y-8" hover={true}>
+          <div class="w-10 h-10 sm:w-14 sm:h-14 bg-ieee-blue/10 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-2 sm:mb-4">
+            <svg class="w-5 h-5 sm:w-7 sm:h-7 text-ieee-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          </div>
+          <div class="text-base sm:text-2xl font-bold text-neutral-900">Comunidad</div>
+          <div class="text-xs sm:text-sm text-neutral-500 mt-1">Red de contactos</div>
+        </Card>
+
+        <Card class="p-3 sm:p-6 text-center" hover={true}>
+          <div class="w-10 h-10 sm:w-14 sm:h-14 bg-neutral-100 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-2 sm:mb-4">
+            <svg class="w-5 h-5 sm:w-7 sm:h-7 text-neutral-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+            </svg>
+          </div>
+          <div class="text-base sm:text-2xl font-bold text-neutral-900">Innovación</div>
+          <div class="text-xs sm:text-sm text-neutral-500 mt-1">Nuevas tecnologías</div>
+        </Card>
+
+        <Card class="p-3 sm:p-6 text-center lg:translate-y-8" hover={true}>
+          <div class="w-10 h-10 sm:w-14 sm:h-14 bg-ieee-orange/10 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-2 sm:mb-4">
+            <svg class="w-5 h-5 sm:w-7 sm:h-7 text-ieee-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <div class="text-base sm:text-2xl font-bold text-neutral-900">Crecimiento</div>
+          <div class="text-xs sm:text-sm text-neutral-500 mt-1">Desarrollo profesional</div>
+        </Card>
+      </div>
+    </div>
+  </Container>
+</section>

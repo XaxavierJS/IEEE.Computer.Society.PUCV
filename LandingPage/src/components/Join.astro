@@ -1,0 +1,112 @@
+---
+import Container from './ui/Container.astro';
+import Button from './ui/Button.astro';
+import Card from './ui/Card.astro';
+
+const benefits = [
+  {
+    icon: 'M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253',
+    title: 'Acceso a recursos',
+    description: 'Biblioteca digital IEEE, cursos y publicaciones técnicas'
+  },
+  {
+    icon: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z',
+    title: 'Red de contactos',
+    description: 'Conecta con profesionales y estudiantes de todo el mundo'
+  },
+  {
+    icon: 'M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z',
+    title: 'Desarrollo profesional',
+    description: 'Talleres, certificaciones y oportunidades laborales'
+  },
+  {
+    icon: 'M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
+    title: 'Comunidad activa',
+    description: 'Eventos sociales, hackathones y proyectos colaborativos'
+  }
+];
+
+const steps = [
+  { number: '01', title: 'Únete al grupo', description: 'Entra a nuestro grupo de WhatsApp' },
+  { number: '02', title: 'Asiste a una reunión', description: 'Los jueves nos juntamos' },
+  { number: '03', title: 'Participa', description: 'Colabora en actividades y proyectos' }
+];
+
+const whatsappLink = 'https://chat.whatsapp.com/I4EO42P4Ip3CDlaZT4hFAn';
+const discordLink = 'https://discord.gg/hjfejWFEW4';
+---
+
+<section id="unete" class="py-20 lg:py-28 bg-white">
+  <Container>
+    <!-- Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="text-ieee-orange font-semibold text-sm uppercase tracking-wider">
+        Únete
+      </span>
+      <h2 class="text-3xl lg:text-5xl font-bold text-neutral-900 mt-4 mb-6">
+        Sé parte de <span class="text-ieee-orange">IEEE CS PUCV</span>
+      </h2>
+      <p class="text-lg text-neutral-600">
+        Únete a nuestra comunidad y potencia tu carrera en tecnología junto a 
+        estudiantes y profesionales apasionados.
+      </p>
+    </div>
+
+    <!-- Benefits -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+      {benefits.map((benefit) => (
+        <div class="bg-neutral-50 border border-neutral-200 rounded-2xl p-6 hover:bg-neutral-100 hover:border-neutral-300 transition-colors">
+          <div class="w-12 h-12 bg-ieee-orange/10 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-ieee-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={benefit.icon} />
+            </svg>
+          </div>
+          <h3 class="font-bold text-neutral-900 text-lg mb-2">{benefit.title}</h3>
+          <p class="text-neutral-600 text-sm">{benefit.description}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Steps -->
+    <div class="bg-neutral-50 border border-neutral-200 rounded-2xl p-8 lg:p-12 mb-12">
+      <h3 class="text-2xl font-bold text-neutral-900 text-center mb-10">¿Cómo unirte?</h3>
+      <div class="grid md:grid-cols-3 gap-8">
+        {steps.map((step, index) => (
+          <div class="text-center relative">
+
+            <div class="relative">
+              <span class="text-5xl font-bold text-ieee-orange">{step.number}</span>
+              <h4 class="font-bold text-neutral-900 text-lg mt-2">{step.title}</h4>
+              <p class="text-neutral-600 text-sm mt-2">{step.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- CTAs -->
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a 
+        href={whatsappLink}
+        class="inline-flex items-center gap-3 bg-[#25D366] text-white px-8 py-4 rounded-xl font-semibold hover:bg-[#20BD5A] transition-all shadow-lg hover:shadow-xl text-lg"
+      >
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        Unirse al WhatsApp
+      </a>
+      
+      <a 
+        href={discordLink}
+        class="inline-flex items-center gap-3 bg-[#5865F2] text-white px-8 py-4 rounded-xl font-semibold hover:bg-[#4752C4] transition-all shadow-lg hover:shadow-xl text-lg"
+      >
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189z"/>
+        </svg>
+        Unirse al Discord
+      </a>
+    </div>
+
+
+  </Container>
+</section>

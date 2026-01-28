@@ -1,0 +1,78 @@
+---
+import Container from './ui/Container.astro';
+import Button from './ui/Button.astro';
+---
+
+<section id="inicio" class="relative py-20 lg:py-32 overflow-hidden">
+  <!-- Background gradient -->
+  <div class="absolute inset-0 bg-gradient-to-br from-neutral-50 via-white to-ieee-orange/5"></div>
+  
+  <!-- Decorative elements -->
+  <div class="absolute top-20 right-0 w-96 h-96 bg-ieee-orange/10 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-0 left-0 w-72 h-72 bg-ieee-blue/5 rounded-full blur-3xl"></div>
+
+  <Container class="relative">
+    <div class="max-w-4xl mx-auto text-center">
+      <!-- Badge -->
+      <div class="inline-flex items-center gap-2 bg-ieee-orange/10 text-ieee-orange px-4 py-2 rounded-full text-sm font-medium mb-8">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-ieee-orange opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-ieee-orange"></span>
+        </span>
+        Capítulo Estudiantil PUCV
+      </div>
+
+      <!-- Main title -->
+      <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold text-neutral-900 mb-6 leading-tight">
+        IEEE Computer
+        <span class="text-ieee-orange"> Society</span>
+      </h1>
+
+      <!-- Tagline -->
+      <p class="text-xl lg:text-2xl text-neutral-500 font-medium mb-4">
+        Innovación <span class="text-ieee-orange">•</span> Comunidad <span class="text-ieee-orange">•</span> Tecnología
+      </p>
+
+      <!-- Description -->
+      <p class="text-lg text-neutral-600 max-w-2xl mx-auto mb-10 leading-relaxed">
+        Conectamos estudiantes apasionados por la tecnología, fomentando el aprendizaje, 
+        la innovación y el desarrollo profesional en la PUCV.
+      </p>
+
+      <!-- CTAs -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <Button href="#unete" variant="primary" size="lg">
+          Únete al Capítulo
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </Button>
+        <Button href="#nosotros" variant="outline" size="lg">
+          Conoce más
+        </Button>
+      </div>
+
+      <!-- Stats quick preview -->
+      <div class="mt-16 pt-16 border-t border-neutral-200">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div class="text-center">
+            <div class="text-3xl lg:text-4xl font-bold text-neutral-900">375K+</div>
+            <div class="text-sm text-neutral-500 mt-1">Miembros globales</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl lg:text-4xl font-bold text-neutral-900">1,000+</div>
+            <div class="text-sm text-neutral-500 mt-1">Capítulos</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl lg:text-4xl font-bold text-neutral-900">157+</div>
+            <div class="text-sm text-neutral-500 mt-1">Países</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl lg:text-4xl font-bold text-ieee-orange">PUCV</div>
+            <div class="text-sm text-neutral-500 mt-1">Nuestro capítulo</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>
