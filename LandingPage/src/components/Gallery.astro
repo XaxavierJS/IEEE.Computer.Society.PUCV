@@ -24,12 +24,12 @@ import Container from './ui/Container.astro';
       <!-- Reunión CS - Large card -->
       <div 
         class="lg:col-span-2 group relative overflow-hidden rounded-2xl aspect-[4/3] md:aspect-[16/9] lg:aspect-[2/1] cursor-pointer gallery-item"
-        data-image="/reunion-cs.jpg"
+        data-image={`${import.meta.env.BASE_URL}reunion-cs.jpg`}
         data-title="Reuniones de los Jueves"
         data-description="Nos juntamos semanalmente para planificar actividades, compartir conocimiento y fortalecer nuestra comunidad."
       >
         <img 
-          src="/reunion-cs.jpg" 
+          src={`${import.meta.env.BASE_URL}reunion-cs.jpg`} 
           alt="Reunión semanal IEEE CS PUCV"
           class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
@@ -56,12 +56,12 @@ import Container from './ui/Container.astro';
       <!-- RNR Chile -->
       <div 
         class="group relative overflow-hidden rounded-2xl aspect-square lg:aspect-auto lg:row-span-2 cursor-pointer gallery-item"
-        data-image="/rnr.jpg"
+        data-image={`${import.meta.env.BASE_URL}rnr.jpg`}
         data-title="RNR Chile 2024"
         data-description="Reunión Nacional de Ramas Estudiantiles IEEE Chile, evento anual de networking, capacitación y conexión entre capítulos de todo el país."
       >
         <img 
-          src="/rnr.jpg" 
+          src={`${import.meta.env.BASE_URL}rnr.jpg`} 
           alt="Reunión Nacional de Ramas IEEE Chile"
           class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
@@ -88,12 +88,12 @@ import Container from './ui/Container.astro';
       <!-- IEEEXtreme -->
       <div 
         class="group relative overflow-hidden rounded-2xl aspect-[4/3] cursor-pointer gallery-item"
-        data-image="/ieeextreme-2024.jpeg"
+        data-image={`${import.meta.env.BASE_URL}ieeextreme-2024.jpeg`}
         data-title="IEEEXtreme 18.0"
         data-description="Competencia global de programación de 24 horas donde equipos de hasta 3 estudiantes IEEE resuelven problemas algorítmicos contra miles de equipos de todo el mundo."
       >
         <img 
-          src="/ieeextreme-2024.jpeg" 
+          src={`${import.meta.env.BASE_URL}ieeextreme-2024.jpeg`} 
           alt="Equipo PUCV en IEEEXtreme 18.0"
           class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
@@ -119,12 +119,12 @@ import Container from './ui/Container.astro';
       <!-- Copec Flux -->
       <div 
         class="group relative overflow-hidden rounded-2xl aspect-[4/3] cursor-pointer gallery-item"
-        data-image="/imagen-salida.jpg"
+        data-image={`${import.meta.env.BASE_URL}imagen-salida.jpg`}
         data-title="PMGD Copec Flux"
         data-description="Visita técnica a planta solar La Independencia junto a PES y WIE Chile. Exploramos el rol de las plantas fotovoltaicas en la transición energética."
       >
         <img 
-          src="/imagen-salida.jpg" 
+          src={`${import.meta.env.BASE_URL}imagen-salida.jpg`} 
           alt="Visita técnica a planta solar Copec Flux"
           class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
@@ -150,12 +150,12 @@ import Container from './ui/Container.astro';
       <!-- Semifinal Design Thinking -->
       <div 
         class="group relative overflow-hidden rounded-2xl aspect-[4/3] cursor-pointer gallery-item"
-        data-image="/semifinal.JPG"
+        data-image={`${import.meta.env.BASE_URL}semifinal.JPG`}
         data-title="Semifinal Design Thinking"
         data-description="Competencia de innovación con metodología Design Thinking 2024."
       >
         <img 
-          src="/semifinal.JPG" 
+          src={`${import.meta.env.BASE_URL}semifinal.JPG`} 
           alt="Semifinal Design Thinking 2024"
           class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
@@ -181,12 +181,12 @@ import Container from './ui/Container.astro';
       <!-- Charla Colegio -->
       <div 
         class="group relative overflow-hidden rounded-2xl aspect-[4/3] cursor-pointer gallery-item"
-        data-image="/charla-colegio.jpeg"
+        data-image={`${import.meta.env.BASE_URL}charla-colegio.jpeg`}
         data-title="Charlas en Colegios"
         data-description="Llevamos la tecnología y la ingeniería a estudiantes de enseñanza media, inspirando a las nuevas generaciones."
       >
         <img 
-          src="/charla-colegio.jpeg" 
+          src={`${import.meta.env.BASE_URL}charla-colegio.jpeg`} 
           alt="Charla en colegio"
           class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
@@ -212,12 +212,12 @@ import Container from './ui/Container.astro';
       <!-- Final Design Thinking - Exposoftware 2025 -->
       <div 
         class="group relative overflow-hidden rounded-2xl aspect-[4/3] cursor-pointer gallery-item"
-        data-image="/final-design-thinking.jpeg"
+        data-image={`${import.meta.env.BASE_URL}final-design-thinking.jpeg`}
         data-title="Final Exposoftware 2025"
         data-description="Final de Exposoftware 2025 en la categoría escolar, impulsando la innovación desde la educación media."
       >
         <img 
-          src="/final-design-thinking.jpeg" 
+          src={`${import.meta.env.BASE_URL}final-design-thinking.jpeg`} 
           alt="Final Exposoftware 2025 - Categoría Escolar"
           class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
