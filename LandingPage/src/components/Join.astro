@@ -40,11 +40,11 @@ const discordLink = 'https://discord.gg/hjfejWFEW4';
   <Container>
     <!-- Header -->
     <div class="text-center max-w-3xl mx-auto mb-16">
-      <span class="text-ieee-orange-text font-semibold text-sm uppercase tracking-wider">
+      <span class="text-ieee-orange font-semibold text-sm uppercase tracking-wider">
         Únete
       </span>
       <h2 class="text-3xl lg:text-5xl font-bold text-neutral-900 mt-4 mb-6">
-        Sé parte de <span class="text-ieee-orange-text">IEEE CS PUCV</span>
+        Sé parte de <span class="text-ieee-orange">IEEE CS PUCV</span>
       </h2>
       <p class="text-lg text-neutral-600">
         Únete a nuestra comunidad y potencia tu carrera en tecnología junto a 
@@ -57,7 +57,7 @@ const discordLink = 'https://discord.gg/hjfejWFEW4';
       {benefits.map((benefit) => (
         <div class="bg-neutral-50 border border-neutral-200 rounded-2xl p-6 hover:bg-neutral-100 hover:border-neutral-300 transition-colors">
           <div class="w-12 h-12 bg-ieee-orange/10 rounded-xl flex items-center justify-center mb-4">
-            <svg class="w-6 h-6 text-ieee-orange-text" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-6 h-6 text-ieee-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={benefit.icon} />
             </svg>
           </div>
@@ -75,7 +75,7 @@ const discordLink = 'https://discord.gg/hjfejWFEW4';
           <div class="text-center relative">
 
             <div class="relative">
-              <span class="text-5xl font-bold text-ieee-orange-text">{step.number}</span>
+              <span class="text-5xl font-bold text-ieee-orange">{step.number}</span>
               <h4 class="font-bold text-neutral-900 text-lg mt-2">{step.title}</h4>
               <p class="text-neutral-600 text-sm mt-2">{step.description}</p>
             </div>

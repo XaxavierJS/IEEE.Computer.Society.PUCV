@@ -11,11 +11,11 @@ const sortedMembers = teamMembers.sort((a, b) => a.data.order - b.data.order);
   <Container>
     <!-- Header -->
     <div class="text-center max-w-3xl mx-auto mb-16">
-      <span class="text-ieee-orange-text font-semibold text-sm uppercase tracking-wider">
+      <span class="text-ieee-orange font-semibold text-sm uppercase tracking-wider">
         Nuestro Equipo
       </span>
-      <h2 class="text-3xl lg:text-4xl font-bold text-neutral-900 mt-4 mb-6">
-        <span class="text-ieee-orange-text">Directiva</span> 2025
+      <h2 class="text-3xl lg:text-5xl font-bold text-neutral-900 mt-4 mb-6">
+        <span class="text-ieee-orange">Directiva</span> 2025
       </h2>
       <p class="text-lg text-neutral-600">
         Conoce al equipo que lidera el capítulo estudiantil de IEEE Computer Society en la PUCV.
@@ -31,8 +31,6 @@ const sortedMembers = teamMembers.sort((a, b) => a.data.order - b.data.order);
             <img 
               src={member.data.photo === '/placeholder-avatar.webp' ? '/placeholder-avatar.svg' : member.data.photo} 
               alt={`Foto de ${member.data.name}`}
-              width="96"
-              height="96"
               class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
               loading="lazy"
             />
@@ -40,7 +38,7 @@ const sortedMembers = teamMembers.sort((a, b) => a.data.order - b.data.order);
 
           <!-- Info -->
           <h3 class="font-bold text-neutral-900 text-lg mb-1">{member.data.name}</h3>
-          <p class="text-sm text-ieee-orange-text font-medium mb-3">{member.data.role}</p>
+          <p class="text-sm text-ieee-orange font-medium mb-3">{member.data.role}</p>
 
           <!-- LinkedIn -->
           {member.data.linkedin && member.data.linkedin !== 'https://linkedin.com/in/' && (
