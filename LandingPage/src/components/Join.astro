@@ -55,7 +55,7 @@ const discordLink = 'https://discord.gg/hjfejWFEW4';
     <!-- Benefits -->
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
       {benefits.map((benefit) => (
-        <div class="bg-neutral-50 border border-neutral-200 rounded-2xl p-6 hover:bg-neutral-100 hover:border-neutral-300 transition-colors">
+        <Card class="p-3 sm:p-6 text-center" hover={true}>
           <div class="w-12 h-12 bg-ieee-orange/10 rounded-xl flex items-center justify-center mb-4">
             <svg class="w-6 h-6 text-ieee-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={benefit.icon} />
@@ -63,7 +63,7 @@ const discordLink = 'https://discord.gg/hjfejWFEW4';
           </div>
           <h3 class="font-bold text-neutral-900 text-lg mb-2">{benefit.title}</h3>
           <p class="text-neutral-600 text-sm">{benefit.description}</p>
-        </div>
+        </Card>
       ))}
     </div>
 

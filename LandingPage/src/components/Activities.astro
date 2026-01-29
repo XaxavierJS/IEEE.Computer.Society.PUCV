@@ -8,25 +8,29 @@ const activities = [
     icon: 'code',
     title: 'Workshops',
     description: 'Talleres prácticos de programación, herramientas y tecnologías emergentes con expertos de la industria.',
-    color: 'orange'
+    color: 'orange',
+    image: '/Desing Thinking clase.jpeg'
   },
   {
     icon: 'presentation',
     title: 'Charlas Técnicas',
     description: 'Presentaciones sobre tendencias tecnológicas, investigación y experiencias profesionales del sector.',
-    color: 'blue'
+    color: 'blue',
+    image: '/Desing Thinking.jpeg'
   },
   {
     icon: 'trophy',
     title: 'Hackathones',
     description: 'Competencias de desarrollo donde pondrás a prueba tus habilidades y creatividad en equipo.',
-    color: 'orange'
+    color: 'orange',
+    image: '/IEEEXteeme 2024.jpeg'
   },
   {
     icon: 'users',
     title: 'Networking',
     description: 'Eventos sociales para conectar con profesionales, empresas y otros estudiantes del área.',
-    color: 'blue'
+    color: 'blue',
+    image: '/Networking.jpg'
   }
 ];
 
@@ -67,21 +71,32 @@ const icons: Record<string, string> = {
     <!-- Activities grid -->
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
       {activities.map((activity, index) => (
-        <Card class="p-6 group" hover={true}>
-          <div class={`w-14 h-14 rounded-2xl flex items-center justify-center mb-5 transition-transform group-hover:scale-110 ${
-            activity.color === 'orange' ? 'bg-ieee-orange/10' : 'bg-ieee-blue/10'
-          }`}>
-            <svg 
-              class={`w-7 h-7 ${activity.color === 'orange' ? 'text-ieee-orange' : 'text-ieee-blue'}`} 
-              fill="none" 
-              stroke="currentColor" 
-              viewBox="0 0 24 24"
-            >
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={icons[activity.icon]} />
-            </svg>
+        <Card class="overflow-hidden group" hover={true}>
+          <!-- Image -->
+          <div class="relative h-40 overflow-hidden">
+            <img 
+              src={activity.image} 
+              alt={activity.title}
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <div class={`absolute top-3 left-3 w-10 h-10 rounded-xl flex items-center justify-center ${
+              activity.color === 'orange' ? 'bg-ieee-orange' : 'bg-ieee-blue'
+            }`}>
+              <svg 
+                class="w-5 h-5 text-white" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={icons[activity.icon]} />
+              </svg>
+            </div>
           </div>
-          <h3 class="text-xl font-bold text-neutral-900 mb-3">{activity.title}</h3>
-          <p class="text-neutral-600 text-sm leading-relaxed">{activity.description}</p>
+          <!-- Content -->
+          <div class="p-5">
+            <h3 class="text-xl font-bold text-neutral-900 mb-2">{activity.title}</h3>
+            <p class="text-neutral-600 text-sm leading-relaxed">{activity.description}</p>
+          </div>
         </Card>
       ))}
     </div>

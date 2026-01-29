@@ -1,0 +1,322 @@
+---
+import Container from './ui/Container.astro';
+---
+
+<section id="experiencias" class="py-20 lg:py-28 bg-white">
+  <Container>
+    <!-- Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="text-ieee-orange font-semibold text-sm uppercase tracking-wider">
+        Experiencias
+      </span>
+      <h2 class="text-3xl lg:text-5xl font-bold text-neutral-900 mt-4 mb-6">
+        Nuestras <span class="text-ieee-orange">Actividades</span> en Acción
+      </h2>
+      <p class="text-lg text-neutral-600">
+        Conoce algunas de las experiencias que hemos vivido como capítulo, 
+        conectando con la comunidad IEEE a nivel nacional e internacional.
+      </p>
+    </div>
+
+    <!-- Bento Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
+      
+      <!-- Reunión CS - Large card -->
+      <div 
+        class="lg:col-span-2 group relative overflow-hidden rounded-2xl aspect-[4/3] md:aspect-[16/9] lg:aspect-[2/1] cursor-pointer gallery-item"
+        data-image="/reunion CS.jpg"
+        data-title="Reuniones de los Jueves"
+        data-description="Nos juntamos semanalmente para planificar actividades, compartir conocimiento y fortalecer nuestra comunidad."
+      >
+        <img 
+          src="/reunion CS.jpg" 
+          alt="Reunión semanal IEEE CS PUCV"
+          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+          <div class="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+            </svg>
+          </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-white">
+          <span class="inline-block bg-ieee-orange px-3 py-1 rounded-full text-xs font-semibold mb-2 md:mb-3">
+            Reunión Semanal
+          </span>
+          <h3 class="text-lg md:text-xl lg:text-2xl font-bold mb-1 md:mb-2">Reuniones de los Jueves</h3>
+          <p class="text-xs md:text-sm text-white/80 max-w-xl">
+            Nos juntamos semanalmente para planificar actividades, compartir conocimiento 
+            y fortalecer nuestra comunidad.
+          </p>
+        </div>
+      </div>
+
+      <!-- RNR Chile -->
+      <div 
+        class="group relative overflow-hidden rounded-2xl aspect-square lg:aspect-auto lg:row-span-2 cursor-pointer gallery-item"
+        data-image="/rnr.jpg"
+        data-title="RNR Chile 2024"
+        data-description="Reunión Nacional de Ramas Estudiantiles IEEE Chile, evento anual de networking, capacitación y conexión entre capítulos de todo el país."
+      >
+        <img 
+          src="/rnr.jpg" 
+          alt="Reunión Nacional de Ramas IEEE Chile"
+          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+          <div class="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+            </svg>
+          </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+          <span class="inline-block bg-ieee-blue px-3 py-1 rounded-full text-xs font-semibold mb-3">
+            Evento Nacional
+          </span>
+          <h3 class="text-xl font-bold mb-2">RNR Chile 2024</h3>
+          <p class="text-sm text-white/80">
+            Reunión Nacional de Ramas Estudiantiles IEEE Chile, evento anual de networking, 
+            capacitación y conexión entre capítulos de todo el país.
+          </p>
+        </div>
+      </div>
+
+      <!-- IEEEXtreme -->
+      <div 
+        class="group relative overflow-hidden rounded-2xl aspect-[4/3] cursor-pointer gallery-item"
+        data-image="/IEEEXteeme 2024.jpeg"
+        data-title="IEEEXtreme 18.0"
+        data-description="Competencia global de programación de 24 horas donde equipos de hasta 3 estudiantes IEEE resuelven problemas algorítmicos contra miles de equipos de todo el mundo."
+      >
+        <img 
+          src="/IEEEXteeme 2024.jpeg" 
+          alt="Equipo PUCV en IEEEXtreme 18.0"
+          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+          <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+            </svg>
+          </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 p-4 lg:p-6 text-white">
+          <span class="inline-block bg-ieee-orange px-3 py-1 rounded-full text-xs font-semibold mb-2">
+            Competencia Internacional
+          </span>
+          <h3 class="text-lg font-bold mb-1">IEEEXtreme 18.0</h3>
+          <p class="text-xs text-white/80">
+            Competencia global de programación de 24 horas contra miles de equipos del mundo.
+          </p>
+        </div>
+      </div>
+
+      <!-- Copec Flux -->
+      <div 
+        class="group relative overflow-hidden rounded-2xl aspect-[4/3] cursor-pointer gallery-item"
+        data-image="/Imagen salida.jpg"
+        data-title="PMGD Copec Flux"
+        data-description="Visita técnica a planta solar La Independencia junto a PES y WIE Chile. Exploramos el rol de las plantas fotovoltaicas en la transición energética."
+      >
+        <img 
+          src="/Imagen salida.jpg" 
+          alt="Visita técnica a planta solar Copec Flux"
+          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+          <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+            </svg>
+          </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 p-4 lg:p-6 text-white">
+          <span class="inline-block bg-green-500 px-3 py-1 rounded-full text-xs font-semibold mb-2">
+            Salida a Terreno
+          </span>
+          <h3 class="text-lg font-bold mb-1">PMGD Copec Flux</h3>
+          <p class="text-xs text-white/80">
+            Visita técnica a planta solar La Independencia junto a PES y WIE Chile.
+          </p>
+        </div>
+      </div>
+
+      <!-- Semifinal Design Thinking -->
+      <div 
+        class="group relative overflow-hidden rounded-2xl aspect-[4/3] cursor-pointer gallery-item"
+        data-image="/semifinal.JPG"
+        data-title="Semifinal Design Thinking"
+        data-description="Competencia de innovación con metodología Design Thinking 2024."
+      >
+        <img 
+          src="/semifinal.JPG" 
+          alt="Semifinal Design Thinking 2024"
+          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+          <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+            </svg>
+          </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 p-4 lg:p-6 text-white">
+          <span class="inline-block bg-purple-500 px-3 py-1 rounded-full text-xs font-semibold mb-2">
+            Innovación
+          </span>
+          <h3 class="text-lg font-bold mb-1">Semifinal Design Thinking</h3>
+          <p class="text-xs text-white/80">
+            Competencia de innovación con metodología Design Thinking 2024.
+          </p>
+        </div>
+      </div>
+
+      <!-- Charla Colegio -->
+      <div 
+        class="group relative overflow-hidden rounded-2xl aspect-[4/3] cursor-pointer gallery-item"
+        data-image="/Charla colegio.jpeg"
+        data-title="Charlas en Colegios"
+        data-description="Llevamos la tecnología y la ingeniería a estudiantes de enseñanza media, inspirando a las nuevas generaciones."
+      >
+        <img 
+          src="/Charla colegio.jpeg" 
+          alt="Charla en colegio"
+          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+          <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+            </svg>
+          </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 p-4 lg:p-6 text-white">
+          <span class="inline-block bg-yellow-500 px-3 py-1 rounded-full text-xs font-semibold mb-2">
+            Outreach
+          </span>
+          <h3 class="text-lg font-bold mb-1">Charlas en Colegios</h3>
+          <p class="text-xs text-white/80">
+            Llevamos la tecnología y la ingeniería a estudiantes de enseñanza media.
+          </p>
+        </div>
+      </div>
+
+      <!-- Final Design Thinking - Exposoftware 2025 -->
+      <div 
+        class="group relative overflow-hidden rounded-2xl aspect-[4/3] cursor-pointer gallery-item"
+        data-image="/FInal desing thinking.jpeg"
+        data-title="Final Exposoftware 2025"
+        data-description="Final de Exposoftware 2025 en la categoría escolar, impulsando la innovación desde la educación media."
+      >
+        <img 
+          src="/FInal desing thinking.jpeg" 
+          alt="Final Exposoftware 2025 - Categoría Escolar"
+          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+          <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+            </svg>
+          </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 p-4 lg:p-6 text-white">
+          <span class="inline-block bg-pink-500 px-3 py-1 rounded-full text-xs font-semibold mb-2">
+            Exposoftware 2025
+          </span>
+          <h3 class="text-lg font-bold mb-1">Final Categoría Escolar</h3>
+          <p class="text-xs text-white/80">
+            Impulsando la innovación desde la educación media.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </Container>
+</section>
+
+<!-- Lightbox Modal -->
+<div id="lightbox" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/90 backdrop-blur-sm">
+  <button 
+    id="lightbox-close" 
+    class="absolute top-4 right-4 z-10 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors"
+    aria-label="Cerrar"
+  >
+    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  </button>
+  
+  <div class="max-w-5xl max-h-[90vh] mx-4 flex flex-col">
+    <img 
+      id="lightbox-image" 
+      src="" 
+      alt=""
+      class="max-w-full max-h-[80vh] object-contain rounded-lg"
+    />
+    <div class="mt-4 text-center text-white">
+      <h3 id="lightbox-title" class="text-xl font-bold mb-2"></h3>
+      <p id="lightbox-description" class="text-white/70 max-w-2xl mx-auto"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightbox-image') as HTMLImageElement;
+    const lightboxTitle = document.getElementById('lightbox-title');
+    const lightboxDescription = document.getElementById('lightbox-description');
+    const lightboxClose = document.getElementById('lightbox-close');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    // Open lightbox
+    galleryItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const image = item.getAttribute('data-image');
+        const title = item.getAttribute('data-title');
+        const description = item.getAttribute('data-description');
+
+        if (lightboxImage && image) lightboxImage.src = image;
+        if (lightboxImage && title) lightboxImage.alt = title;
+        if (lightboxTitle && title) lightboxTitle.textContent = title;
+        if (lightboxDescription && description) lightboxDescription.textContent = description;
+        
+        if (lightbox) {
+          lightbox.classList.remove('hidden');
+          lightbox.classList.add('flex');
+          document.body.style.overflow = 'hidden';
+        }
+      });
+    });
+
+    // Close lightbox
+    const closeLightbox = () => {
+      if (lightbox) {
+        lightbox.classList.add('hidden');
+        lightbox.classList.remove('flex');
+        document.body.style.overflow = '';
+      }
+    };
+
+    lightboxClose?.addEventListener('click', closeLightbox);
+    
+    lightbox?.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    // Close on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  });
+</script>
