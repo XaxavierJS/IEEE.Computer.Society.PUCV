@@ -5,6 +5,7 @@
 @theme {
   /* Colores IEEE CS */
   --color-ieee-orange: #E87722;
+  --color-ieee-orange-text: #c25409; /* Darker for accessibility (AA on white) */
   --color-ieee-orange-dark: #C9631A;
   --color-ieee-blue: #00629B;
   --color-ieee-black: #000000;
