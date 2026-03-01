@@ -1,0 +1,156 @@
+{
+  "design": [
+    {
+      "categoryId": "design",
+      "title": "Autodesk Education",
+      "description": "Acceso gratuito para estudiantes a herramientas como AutoCAD, Fusion 360, Maya y más.",
+      "access": "Crea una cuenta Autodesk y completa la verificación educativa para activar el acceso anual renovable.",
+      "url": "https://www.autodesk.com/education/home",
+      "verification": "third_party",
+      "_id": "autodesk-education"
+    },
+    {
+      "categoryId": "design",
+      "title": "Canva (plan educativo)",
+      "description": "Acceso a funciones premium de Canva mediante verificación educativa.",
+      "access": "Regístrate e inicia el proceso de verificación de estudiante (puede usar correo institucional).",
+      "url": "https://www.canva.com/es_us/educacion/estudiantes/",
+      "verification": "third_party",
+      "_id": "canva-pro"
+    },
+    {
+      "categoryId": "design",
+      "title": "Figma Education",
+      "description": "Plan profesional para estudiantes con colaboración y herramientas UI/UX.",
+      "access": "Postula al plan Education de Figma y verifica tu estado de estudiante.",
+      "url": "https://www.figma.com/education/",
+      "verification": "email_or_certificate",
+      "_id": "figma-education"
+    }
+  ],
+  "cloud-dev": [
+    {
+      "categoryId": "cloud-dev",
+      "title": "AWS Educate",
+      "description": "Cursos gratuitos, laboratorios y rutas de aprendizaje en cloud.",
+      "access": "Crea una cuenta en AWS Educate. Algunos beneficios pueden depender de participación institucional.",
+      "url": "https://aws.amazon.com/education/awseducate/",
+      "verification": "third_party",
+      "_id": "aws-educate"
+    },
+    {
+      "categoryId": "cloud-dev",
+      "title": "GitHub Student Developer Pack",
+      "description": "Acceso a herramientas premium como GitHub Pro, Copilot y créditos en servicios asociados.",
+      "access": "Postula en education.github.com/pack verificando con tu correo institucional.",
+      "url": "https://education.github.com/pack",
+      "verification": "email_or_certificate",
+      "_id": "github-student-pack"
+    },
+    {
+      "categoryId": "cloud-dev",
+      "title": "Google Cloud for Students",
+      "description": "Créditos y acceso a laboratorios prácticos para aprender Google Cloud.",
+      "access": "Regístrate en el programa para estudiantes y sigue los pasos de verificación.",
+      "url": "https://cloud.google.com/edu/students",
+      "verification": "email",
+      "_id": "google-cloud-students"
+    },
+    {
+      "categoryId": "cloud-dev",
+      "title": "JetBrains Student Pack",
+      "description": "Licencias gratuitas de IDEs como IntelliJ IDEA, PyCharm, WebStorm y más para estudiantes.",
+      "access": "Postula al Student Pack y verifica tu estado con correo institucional o prueba de matrícula.",
+      "url": "https://www.jetbrains.com/academy/student-pack/",
+      "verification": "email_or_certificate",
+      "_id": "jetbrains-student-pack"
+    },
+    {
+      "categoryId": "cloud-dev",
+      "title": "Microsoft Azure for Students",
+      "description": "Crédito inicial y servicios gratuitos para aprender y desplegar proyectos en Azure.",
+      "access": "Regístrate en el portal de Azure for Students y completa la verificación académica.",
+      "url": "https://azure.microsoft.com/en-us/free/students/",
+      "verification": "email_or_certificate",
+      "_id": "azure-for-students"
+    },
+    {
+      "categoryId": "cloud-dev",
+      "title": "Oracle Cloud Free Tier",
+      "description": "Créditos de prueba y servicios Always Free para proyectos en la nube.",
+      "access": "Crea una cuenta en Oracle Cloud Free Tier y habilita el plan gratuito.",
+      "url": "https://www.oracle.com/cloud/free/",
+      "verification": "email",
+      "_id": "oracle-cloud-free"
+    }
+  ],
+  "learning": [
+    {
+      "categoryId": "learning",
+      "title": "Coursera (cursos para auditar)",
+      "description": "Muchos cursos permiten acceso gratuito en modo auditoría; certificados pueden tener costo o ayudas.",
+      "access": "Busca el curso, selecciona modo audit (si está disponible) o postula a ayuda financiera.",
+      "url": "https://www.coursera.org/",
+      "verification": "email",
+      "_id": "coursera"
+    },
+    {
+      "categoryId": "learning",
+      "title": "freeCodeCamp",
+      "description": "Plataforma gratuita con cursos y certificaciones en desarrollo web, data science y más.",
+      "access": "Crea una cuenta gratuita y sigue la ruta de aprendizaje.",
+      "url": "https://www.freecodecamp.org/",
+      "verification": "email",
+      "_id": "freecodecamp"
+    }
+  ],
+  "productivity": [
+    {
+      "categoryId": "productivity",
+      "title": "Microsoft 365 Education (PUCV)",
+      "description": "Acceso a Word, Excel, PowerPoint, Outlook, Teams y OneDrive usando correo institucional.",
+      "access": "Ingresa con tu correo institucional y sigue el instructivo DSIC para activar tu cuenta.",
+      "url": "https://www.microsoft.com/es-cl/education/products/office",
+      "verification": "institutional",
+      "_id": "microsoft-365-education"
+    },
+    {
+      "categoryId": "productivity",
+      "title": "Miro Education Plan",
+      "description": "Plan educativo gratuito para colaboración visual (pizarras) para estudiantes y docentes.",
+      "access": "Solicita el Education Plan y verifica tu condición académica.",
+      "url": "https://help.miro.com/hc/en-us/articles/360017730473-Education-plan",
+      "verification": "email_or_certificate",
+      "_id": "miro-education"
+    },
+    {
+      "categoryId": "productivity",
+      "title": "Notion Education",
+      "description": "Plan educativo con características premium gratis usando correo institucional.",
+      "access": "Regístrate en Notion y activa el plan Education con tu correo institucional.",
+      "url": "https://www.notion.com/help/notion-for-education",
+      "verification": "email",
+      "_id": "notion-education"
+    }
+  ],
+  "multimedia": [
+    {
+      "categoryId": "multimedia",
+      "title": "Spotify Premium (plan estudiante)",
+      "description": "Precio reducido para estudiantes en Spotify Premium, con verificación periódica.",
+      "access": "Activa el plan estudiante y completa la verificación de alumno regular.",
+      "url": "https://www.spotify.com/cl/student/",
+      "verification": "third_party",
+      "_id": "spotify-student"
+    },
+    {
+      "categoryId": "multimedia",
+      "title": "YouTube Premium (plan estudiante)",
+      "description": "Descuento para estudiantes en YouTube Premium (puede requerir verificación anual).",
+      "access": "Activa el plan estudiante desde la página oficial y completa la verificación.",
+      "url": "https://www.youtube.com/premium/student",
+      "verification": "third_party",
+      "_id": "youtube-premium-student"
+    }
+  ]
+}

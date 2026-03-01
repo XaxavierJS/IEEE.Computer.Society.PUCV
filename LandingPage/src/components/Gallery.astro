@@ -1,5 +1,18 @@
 ---
 import Container from './ui/Container.astro';
+
+const rawBaseUrl = import.meta.env.BASE_URL;
+const baseUrl = rawBaseUrl.endsWith('/') ? rawBaseUrl : `${rawBaseUrl}/`;
+
+const galleryImages = [
+  { src: `${baseUrl}assets/Galeria/reunion-cs.jpg`, alt: 'Reunión del capítulo IEEE Computer Society PUCV' },
+  { src: `${baseUrl}assets/Galeria/rnr.jpg`, alt: 'Run & Run - Actividad deportiva del capítulo' },
+  { src: `${baseUrl}assets/Galeria/ieeextreme-2024.jpeg`, alt: 'Participación en IEEE Xtreme 2024' },
+  { src: `${baseUrl}assets/Galeria/imagen-salida.jpg`, alt: 'Salida grupal del capítulo' },
+  { src: `${baseUrl}assets/Galeria/semifinal.JPG`, alt: 'Semifinal de competencia interna' },
+  { src: `${baseUrl}assets/Galeria/charla-colegio.jpeg`, alt: 'Charla en colegio local' },
+  { src: `${baseUrl}assets/Galeria/final-design-thinking.jpeg`, alt: 'Final de Design Thinking Workshop' }
+];
 ---
 
 <section id="experiencias" class="py-20 lg:py-28 bg-white">
@@ -24,12 +37,12 @@ import Container from './ui/Container.astro';
       <!-- Reunión CS - Large card -->
       <div 
         class="lg:col-span-2 group relative overflow-hidden rounded-2xl aspect-[4/3] md:aspect-[16/9] lg:aspect-[2/1] cursor-pointer gallery-item"
-        data-image={`${import.meta.env.BASE_URL}reunion-cs.jpg`}
+        data-image={galleryImages[0].src}
         data-title="Reuniones de los Jueves"
         data-description="Nos juntamos semanalmente para planificar actividades, compartir conocimiento y fortalecer nuestra comunidad."
       >
         <img 
-          src={`${import.meta.env.BASE_URL}reunion-cs.jpg`} 
+          src={galleryImages[0].src} 
           alt="Reunión semanal IEEE CS PUCV"
           class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
@@ -56,12 +69,12 @@ import Container from './ui/Container.astro';
       <!-- RNR Chile -->
       <div 
         class="group relative overflow-hidden rounded-2xl aspect-square lg:aspect-auto lg:row-span-2 cursor-pointer gallery-item"
-        data-image={`${import.meta.env.BASE_URL}rnr.jpg`}
+        data-image={galleryImages[1].src}
         data-title="RNR Chile 2024"
         data-description="Reunión Nacional de Ramas Estudiantiles IEEE Chile, evento anual de networking, capacitación y conexión entre capítulos de todo el país."
       >
         <img 
-          src={`${import.meta.env.BASE_URL}rnr.jpg`} 
+          src={galleryImages[1].src} 
           alt="Reunión Nacional de Ramas IEEE Chile"
           class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
@@ -88,12 +101,12 @@ import Container from './ui/Container.astro';
       <!-- IEEEXtreme -->
       <div 
         class="group relative overflow-hidden rounded-2xl aspect-[4/3] cursor-pointer gallery-item"
-        data-image={`${import.meta.env.BASE_URL}ieeextreme-2024.jpeg`}
+        data-image={galleryImages[2].src}
         data-title="IEEEXtreme 18.0"
         data-description="Competencia global de programación de 24 horas donde equipos de hasta 3 estudiantes IEEE resuelven problemas algorítmicos contra miles de equipos de todo el mundo."
       >
         <img 
-          src={`${import.meta.env.BASE_URL}ieeextreme-2024.jpeg`} 
+          src={galleryImages[2].src} 
           alt="Equipo PUCV en IEEEXtreme 18.0"
           class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
@@ -119,12 +132,12 @@ import Container from './ui/Container.astro';
       <!-- Copec Flux -->
       <div 
         class="group relative overflow-hidden rounded-2xl aspect-[4/3] cursor-pointer gallery-item"
-        data-image={`${import.meta.env.BASE_URL}imagen-salida.jpg`}
+        data-image={galleryImages[3].src}
         data-title="PMGD Copec Flux"
         data-description="Visita técnica a planta solar La Independencia junto a PES y WIE Chile. Exploramos el rol de las plantas fotovoltaicas en la transición energética."
       >
         <img 
-          src={`${import.meta.env.BASE_URL}imagen-salida.jpg`} 
+          src={galleryImages[3].src} 
           alt="Visita técnica a planta solar Copec Flux"
           class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
@@ -150,12 +163,12 @@ import Container from './ui/Container.astro';
       <!-- Semifinal Design Thinking -->
       <div 
         class="group relative overflow-hidden rounded-2xl aspect-[4/3] cursor-pointer gallery-item"
-        data-image={`${import.meta.env.BASE_URL}semifinal.JPG`}
+        data-image={galleryImages[4].src}
         data-title="Semifinal Design Thinking"
         data-description="Competencia de innovación con metodología Design Thinking 2024."
       >
         <img 
-          src={`${import.meta.env.BASE_URL}semifinal.JPG`} 
+          src={galleryImages[4].src} 
           alt="Semifinal Design Thinking 2024"
           class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
@@ -181,12 +194,12 @@ import Container from './ui/Container.astro';
       <!-- Charla Colegio -->
       <div 
         class="group relative overflow-hidden rounded-2xl aspect-[4/3] cursor-pointer gallery-item"
-        data-image={`${import.meta.env.BASE_URL}charla-colegio.jpeg`}
+        data-image={galleryImages[5].src}
         data-title="Charlas en Colegios"
         data-description="Llevamos la tecnología y la ingeniería a estudiantes de enseñanza media, inspirando a las nuevas generaciones."
       >
         <img 
-          src={`${import.meta.env.BASE_URL}charla-colegio.jpeg`} 
+          src={galleryImages[5].src} 
           alt="Charla en colegio"
           class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
@@ -212,12 +225,12 @@ import Container from './ui/Container.astro';
       <!-- Final Design Thinking - Exposoftware 2025 -->
       <div 
         class="group relative overflow-hidden rounded-2xl aspect-[4/3] cursor-pointer gallery-item"
-        data-image={`${import.meta.env.BASE_URL}final-design-thinking.jpeg`}
+        data-image={galleryImages[6].src}
         data-title="Final Exposoftware 2025"
         data-description="Final de Exposoftware 2025 en la categoría escolar, impulsando la innovación desde la educación media."
       >
         <img 
-          src={`${import.meta.env.BASE_URL}final-design-thinking.jpeg`} 
+          src={galleryImages[6].src} 
           alt="Final Exposoftware 2025 - Categoría Escolar"
           class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />

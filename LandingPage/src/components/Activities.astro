@@ -3,34 +3,37 @@ import Container from './ui/Container.astro';
 import Card from './ui/Card.astro';
 import Badge from './ui/Badge.astro';
 
+const rawBaseUrl = import.meta.env.BASE_URL;
+const baseUrl = rawBaseUrl.endsWith('/') ? rawBaseUrl : `${rawBaseUrl}/`;
+
 const activities = [
   {
     icon: 'code',
     title: 'Workshops',
     description: 'Talleres prácticos de programación, herramientas y tecnologías emergentes con expertos de la industria.',
     color: 'orange',
-    image: '/design-thinking-clase.jpeg'
+    image: `${baseUrl}assets/Activities/design-thinking-clase.jpeg`
   },
   {
     icon: 'presentation',
     title: 'Charlas Técnicas',
     description: 'Presentaciones sobre tendencias tecnológicas, investigación y experiencias profesionales del sector.',
     color: 'blue',
-    image: '/design-thinking.jpeg'
+    image: `${baseUrl}assets/Activities/design-thinking.jpeg`
   },
   {
     icon: 'trophy',
     title: 'Hackathones',
     description: 'Competencias de desarrollo donde pondrás a prueba tus habilidades y creatividad en equipo.',
     color: 'orange',
-    image: '/ieeextreme-2024.jpeg'
+    image: `${baseUrl}assets/Galeria/ieeextreme-2024.jpeg`
   },
   {
     icon: 'users',
     title: 'Networking',
     description: 'Eventos sociales para conectar con profesionales, empresas y otros estudiantes del área.',
     color: 'blue',
-    image: '/Networking.jpg'
+    image: `${baseUrl}assets/Activities/Networking.jpg`
   }
 ];
 
@@ -75,7 +78,7 @@ const icons: Record<string, string> = {
           <!-- Image -->
           <div class="relative h-40 overflow-hidden">
             <img 
-              src={`${import.meta.env.BASE_URL}${activity.image.replace(/^\//, '')}`}
+              src={activity.image}
               alt={activity.title}
               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             />
