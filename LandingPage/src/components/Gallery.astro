@@ -1,26 +1,122 @@
 ---
 import Container from './ui/Container.astro';
-import { Image } from 'astro:assets';
-
-import imgReunion from '../assets/Galeria/reunion-cs.jpg';
-import imgRNR from '../assets/Galeria/rnr.jpg';
-import imgIeeextreme from '../assets/Galeria/ieeextreme-2024.jpeg';
-import imgSalida from '../assets/Galeria/imagen-salida.jpg';
-import imgSemifinal from '../assets/Galeria/semifinal.JPG';
-import imgCharla from '../assets/Galeria/charla-colegio.jpeg';
-import imgDesignThinking from '../assets/Galeria/final-design-thinking.jpeg';
 
 const rawBaseUrl = import.meta.env.BASE_URL;
 const baseUrl = rawBaseUrl.endsWith('/') ? rawBaseUrl : `${rawBaseUrl}/`;
 
-const galleryImages = [
-  { img: imgReunion, alt: 'Reunión del capítulo IEEE Computer Society PUCV' },
-  { img: imgRNR, alt: 'Run & Run - Actividad deportiva del capítulo' },
-  { img: imgIeeextreme, alt: 'Participación en IEEE Xtreme 2024' },
-  { img: imgSalida, alt: 'Salida grupal del capítulo' },
-  { img: imgSemifinal, alt: 'Semifinal de competencia interna' },
-  { img: imgCharla, alt: 'Charla en colegio local' },
-  { img: imgDesignThinking, alt: 'Final de Design Thinking Workshop' }
+const galleryItems = [
+  {
+    img: `${baseUrl}assets/Galeria/reunion-cs.jpg`,
+    imageAlt: 'Reunión semanal IEEE CS PUCV',
+    title: 'Reuniones de los Jueves',
+    modalDescription: 'Nos juntamos semanalmente para planificar actividades, compartir conocimiento y fortalecer nuestra comunidad.',
+    cardDescription: 'Nos juntamos semanalmente para planificar actividades, compartir conocimiento y fortalecer nuestra comunidad.',
+    badgeText: 'Reunión Semanal',
+    badgeClass: 'bg-ieee-orange',
+    wrapperClass: 'lg:col-span-2 aspect-[4/3] md:aspect-[16/9] lg:aspect-[2/1]',
+    overlayClass: 'from-black/80 via-black/40 to-transparent',
+    contentPaddingClass: 'p-4 md:p-6',
+    titleClass: 'text-lg md:text-xl lg:text-2xl font-bold mb-1 md:mb-2',
+    descriptionClass: 'text-xs md:text-sm text-white/80 max-w-xl',
+    zoomWrapperClass: 'w-14 h-14',
+    zoomIconClass: 'w-7 h-7'
+  },
+  {
+    img: `${baseUrl}assets/Galeria/rnr.jpg`,
+    imageAlt: 'Reunión Nacional de Ramas IEEE Chile',
+    title: 'RNR Chile 2024',
+    modalDescription: 'Reunión Nacional de Ramas Estudiantiles IEEE Chile, evento anual de networking, capacitación y conexión entre capítulos de todo el país.',
+    cardDescription: 'Reunión Nacional de Ramas Estudiantiles IEEE Chile, evento anual de networking, capacitación y conexión entre capítulos de todo el país.',
+    badgeText: 'Evento Nacional',
+    badgeClass: 'bg-ieee-blue',
+    wrapperClass: 'aspect-square lg:aspect-auto lg:row-span-2',
+    overlayClass: 'from-black/80 via-black/20 to-transparent',
+    contentPaddingClass: 'p-6',
+    titleClass: 'text-xl font-bold mb-2',
+    descriptionClass: 'text-sm text-white/80',
+    zoomWrapperClass: 'w-14 h-14',
+    zoomIconClass: 'w-7 h-7'
+  },
+  {
+    img: `${baseUrl}assets/Galeria/ieeextreme-2024.jpeg`,
+    imageAlt: 'Equipo PUCV en IEEEXtreme 18.0',
+    title: 'IEEEXtreme 18.0',
+    modalDescription: 'Competencia global de programación de 24 horas donde equipos de hasta 3 estudiantes IEEE resuelven problemas algorítmicos contra miles de equipos de todo el mundo.',
+    cardDescription: 'Competencia global de programación de 24 horas contra miles de equipos del mundo.',
+    badgeText: 'Competencia Internacional',
+    badgeClass: 'bg-ieee-orange',
+    wrapperClass: 'aspect-[4/3]',
+    overlayClass: 'from-black/80 via-black/20 to-transparent',
+    contentPaddingClass: 'p-4 lg:p-6',
+    titleClass: 'text-lg font-bold mb-1',
+    descriptionClass: 'text-xs text-white/80',
+    zoomWrapperClass: 'w-12 h-12',
+    zoomIconClass: 'w-6 h-6'
+  },
+  {
+    img: `${baseUrl}assets/Galeria/imagen-salida.jpg`,
+    imageAlt: 'Visita técnica a planta solar Copec Flux',
+    title: 'PMGD Copec Flux',
+    modalDescription: 'Visita técnica a planta solar La Independencia junto a PES y WIE Chile. Exploramos el rol de las plantas fotovoltaicas en la transición energética.',
+    cardDescription: 'Visita técnica a planta solar La Independencia junto a PES y WIE Chile.',
+    badgeText: 'Salida a Terreno',
+    badgeClass: 'bg-green-500',
+    wrapperClass: 'aspect-[4/3]',
+    overlayClass: 'from-black/80 via-black/20 to-transparent',
+    contentPaddingClass: 'p-4 lg:p-6',
+    titleClass: 'text-lg font-bold mb-1',
+    descriptionClass: 'text-xs text-white/80',
+    zoomWrapperClass: 'w-12 h-12',
+    zoomIconClass: 'w-6 h-6'
+  },
+  {
+    img: `${baseUrl}assets/Galeria/semifinal.JPG`,
+    imageAlt: 'Semifinal Design Thinking 2024',
+    title: 'Semifinal Design Thinking',
+    modalDescription: 'Competencia de innovación con metodología Design Thinking 2024.',
+    cardDescription: 'Competencia de innovación con metodología Design Thinking 2024.',
+    badgeText: 'Innovación',
+    badgeClass: 'bg-purple-500',
+    wrapperClass: 'aspect-[4/3]',
+    overlayClass: 'from-black/80 via-black/20 to-transparent',
+    contentPaddingClass: 'p-4 lg:p-6',
+    titleClass: 'text-lg font-bold mb-1',
+    descriptionClass: 'text-xs text-white/80',
+    zoomWrapperClass: 'w-12 h-12',
+    zoomIconClass: 'w-6 h-6'
+  },
+  {
+    img: `${baseUrl}assets/Galeria/charla-colegio.jpeg`,
+    imageAlt: 'Charla en colegio',
+    title: 'Charlas en Colegios',
+    modalDescription: 'Llevamos la tecnología y la ingeniería a estudiantes de enseñanza media, inspirando a las nuevas generaciones.',
+    cardDescription: 'Llevamos la tecnología y la ingeniería a estudiantes de enseñanza media.',
+    badgeText: 'Outreach',
+    badgeClass: 'bg-yellow-500',
+    wrapperClass: 'aspect-[4/3]',
+    overlayClass: 'from-black/80 via-black/20 to-transparent',
+    contentPaddingClass: 'p-4 lg:p-6',
+    titleClass: 'text-lg font-bold mb-1',
+    descriptionClass: 'text-xs text-white/80',
+    zoomWrapperClass: 'w-12 h-12',
+    zoomIconClass: 'w-6 h-6'
+  },
+  {
+    img: `${baseUrl}assets/Galeria/final-design-thinking.jpeg`,
+    imageAlt: 'Final Exposoftware 2025 - Categoría Escolar',
+    title: 'Final Exposoftware 2025',
+    modalDescription: 'Final de Exposoftware 2025 en la categoría escolar, impulsando la innovación desde la educación media.',
+    cardDescription: 'Impulsando la innovación desde la educación media.',
+    badgeText: 'Exposoftware 2025',
+    badgeClass: 'bg-pink-500',
+    wrapperClass: 'aspect-[4/3]',
+    overlayClass: 'from-black/80 via-black/20 to-transparent',
+    contentPaddingClass: 'p-4 lg:p-6',
+    titleClass: 'text-lg font-bold mb-1',
+    descriptionClass: 'text-xs text-white/80',
+    zoomWrapperClass: 'w-12 h-12',
+    zoomIconClass: 'w-6 h-6'
+  }
 ];
 
 ---
@@ -43,226 +139,36 @@ const galleryImages = [
 
     <!-- Bento Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
-      
-      <!-- Reunión CS - Large card -->
-      <div 
-        class="lg:col-span-2 group relative overflow-hidden rounded-2xl aspect-[4/3] md:aspect-[16/9] lg:aspect-[2/1] cursor-pointer gallery-item"
-        data-image={galleryImages[0].img.src}
-        data-title="Reuniones de los Jueves"
-        data-description="Nos juntamos semanalmente para planificar actividades, compartir conocimiento y fortalecer nuestra comunidad."
-      >
-        <Image 
-          src={galleryImages[0].img} 
-          alt="Reunión semanal IEEE CS PUCV"
-          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-        />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-          <div class="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-            </svg>
+      {galleryItems.map((item) => (
+        <div
+          class={`group relative overflow-hidden rounded-2xl cursor-pointer gallery-item ${item.wrapperClass}`}
+          data-image={item.img}
+          data-title={item.title}
+          data-description={item.modalDescription}
+        >
+          <img
+            src={item.img}
+            alt={item.imageAlt}
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            loading="lazy"
+          />
+          <div class={`absolute inset-0 bg-gradient-to-t ${item.overlayClass}`}></div>
+          <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+            <div class={`${item.zoomWrapperClass} bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center`}>
+              <svg class={`${item.zoomIconClass} text-white`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+              </svg>
+            </div>
+          </div>
+          <div class={`absolute bottom-0 left-0 right-0 text-white ${item.contentPaddingClass}`}>
+            <span class={`inline-block px-3 py-1 rounded-full text-xs font-semibold mb-2 ${item.badgeClass}`}>
+              {item.badgeText}
+            </span>
+            <h3 class={item.titleClass}>{item.title}</h3>
+            <p class={item.descriptionClass}>{item.cardDescription}</p>
           </div>
         </div>
-        <div class="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-white">
-          <span class="inline-block bg-ieee-orange px-3 py-1 rounded-full text-xs font-semibold mb-2 md:mb-3">
-            Reunión Semanal
-          </span>
-          <h3 class="text-lg md:text-xl lg:text-2xl font-bold mb-1 md:mb-2">Reuniones de los Jueves</h3>
-          <p class="text-xs md:text-sm text-white/80 max-w-xl">
-            Nos juntamos semanalmente para planificar actividades, compartir conocimiento 
-            y fortalecer nuestra comunidad.
-          </p>
-        </div>
-      </div>
-
-      <!-- RNR Chile -->
-      <div 
-        class="group relative overflow-hidden rounded-2xl aspect-square lg:aspect-auto lg:row-span-2 cursor-pointer gallery-item"
-        data-image={galleryImages[1].img.src}
-        data-title="RNR Chile 2024"
-        data-description="Reunión Nacional de Ramas Estudiantiles IEEE Chile, evento anual de networking, capacitación y conexión entre capítulos de todo el país."
-      >
-        <Image 
-          src={galleryImages[1].img} 
-          alt="Reunión Nacional de Ramas IEEE Chile"
-          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-        />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-          <div class="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-            </svg>
-          </div>
-        </div>
-        <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
-          <span class="inline-block bg-ieee-blue px-3 py-1 rounded-full text-xs font-semibold mb-3">
-            Evento Nacional
-          </span>
-          <h3 class="text-xl font-bold mb-2">RNR Chile 2024</h3>
-          <p class="text-sm text-white/80">
-            Reunión Nacional de Ramas Estudiantiles IEEE Chile, evento anual de networking, 
-            capacitación y conexión entre capítulos de todo el país.
-          </p>
-        </div>
-      </div>
-
-      <!-- IEEEXtreme -->
-      <div 
-        class="group relative overflow-hidden rounded-2xl aspect-[4/3] cursor-pointer gallery-item"
-        data-image={galleryImages[2].img.src}
-        data-title="IEEEXtreme 18.0"
-        data-description="Competencia global de programación de 24 horas donde equipos de hasta 3 estudiantes IEEE resuelven problemas algorítmicos contra miles de equipos de todo el mundo."
-      >
-        <Image 
-          src={galleryImages[2].img} 
-          alt="Equipo PUCV en IEEEXtreme 18.0"
-          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-        />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-          <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-            </svg>
-          </div>
-        </div>
-        <div class="absolute bottom-0 left-0 right-0 p-4 lg:p-6 text-white">
-          <span class="inline-block bg-ieee-orange px-3 py-1 rounded-full text-xs font-semibold mb-2">
-            Competencia Internacional
-          </span>
-          <h3 class="text-lg font-bold mb-1">IEEEXtreme 18.0</h3>
-          <p class="text-xs text-white/80">
-            Competencia global de programación de 24 horas contra miles de equipos del mundo.
-          </p>
-        </div>
-      </div>
-
-      <!-- Copec Flux -->
-      <div 
-        class="group relative overflow-hidden rounded-2xl aspect-[4/3] cursor-pointer gallery-item"
-        data-image={galleryImages[3].img.src}
-        data-title="PMGD Copec Flux"
-        data-description="Visita técnica a planta solar La Independencia junto a PES y WIE Chile. Exploramos el rol de las plantas fotovoltaicas en la transición energética."
-      >
-        <Image 
-          src={galleryImages[3].img} 
-          alt="Visita técnica a planta solar Copec Flux"
-          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-        />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-          <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-            </svg>
-          </div>
-        </div>
-        <div class="absolute bottom-0 left-0 right-0 p-4 lg:p-6 text-white">
-          <span class="inline-block bg-green-500 px-3 py-1 rounded-full text-xs font-semibold mb-2">
-            Salida a Terreno
-          </span>
-          <h3 class="text-lg font-bold mb-1">PMGD Copec Flux</h3>
-          <p class="text-xs text-white/80">
-            Visita técnica a planta solar La Independencia junto a PES y WIE Chile.
-          </p>
-        </div>
-      </div>
-
-      <!-- Semifinal Design Thinking -->
-      <div 
-        class="group relative overflow-hidden rounded-2xl aspect-[4/3] cursor-pointer gallery-item"
-        data-image={galleryImages[4].img.src}
-        data-title="Semifinal Design Thinking"
-        data-description="Competencia de innovación con metodología Design Thinking 2024."
-      >
-        <Image 
-          src={galleryImages[4].img} 
-          alt="Semifinal Design Thinking 2024"
-          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-        />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-          <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-            </svg>
-          </div>
-        </div>
-        <div class="absolute bottom-0 left-0 right-0 p-4 lg:p-6 text-white">
-          <span class="inline-block bg-purple-500 px-3 py-1 rounded-full text-xs font-semibold mb-2">
-            Innovación
-          </span>
-          <h3 class="text-lg font-bold mb-1">Semifinal Design Thinking</h3>
-          <p class="text-xs text-white/80">
-            Competencia de innovación con metodología Design Thinking 2024.
-          </p>
-        </div>
-      </div>
-
-      <!-- Charla Colegio -->
-      <div 
-        class="group relative overflow-hidden rounded-2xl aspect-[4/3] cursor-pointer gallery-item"
-        data-image={galleryImages[5].img.src}
-        data-title="Charlas en Colegios"
-        data-description="Llevamos la tecnología y la ingeniería a estudiantes de enseñanza media, inspirando a las nuevas generaciones."
-      >
-        <Image 
-          src={galleryImages[5].img} 
-          alt="Charla en colegio"
-          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-        />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-          <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-            </svg>
-          </div>
-        </div>
-        <div class="absolute bottom-0 left-0 right-0 p-4 lg:p-6 text-white">
-          <span class="inline-block bg-yellow-500 px-3 py-1 rounded-full text-xs font-semibold mb-2">
-            Outreach
-          </span>
-          <h3 class="text-lg font-bold mb-1">Charlas en Colegios</h3>
-          <p class="text-xs text-white/80">
-            Llevamos la tecnología y la ingeniería a estudiantes de enseñanza media.
-          </p>
-        </div>
-      </div>
-
-      <!-- Final Design Thinking - Exposoftware 2025 -->
-      <div 
-        class="group relative overflow-hidden rounded-2xl aspect-[4/3] cursor-pointer gallery-item"
-        data-image={galleryImages[6].img.src}
-        data-title="Final Exposoftware 2025"
-        data-description="Final de Exposoftware 2025 en la categoría escolar, impulsando la innovación desde la educación media."
-      >
-        <Image 
-          src={galleryImages[6].img} 
-          alt="Final Exposoftware 2025 - Categoría Escolar"
-          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-        />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-          <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-            </svg>
-          </div>
-        </div>
-        <div class="absolute bottom-0 left-0 right-0 p-4 lg:p-6 text-white">
-          <span class="inline-block bg-pink-500 px-3 py-1 rounded-full text-xs font-semibold mb-2">
-            Exposoftware 2025
-          </span>
-          <h3 class="text-lg font-bold mb-1">Final Categoría Escolar</h3>
-          <p class="text-xs text-white/80">
-            Impulsando la innovación desde la educación media.
-          </p>
-        </div>
-      </div>
-
+      ))}
     </div>
   </Container>
 </section>

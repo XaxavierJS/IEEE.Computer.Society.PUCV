@@ -1,0 +1,79 @@
+---
+import Container from './ui/Container.astro';
+
+const faqItems = [
+  {
+    question: '¿Quiénes pueden participar?',
+    answer:
+      'Todos pueden participar. El capítulo está abierto a personas interesadas en tecnología y computación; estudiantes PUCV tienen acceso directo a actividades y procesos internos del capítulo.'
+  },
+  {
+    question: '¿Cómo me uno al capítulo IEEE Computer Society PUCV?',
+    answer:
+      'Puedes escribirnos al correo oficial o unirte a nuestras redes para asistir a una reunión y conocer el proceso de incorporación.'
+  },
+  {
+    question: '¿Necesito ser miembro IEEE para participar en el capítulo?',
+    answer:
+      'No siempre. Muchas actividades están abiertas, pero algunos beneficios avanzados sí pueden requerir membresía IEEE activa.'
+  },
+  {
+    question: '¿Cuánto cuesta la membresía IEEE y la de Computer Society?',
+    answer:
+      'Como referencia aproximada: IEEE estudiante cuesta cerca de 14.000 CLP al año y agregar Computer Society suma cerca de 2.000 CLP adicionales. Estos valores pueden variar por periodo y promociones vigentes.'
+  },
+  {
+    question: '¿Dónde me inscribo oficialmente a IEEE?',
+    answer:
+      'La inscripción oficial se realiza en el portal de membresía IEEE: https://www.ieee.org/membership/join/index.html.'
+  },
+  {
+    question: '¿Cómo contacto al capítulo IEEE CS PUCV?',
+    answer:
+      'Puedes escribir al correo oficial ieee.computersociety.pucv@gmail.com y revisar nuestras redes para novedades y actividades.'
+  }
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer
+    }
+  }))
+};
+---
+
+<section id="faq" class="py-16 lg:py-20 bg-neutral-50">
+  <Container>
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-10">
+        <span class="text-ieee-orange font-semibold text-sm uppercase tracking-wider">FAQ</span>
+        <h2 class="text-3xl lg:text-5xl font-bold text-neutral-900 mt-4 mb-4">
+          Preguntas <span class="text-ieee-orange">frecuentes</span>
+        </h2>
+        <p class="text-lg text-neutral-600">
+          Respuestas rápidas sobre participación, requisitos, costos y contacto del capítulo.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        {faqItems.map((item) => (
+          <details class="bg-white border border-neutral-200 rounded-xl p-5 group">
+            <summary class="cursor-pointer list-none font-semibold text-neutral-900 pr-8 relative">
+              {item.question}
+              <span class="absolute right-0 top-0 text-ieee-orange transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-3 text-neutral-600 leading-relaxed">{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </Container>
+</section>
+
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>

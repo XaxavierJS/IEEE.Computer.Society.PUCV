@@ -7,6 +7,8 @@ import DocumentCard from '../../components/beneficios/DocumentCard.astro';
 import benefits from '../../data/benefits-grouped.json';
 import documents from '../../data/documents-grouped.json';
 
+const totalBenefits = Object.values(benefits).flat().length;
+
 const documentTypeCategories = [
   { id: 'reglamento', label: 'Reglamentos' },
   { id: 'rubrica', label: 'Rúbricas' },
@@ -47,69 +49,39 @@ const categories = [
     title: 'Multimedia',
     description: 'Descuentos para estudiantes en música, streaming y suscripciones.',
     iconPath: 'M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.26a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z M21 12a9 9 0 11-18 0 9 9 0 0118 0z'
+  },
+  {
+    id: 'ieee',
+    title: 'IEEE Membership',
+    description: 'Beneficios exclusivos por pertenecer a IEEE y IEEE Computer Society.',
+    iconPath: 'M12 2l2.4 4.86L20 7.8l-4 3.9.94 5.5L12 14.8 7.06 17.2 8 11.7 4 7.8l5.6-.94L12 2z'
   }
 ];
+
 ---
 
-<Layout>
+<Layout
+  title="Beneficios IEEE Computer Society PUCV | Convenios y Recursos"
+  description="Explora beneficios académicos y profesionales para estudiantes PUCV e IEEE Computer Society: software, cursos, recursos y documentos oficiales."
+>
   <Navbar />
   <main>
-    <!-- Hero Section -->
-    <section class="relative py-20 lg:py-32 overflow-hidden bg-gradient-to-br from-neutral-50 via-white to-ieee-orange/5">
-      <!-- Background elements -->
-      <div class="absolute top-20 right-0 w-96 h-96 bg-ieee-orange/10 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-0 left-0 w-72 h-72 bg-ieee-blue/5 rounded-full blur-3xl"></div>
-
-      <Container class="relative">
-        <div class="max-w-4xl mx-auto text-center">
-          <!-- Badge -->
-          <div class="inline-flex items-center gap-2 bg-ieee-orange/10 text-ieee-orange px-4 py-2 rounded-full text-sm font-medium mb-8">
-            <span class="relative flex h-2 w-2">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-ieee-orange opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-2 w-2 bg-ieee-orange"></span>
-            </span>
-            Beneficios Exclusivos
-          </div>
-
-          <!-- Main title -->
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6 leading-tight">
-            Beneficios para
-            <span class="text-ieee-orange"> Estudiantes</span>
-          </h1>
-
-          <!-- Description -->
-          <p class="text-xl text-neutral-600 max-w-2xl mx-auto mb-8 leading-relaxed">
-            Accede a herramientas, licencias y descuentos exclusivos para estudiantes PUCV. 
-            Cloud, IDEs, diseño, productividad y más.
-          </p>
-
-          <!-- Stats -->
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
-            <div class="text-center">
-              <div class="text-2xl font-bold text-ieee-orange">{benefits.length}+</div>
-              <div class="text-sm text-neutral-500">Beneficios</div>
-            </div>
-            <div class="text-center">
-              <div class="text-2xl font-bold text-ieee-orange">{categories.length}</div>
-              <div class="text-sm text-neutral-500">Categorías</div>
-            </div>
-            <div class="text-center">
-              <div class="text-2xl font-bold text-ieee-orange">{documents.length}+</div>
-              <div class="text-sm text-neutral-500">Documentos</div>
-            </div>
-            <div class="text-center">
-              <div class="text-2xl font-bold text-ieee-orange">100%</div>
-              <div class="text-sm text-neutral-500">Gratis</div>
-            </div>
-          </div>
-        </div>
-      </Container>
-    </section>
-
     <!-- Categorías y Beneficios -->
-    <section class="py-16 lg:py-24 bg-neutral-50">
+    <section class="py-10 lg:py-14 bg-neutral-50">
       <Container class="relative">
         <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-8 lg:mb-10">
+            <span class="inline-flex items-center gap-2 bg-ieee-orange/10 text-ieee-orange px-4 py-2 rounded-full text-sm font-medium mb-5">
+              Beneficios para la comunidad estudiantil
+            </span>
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4">
+              Beneficios PUCV e IEEE Computer Society
+            </h1>
+            <p class="text-lg text-neutral-600 max-w-3xl mx-auto">
+              Explora los beneficios por categoría y encuentra rápidamente lo que necesitas.
+            </p>
+          </div>
+
           <!-- Categorías arriba -->
           <div class="flex flex-wrap justify-center gap-3 mb-12">
             {categories.map(category => (
@@ -137,9 +109,7 @@ const categories = [
                     <h2 class="text-3xl font-bold text-neutral-900 mb-4">{category.title}</h2>
                     <p class="text-lg text-neutral-600 max-w-2xl mx-auto">{category.description}</p>
                   </div>
-
-                  {/* Beneficios como cartas */}
-                  {categoryBenefits.length > 0 && (
+                  {categoryBenefits.length > 0 ? (
                     <div class="mb-12">
                       <h3 class="text-xl font-semibold text-neutral-900 mb-6">Beneficios disponibles</h3>
                       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -172,6 +142,10 @@ const categories = [
                         ))}
                       </div>
                     </div>
+                  ) : (
+                    <div class="text-center text-neutral-600 bg-white border border-neutral-200 rounded-xl p-8 mb-12">
+                      No hay beneficios cargados en esta categoría por ahora.
+                    </div>
                   )}
                 </div>
               );
@@ -180,6 +154,8 @@ const categories = [
         </div>
       </Container>
     </section>
+
+
 
     <!-- Todos los Documentos -->
     <section class="py-16 lg:py-24 bg-white" id="documentos">
@@ -241,94 +217,23 @@ const categories = [
 </Layout>
 
 <script>
-  const buttons = Array.from(document.querySelectorAll('[data-category-button]'));
-  const panels = Array.from(document.querySelectorAll('[data-category-panel]'));
+  import { setupFilterTabs } from '../../lib/filterTabs';
 
-  const docButtons = Array.from(document.querySelectorAll('[data-document-type-button]'));
-  const docPanels = Array.from(document.querySelectorAll('[data-document-type-panel]'));
-
-  function setActive(categoryId) {
-    buttons.forEach((btn) => {
-      const isActive = btn.getAttribute('data-category-id') === categoryId;
-      btn.classList.toggle('border-ieee-orange', isActive);
-      btn.classList.toggle('bg-ieee-orange/5', isActive);
-      btn.classList.toggle('shadow-sm', isActive);
-      btn.classList.toggle('border-neutral-200', !isActive);
-      btn.classList.toggle('hover:border-ieee-orange/40', !isActive);
-    });
-
-    panels.forEach((p) => {
-      const isActive = p.getAttribute('data-category-id') === categoryId;
-      p.classList.toggle('hidden', !isActive);
-      p.style.display = '';
-    });
-  }
-
-  function setActiveDocType(typeId) {
-    docButtons.forEach((btn) => {
-      const isActive = btn.getAttribute('data-document-type-id') === typeId;
-      btn.classList.toggle('border-ieee-orange', isActive);
-      btn.classList.toggle('bg-ieee-orange/5', isActive);
-      btn.classList.toggle('shadow-sm', isActive);
-      btn.classList.toggle('border-neutral-200', !isActive);
-      btn.classList.toggle('hover:border-ieee-orange/40', !isActive);
-    });
-
-    docPanels.forEach((p) => {
-      const isActive = p.getAttribute('data-document-type-id') === typeId;
-      p.classList.toggle('hidden', !isActive);
-      p.style.display = '';
-    });
-  }
-
-  buttons.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const categoryId = btn.getAttribute('data-category-id');
-      if (!categoryId) return;
-
-      setActive(categoryId);
-
-      const url = new URL(window.location.href);
-      url.searchParams.set('cat', categoryId);
-      window.history.replaceState({}, '', url.toString());
-
-      const section = document.querySelector('section[class*="bg-neutral-50"]');
-      if (section) {
-        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
+  setupFilterTabs({
+    buttonSelector: '[data-category-button]',
+    panelSelector: '[data-category-panel]',
+    idAttribute: 'data-category-id',
+    defaultId: 'cloud-dev',
+    queryParam: 'cat',
+    scrollTargetSelector: 'section[class*="bg-neutral-50"]'
   });
 
-  const initialCat = new URL(window.location.href).searchParams.get('cat');
-  if (initialCat) {
-    setActive(initialCat);
-  } else {
-    const firstCategoryId = 'cloud-dev';
-    setActive(firstCategoryId);
-  }
-
-  const initialDocType = new URL(window.location.href).searchParams.get('docs');
-  if (initialDocType) {
-    setActiveDocType(initialDocType);
-  } else {
-    setActiveDocType('reglamento');
-  }
-
-  docButtons.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const typeId = btn.getAttribute('data-document-type-id');
-      if (!typeId) return;
-
-      setActiveDocType(typeId);
-
-      const url = new URL(window.location.href);
-      url.searchParams.set('docs', typeId);
-      window.history.replaceState({}, '', url.toString());
-
-      const section = document.getElementById('documentos');
-      if (section) {
-        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
+  setupFilterTabs({
+    buttonSelector: '[data-document-type-button]',
+    panelSelector: '[data-document-type-panel]',
+    idAttribute: 'data-document-type-id',
+    defaultId: 'reglamento',
+    queryParam: 'docs',
+    scrollTargetSelector: '#documentos'
   });
 </script>

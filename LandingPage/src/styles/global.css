@@ -3,12 +3,24 @@
 /* ===== IEEE Computer Society PUCV - Design System ===== */
 
 @theme {
-  /* Colores IEEE CS */
+  /* Colores Oficiales IEEE CS - Primary Palette */
   --color-ieee-orange: #E87722;
-  --color-ieee-orange-dark: #C9631A;
+  /* PMS 158 C */
+  --color-ieee-orange-dark: #C85F18;
+  /* Hover: más sobrio y con mejor contraste */
+
   --color-ieee-blue: #00629B;
+  /* PMS 3015 */
+  --color-ieee-blue-dark: #004F7C;
+
+  --color-ieee-cyan: #00B5E2;
+  /* PMS Process Cyan */
+
+  --color-ieee-gray: #75787B;
+  /* PMS Cool Gray 9 C */
   --color-ieee-black: #000000;
-  
+  /* PMS Process Black */
+
   /* Neutrales */
   --color-neutral-50: #FAFAFA;
   --color-neutral-100: #F5F5F5;
@@ -20,10 +32,10 @@
   --color-neutral-700: #404040;
   --color-neutral-800: #262626;
   --color-neutral-900: #171717;
-  
+
   /* Tipografía */
   --font-family-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  
+
   /* Border radius */
   --radius-lg: 0.75rem;
   --radius-xl: 1rem;

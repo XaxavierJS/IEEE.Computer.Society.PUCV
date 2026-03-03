@@ -6,80 +6,67 @@ const rawBaseUrl = import.meta.env.BASE_URL;
 const baseUrl = rawBaseUrl.endsWith('/') ? rawBaseUrl : `${rawBaseUrl}/`;
 ---
 
-<section id="inicio" class="relative py-20 lg:py-32 overflow-hidden">
-  <!-- Background gradient -->
-  <div class="absolute inset-0 bg-gradient-to-br from-neutral-50 via-white to-ieee-orange/5"></div>
+<section id="inicio" class="relative py-20 lg:py-32 overflow-hidden bg-gradient-to-b from-neutral-50 via-neutral-50 to-white">
   
   <!-- Decorative elements -->
   <div class="absolute top-20 right-0 w-96 h-96 bg-ieee-orange/10 rounded-full blur-3xl"></div>
   <div class="absolute bottom-0 left-0 w-72 h-72 bg-ieee-blue/5 rounded-full blur-3xl"></div>
 
-  <Container class="relative">
+  <Container class="relative z-10">
     <div class="max-w-4xl mx-auto text-center">
-      <!-- Badge -->
-      <div class="inline-flex items-center gap-2 bg-ieee-orange/10 text-ieee-orange px-4 py-2 rounded-full text-sm font-medium mb-8">
-        <span class="relative flex h-2 w-2">
-          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-ieee-orange opacity-75"></span>
-          <span class="relative inline-flex rounded-full h-2 w-2 bg-ieee-orange"></span>
-        </span>
-        Capítulo Estudiantil PUCV
-      </div>
-
-      <!-- Main title -->
-      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6 leading-tight">
-        Beneficios para
-        <span class="text-ieee-orange"> Estudiantes</span>
-      </h1>
-
-      <!-- Tagline -->
-      <p class="text-xl lg:text-2xl text-neutral-500 font-medium mb-4">
-        IEEE Computer Society <span class="text-ieee-orange">•</span> PUCV
-      </p>
-
-      <!-- Description -->
-      <p class="text-lg text-neutral-600 max-w-2xl mx-auto mb-10 leading-relaxed">
-        Accede a herramientas, licencias y descuentos exclusivos para estudiantes PUCV. 
-        Cloud, IDEs, diseño, productividad y más.
-      </p>
-
-      <!-- CTAs -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <Button href={`${baseUrl}beneficios`} variant="primary" size="lg">
-          Explorar Beneficios
-          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-          </svg>
-        </Button>
-        <Button href="#nosotros" variant="outline" size="lg">
-          Conoce el Capítulo
-        </Button>
-      </div>
-
-      <!-- Benefits quick preview -->
-      <div class="mt-16 pt-16 border-t border-neutral-200">
-        <div class="text-center mb-8">
-          <h3 class="text-lg font-semibold text-neutral-900 mb-2">Beneficios destacados</h3>
-          <p class="text-sm text-neutral-500">Herramientas y recursos que ya puedes usar</p>
-        </div>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div class="text-center">
-            <div class="text-2xl lg:text-3xl font-bold text-ieee-orange">GitHub</div>
-            <div class="text-sm text-neutral-500 mt-1">Student Pack</div>
+          <div class="animate-fade-in-up inline-flex items-center gap-2 bg-ieee-orange/10 text-ieee-orange px-4 py-2 rounded-full text-sm font-medium mb-8">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-ieee-orange opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-ieee-orange"></span>
+            </span>
+            Innovación, Comunidad y Tecnología
           </div>
-          <div class="text-center">
-            <div class="text-2xl lg:text-3xl font-bold text-ieee-orange">Azure</div>
-            <div class="text-sm text-neutral-500 mt-1">Créditos Cloud</div>
+
+          <h1 class="animate-fade-in-up delay-100 text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6 leading-tight">
+            IEEE Computer Society
+            <span class="text-ieee-orange"> PUCV</span>
+          </h1>
+
+          <p class="animate-fade-in-up delay-200 text-xl lg:text-2xl text-neutral-500 font-medium mb-4">
+            Capítulo Estudiantil de Ingeniería Informática
+          </p>
+
+          <p class="animate-fade-in-up delay-300 text-lg text-neutral-600 mb-10 leading-relaxed">
+            Únete a la principal red de estudiantes y profesionales de la computación.
+            Potencia tu carrera, participa en proyectos reales y conecta con el mundo tecnológico.
+          </p>
+
+          <div class="animate-fade-in-up delay-400 flex flex-col sm:flex-row justify-center items-center gap-4">
+            <Button href={`${baseUrl}beneficios`} variant="primary" size="lg">
+              Explorar Beneficios
+              <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </Button>
+            <Button href="#nosotros" variant="outline" size="lg">
+              Conoce el Capítulo
+            </Button>
           </div>
-          <div class="text-center">
-            <div class="text-2xl lg:text-3xl font-bold text-ieee-orange">JetBrains</div>
-            <div class="text-sm text-neutral-500 mt-1">IDEs Gratis</div>
-          </div>
-          <div class="text-center">
-            <div class="text-2xl lg:text-3xl font-bold text-ieee-orange">Figma</div>
-            <div class="text-sm text-neutral-500 mt-1">Diseño Pro</div>
-          </div>
-        </div>
-      </div>
     </div>
   </Container>
 </section>
+
+<style>
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

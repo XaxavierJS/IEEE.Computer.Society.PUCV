@@ -31,9 +31,7 @@ const sortedMembers = team.sort((a, b) => a.order - b.order);
           <!-- Photo -->
           <div class="relative w-24 h-24 mx-auto mb-4 overflow-hidden rounded-2xl bg-neutral-100">
             <img 
-              src={member.photo === '/placeholder-avatar.webp' 
-                ? `${baseUrl}assets/Team/placeholder-avatar.svg`
-                : member.photo}
+              src={member.photo.startsWith('/') ? `${baseUrl}${member.photo.slice(1)}` : member.photo}
               alt={`Foto de ${member.name}`}
               class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
               loading="lazy"

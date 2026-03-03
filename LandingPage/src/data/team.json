@@ -2,7 +2,7 @@
   {
     "name": "Victor",
     "role": "Presidente",
-    "photo": "/placeholder-avatar.webp",
+    "photo": "/assets/Team/placeholder-avatar.svg",
     "linkedin": "https://linkedin.com/in/",
     "order": 1,
     "_id": "presidente"
@@ -10,7 +10,7 @@
   {
     "name": "Por definir",
     "role": "Vicepresidente",
-    "photo": "/placeholder-avatar.webp",
+    "photo": "/assets/Team/placeholder-avatar.svg",
     "linkedin": "https://linkedin.com/in/",
     "order": 2,
     "_id": "vicepresidente"
@@ -18,7 +18,7 @@
   {
     "name": "Por definir",
     "role": "Tesorero",
-    "photo": "/placeholder-avatar.webp",
+    "photo": "/assets/Team/placeholder-avatar.svg",
     "linkedin": "https://linkedin.com/in/",
     "order": 3,
     "_id": "tesorero"
@@ -26,7 +26,7 @@
   {
     "name": "Por definir",
     "role": "Secretario",
-    "photo": "/placeholder-avatar.webp",
+    "photo": "/assets/Team/placeholder-avatar.svg",
     "linkedin": "https://linkedin.com/in/",
     "order": 4,
     "_id": "secretario"
@@ -34,7 +34,7 @@
   {
     "name": "Por definir",
     "role": "Relaciones Exteriores",
-    "photo": "/placeholder-avatar.webp",
+    "photo": "/assets/Team/placeholder-avatar.svg",
     "linkedin": "https://linkedin.com/in/",
     "order": 5,
     "_id": "relaciones-exteriores"
@@ -42,7 +42,7 @@
   {
     "name": "Por definir",
     "role": "Web Master",
-    "photo": "/placeholder-avatar.webp",
+    "photo": "/assets/Team/placeholder-avatar.svg",
     "linkedin": "https://linkedin.com/in/",
     "order": 6,
     "_id": "webmaster-1"
@@ -50,7 +50,7 @@
   {
     "name": "Por definir",
     "role": "Web Master",
-    "photo": "/placeholder-avatar.webp",
+    "photo": "/assets/Team/placeholder-avatar.svg",
     "linkedin": "https://linkedin.com/in/",
     "order": 7,
     "_id": "webmaster-2"
@@ -58,7 +58,7 @@
   {
     "name": "Por definir",
     "role": "Web Master",
-    "photo": "/placeholder-avatar.webp",
+    "photo": "/assets/Team/placeholder-avatar.svg",
     "linkedin": "https://linkedin.com/in/",
     "order": 8,
     "_id": "webmaster-3"

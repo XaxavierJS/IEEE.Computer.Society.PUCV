@@ -10,6 +10,34 @@ const {
 	title = 'IEEE Computer Society PUCV',
 	description = 'Capítulo Estudiantil de IEEE Computer Society en la Pontificia Universidad Católica de Valparaíso. Innovación, Comunidad y Tecnología.'
 } = Astro.props;
+
+const siteUrl = Astro.site ?? new URL('https://ieeepucv.computer');
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
+const ogImageUrl = new URL('assets/logocs.webp', siteUrl).toString();
+
+const structuredData = {
+	'@context': 'https://schema.org',
+	'@graph': [
+		{
+			'@type': 'Organization',
+			'@id': `${siteUrl.toString()}#organization`,
+			name: 'IEEE Computer Society PUCV',
+			url: siteUrl.toString(),
+			logo: ogImageUrl,
+			sameAs: [
+				'https://www.instagram.com/ieee.pucv.cs/',
+				'https://discord.gg/hjfejWFEW4'
+			]
+		},
+		{
+			'@type': 'WebSite',
+			'@id': `${siteUrl.toString()}#website`,
+			url: siteUrl.toString(),
+			name: 'IEEE Computer Society PUCV',
+			description
+		}
+	]
+};
 ---
 
 <!doctype html>
@@ -18,9 +46,11 @@ const {
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="description" content={description} />
+		<link rel="canonical" href={canonicalUrl} />
+		<meta name="robots" content="index,follow" />
 		
 		<!-- Favicon -->
-		<link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
+		<link rel="icon" type="image/webp" sizes="256x256" href={`${import.meta.env.BASE_URL}assets/logocs-icon.webp`} />
 		
 		<!-- Inter Font -->
 		<link rel="preconnect" href="https://rsms.me/" />
@@ -29,11 +59,21 @@ const {
 		<!-- Open Graph -->
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
-		<meta property="og:image" content={`${import.meta.env.BASE_URL}LogoCS.png`} />
+		<meta property="og:image" content={ogImageUrl} />
+		<meta property="og:url" content={canonicalUrl} />
+		<meta property="og:site_name" content="IEEE Computer Society PUCV" />
+		<meta property="og:locale" content="es_CL" />
 		<meta property="og:type" content="website" />
+
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImageUrl} />
 		
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
 	</head>
 	<body class="min-h-screen bg-neutral-50 text-neutral-900 antialiased">
 		<slot />
