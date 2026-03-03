@@ -7,9 +7,34 @@ import DocumentCard from '../../components/beneficios/DocumentCard.astro';
 import benefits from '../../data/benefits-grouped.json';
 import documents from '../../data/documents-grouped.json';
 
-const totalBenefits = Object.values(benefits).flat().length;
+type BenefitCategoryId = 'cloud-dev' | 'productivity' | 'design' | 'learning' | 'multimedia' | 'bienestar' | 'ieee';
 
-const documentTypeCategories = [
+interface BenefitItem {
+  categoryId: BenefitCategoryId;
+  title: string;
+  description: string;
+  access: string;
+  url: string;
+  verification: string;
+  _id: string;
+}
+
+type DocumentTypeId = 'reglamento' | 'rubrica' | 'plantilla' | 'formulario' | 'admision' | 'viajes' | 'recursos';
+
+interface DocumentItem {
+  title: string;
+  description: string;
+  url: string;
+  type: 'reglamento' | 'admision' | 'viajes' | 'link' | 'plantilla' | 'formulario' | 'recursos' | 'pdf' | 'rubrica' | 'doc';
+  publisher: string;
+  _id: string;
+}
+
+const totalBenefits = Object.values(benefits).flat().length;
+const benefitsByCategory = benefits as Record<BenefitCategoryId, BenefitItem[]>;
+const documentsByType = documents as Record<string, DocumentItem[]>;
+
+const documentTypeCategories: Array<{ id: DocumentTypeId; label: string }> = [
   { id: 'reglamento', label: 'Reglamentos' },
   { id: 'rubrica', label: 'Rúbricas' },
   { id: 'plantilla', label: 'Formatos' },
@@ -19,7 +44,7 @@ const documentTypeCategories = [
   { id: 'recursos', label: 'Recursos' }
 ];
 
-const categories = [
+const categories: Array<{ id: BenefitCategoryId; title: string; description: string; iconPath: string }> = [
   {
     id: 'cloud-dev',
     title: 'Cloud & Desarrollo',
@@ -47,8 +72,14 @@ const categories = [
   {
     id: 'multimedia',
     title: 'Multimedia',
-    description: 'Descuentos para estudiantes en música, streaming y suscripciones.',
+    description: 'Herramientas y planes para contenido visual, presentaciones y servicios multimedia.',
     iconPath: 'M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.26a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z M21 12a9 9 0 11-18 0 9 9 0 0118 0z'
+  },
+  {
+    id: 'bienestar',
+    title: 'Bienestar & Salud',
+    description: 'Atención médica, psicológica, seguros estudiantiles y apoyo integral PUCV.',
+    iconPath: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z'
   },
   {
     id: 'ieee',
@@ -101,7 +132,7 @@ const categories = [
           <!-- Contenido de categorías -->
           <div class="space-y-12">
             {categories.map(category => {
-              const categoryBenefits = benefits[category.id] || [];
+              const categoryBenefits = benefitsByCategory[category.id] || [];
               
               return (
                 <div data-category-panel data-category-id={category.id} class="hidden">
@@ -185,8 +216,8 @@ const categories = [
 
         <div class="space-y-12">
           {documentTypeCategories.map((t) => {
-            const docs = documents[t.id] || [];
-            const sortedDocs = docs.sort((a, b) => a.title.localeCompare(b.title));
+            const docs = documentsByType[t.id] || [];
+            const sortedDocs = [...docs].sort((a, b) => a.title.localeCompare(b.title));
 
             return (
               <div data-document-type-panel data-document-type-id={t.id} class="hidden">
