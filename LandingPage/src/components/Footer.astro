@@ -1,5 +1,7 @@
 ---
 import Container from './ui/Container.astro';
+import { Image } from 'astro:assets';
+import logoBlanco from '../assets/Footer/logo-blanco.webp';
 
 const rawBaseUrl = import.meta.env.BASE_URL;
 const baseUrl = rawBaseUrl.endsWith('/') ? rawBaseUrl : `${rawBaseUrl}/`;
@@ -39,8 +41,8 @@ const navLinks = [
       <!-- Brand -->
       <div class="lg:col-span-2">
         <a href="#inicio" class="flex items-center gap-3 mb-4">
-          <img 
-            src={`${baseUrl}assets/Footer/logo-blanco.webp`}
+          <Image 
+            src={logoBlanco}
             alt="IEEE Computer Society PUCV" 
             class="h-12 w-auto"
           />

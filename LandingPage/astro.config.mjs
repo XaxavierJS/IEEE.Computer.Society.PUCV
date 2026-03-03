@@ -8,8 +8,8 @@ import react from '@astrojs/react';
 export default defineConfig({
   // Configuración para GitHub Pages
   output: 'static',
-  base: '/IEEE.Computer.Society.PUCV',
-  
+  site: 'https://ieeepucv.computer',
+
   vite: {
     plugins: [tailwindcss()]
   },

@@ -2,6 +2,12 @@
 import Container from './ui/Container.astro';
 import Card from './ui/Card.astro';
 import Badge from './ui/Badge.astro';
+import { Image } from 'astro:assets';
+
+import imgDesignThinkingClase from '../assets/Activities/design-thinking-clase.jpeg';
+import imgDesignThinking from '../assets/Activities/design-thinking.jpeg';
+import imgIeeextreme from '../assets/Galeria/ieeextreme-2024.jpeg';
+import imgNetworking from '../assets/Activities/Networking.jpg';
 
 const rawBaseUrl = import.meta.env.BASE_URL;
 const baseUrl = rawBaseUrl.endsWith('/') ? rawBaseUrl : `${rawBaseUrl}/`;
@@ -12,28 +18,28 @@ const activities = [
     title: 'Workshops',
     description: 'Talleres prácticos de programación, herramientas y tecnologías emergentes con expertos de la industria.',
     color: 'orange',
-    image: `${baseUrl}assets/Activities/design-thinking-clase.jpeg`
+    image: imgDesignThinkingClase
   },
   {
     icon: 'presentation',
     title: 'Charlas Técnicas',
     description: 'Presentaciones sobre tendencias tecnológicas, investigación y experiencias profesionales del sector.',
     color: 'blue',
-    image: `${baseUrl}assets/Activities/design-thinking.jpeg`
+    image: imgDesignThinking
   },
   {
     icon: 'trophy',
     title: 'Hackathones',
     description: 'Competencias de desarrollo donde pondrás a prueba tus habilidades y creatividad en equipo.',
     color: 'orange',
-    image: `${baseUrl}assets/Galeria/ieeextreme-2024.jpeg`
+    image: imgIeeextreme
   },
   {
     icon: 'users',
     title: 'Networking',
     description: 'Eventos sociales para conectar con profesionales, empresas y otros estudiantes del área.',
     color: 'blue',
-    image: `${baseUrl}assets/Activities/Networking.jpg`
+    image: imgNetworking
   }
 ];
 
@@ -77,7 +83,7 @@ const icons: Record<string, string> = {
         <Card class="overflow-hidden group" hover={true}>
           <!-- Image -->
           <div class="relative h-40 overflow-hidden">
-            <img 
+            <Image 
               src={activity.image}
               alt={activity.title}
               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"

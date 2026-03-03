@@ -1,6 +1,8 @@
 ---
 import Container from './ui/Container.astro';
 import Card from './ui/Card.astro';
+import { Image } from 'astro:assets';
+import ibcImage from '../assets/About/IBC.webp';
 
 const rawBaseUrl = import.meta.env.BASE_URL;
 const baseUrl = rawBaseUrl.endsWith('/') ? rawBaseUrl : `${rawBaseUrl}/`;
@@ -55,8 +57,8 @@ const baseUrl = rawBaseUrl.endsWith('/') ? rawBaseUrl : `${rawBaseUrl}/`;
       <div class="space-y-6">
         <!-- IBC Photo -->
         <div class="relative overflow-hidden rounded-2xl shadow-xl">
-          <img 
-            src={`${baseUrl}assets/About/IBC.webp`}
+          <Image 
+            src={ibcImage}
             alt="Edificio IBC - Escuela de Ingeniería Informática PUCV"
             class="w-full h-64 lg:h-80 object-cover"
           />

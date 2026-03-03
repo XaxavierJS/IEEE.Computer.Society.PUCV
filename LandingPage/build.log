@@ -1,0 +1,23 @@
+
+> landingpage@0.0.1 build
+> astro build
+
+[2m22:24:56[22m [34m[content][39m Syncing content
+[2m22:24:56[22m [34m[content][39m Synced content
+[2m22:24:56[22m [34m[types][39m Generated [2m47ms[22m
+[2m22:24:56[22m [34m[build][39m output: [34m"static"[39m
+[2m22:24:56[22m [34m[build][39m mode: [34m"static"[39m
+[2m22:24:56[22m [34m[build][39m directory: [34mC:\Users\javie\Documents\GitHub\IEEE.Computer.Society.PUCV\LandingPage\dist\[39m
+[2m22:24:56[22m [34m[build][39m Collecting build info...
+[2m22:24:56[22m [34m[build][39m [32mÔ£ô Completed in 73ms.[39m
+[2m22:24:56[22m [34m[build][39m Building static entrypoints...
+22:24:57 [ERROR] [vite] Ô£ù Build failed in 610ms
+Expected ";" but found ":"
+  Location:
+    C:/Users/javie/Documents/GitHub/IEEE.Computer.Society.PUCV/LandingPage/src/components/Gallery.astro:27:55
+  Stack trace:
+    at failureErrorWithLog (C:\Users\javie\Documents\GitHub\IEEE.Computer.Society.PUCV\LandingPage\node_modules\esbuild\lib\main.js:1467:15)
+    at responseCallbacks.<computed> (C:\Users\javie\Documents\GitHub\IEEE.Computer.Society.PUCV\LandingPage\node_modules\esbuild\lib\main.js:603:9)
+    at Socket.readFromStdout (C:\Users\javie\Documents\GitHub\IEEE.Computer.Society.PUCV\LandingPage\node_modules\esbuild\lib\main.js:581:7)
+    at addChunk (node:internal/streams/readable:559:12)
+    at Readable.push (node:internal/streams/readable:390:5)

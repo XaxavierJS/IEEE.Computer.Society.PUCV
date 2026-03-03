@@ -1,5 +1,7 @@
 ---
 import Container from './ui/Container.astro';
+import { Image } from 'astro:assets';
+import logoEscuelaInformatica from '../assets/Navbar/logo-escuela-informatica-pucv.png';
 
 const rawBaseUrl = import.meta.env.BASE_URL;
 const baseUrl = rawBaseUrl.endsWith('/') ? rawBaseUrl : `${rawBaseUrl}/`;
@@ -19,8 +21,8 @@ const navLinks = [
     <nav class="flex items-center justify-between h-14 lg:h-16">
       <!-- Logo -->
       <a href={baseUrl} class="flex items-center gap-3 group">
-        <img 
-          src={`${baseUrl}assets/Navbar/logo-escuela-informatica-pucv.png`}
+        <Image 
+          src={logoEscuelaInformatica}
           alt="IEEE Computer Society PUCV" 
           class="h-10 lg:h-12 w-auto transition-transform group-hover:scale-105"
         />
