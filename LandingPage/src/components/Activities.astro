@@ -80,8 +80,12 @@ const icons: Record<string, string> = {
             <img 
               src={activity.image}
               alt={activity.title}
+              width="1280"
+              height="720"
               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               loading="lazy"
+              decoding="async"
+              fetchpriority="low"
             />
             <div class={`absolute top-3 left-3 w-10 h-10 rounded-xl flex items-center justify-center ${
               activity.color === 'orange' ? 'bg-ieee-orange' : 'bg-ieee-blue'

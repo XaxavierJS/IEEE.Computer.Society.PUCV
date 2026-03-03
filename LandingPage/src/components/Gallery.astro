@@ -149,8 +149,12 @@ const galleryItems = [
           <img
             src={item.img}
             alt={item.imageAlt}
+            width="1600"
+            height="900"
             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             loading="lazy"
+            decoding="async"
+            fetchpriority="low"
           />
           <div class={`absolute inset-0 bg-gradient-to-t ${item.overlayClass}`}></div>
           <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
@@ -190,7 +194,10 @@ const galleryItems = [
       id="lightbox-image" 
       src="" 
       alt=""
+      width="1600"
+      height="900"
       class="max-w-full max-h-[80vh] object-contain rounded-lg"
+      decoding="async"
     />
     <div class="mt-4 text-center text-white">
       <h3 id="lightbox-title" class="text-xl font-bold mb-2"></h3>

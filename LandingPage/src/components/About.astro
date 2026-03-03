@@ -58,8 +58,12 @@ const baseUrl = rawBaseUrl.endsWith('/') ? rawBaseUrl : `${rawBaseUrl}/`;
           <img 
             src={`${baseUrl}assets/About/IBC.webp`}
             alt="Edificio IBC - Escuela de Ingeniería Informática PUCV"
+            width="1600"
+            height="900"
             class="w-full h-64 lg:h-80 object-cover"
             loading="lazy"
+            decoding="async"
+            fetchpriority="low"
           />
           <div class="absolute inset-0 bg-gradient-to-t "></div>
           <div class="absolute bottom-4 left-4 right-4 text-white">

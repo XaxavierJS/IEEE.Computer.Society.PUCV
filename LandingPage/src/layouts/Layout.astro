@@ -55,7 +55,8 @@ const structuredData = {
 		
 		<!-- Inter Font -->
 		<link rel="preconnect" href="https://rsms.me/" />
-		<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+		<link rel="preload" href="https://rsms.me/inter/inter.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+		<noscript><link rel="stylesheet" href="https://rsms.me/inter/inter.css" /></noscript>
 		
 		<!-- Open Graph -->
 		<meta property="og:title" content={title} />

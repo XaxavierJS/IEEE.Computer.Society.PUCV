@@ -23,8 +23,12 @@ const isActive = (href: string) => {
         <img 
           src={`${baseUrl}assets/Navbar/logo-escuela-informatica-pucv.webp`}
           alt="IEEE Computer Society PUCV" 
+          width="480"
+          height="120"
           class="h-10 lg:h-12 w-auto transition-transform group-hover:scale-105"
           loading="eager"
+          decoding="async"
+          fetchpriority="high"
         />
       </a>
 

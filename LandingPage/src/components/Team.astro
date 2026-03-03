@@ -33,8 +33,11 @@ const sortedMembers = team.sort((a, b) => a.order - b.order);
             <img 
               src={member.photo.startsWith('/') ? `${baseUrl}${member.photo.slice(1)}` : member.photo}
               alt={`Foto de ${member.name}`}
+              width="192"
+              height="192"
               class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
               loading="lazy"
+              decoding="async"
             />
           </div>
 

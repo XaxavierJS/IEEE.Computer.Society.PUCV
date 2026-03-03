@@ -14,7 +14,7 @@ const baseUrl = rawBaseUrl.endsWith('/') ? rawBaseUrl : `${rawBaseUrl}/`;
 
   <Container class="relative z-10">
     <div class="max-w-4xl mx-auto text-center">
-          <div class="animate-fade-in-up inline-flex items-center gap-2 bg-ieee-orange/10 text-ieee-orange px-4 py-2 rounded-full text-sm font-medium mb-8">
+          <div class="inline-flex items-center gap-2 bg-ieee-orange/10 text-ieee-orange px-4 py-2 rounded-full text-sm font-medium mb-8">
             <span class="relative flex h-2 w-2">
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-ieee-orange opacity-75"></span>
               <span class="relative inline-flex rounded-full h-2 w-2 bg-ieee-orange"></span>
@@ -22,21 +22,21 @@ const baseUrl = rawBaseUrl.endsWith('/') ? rawBaseUrl : `${rawBaseUrl}/`;
             Innovación, Comunidad y Tecnología
           </div>
 
-          <h1 class="animate-fade-in-up delay-100 text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6 leading-tight">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6 leading-tight">
             IEEE Computer Society
             <span class="text-ieee-orange"> PUCV</span>
           </h1>
 
-          <p class="animate-fade-in-up delay-200 text-xl lg:text-2xl text-neutral-500 font-medium mb-4">
+          <p class="text-xl lg:text-2xl text-neutral-500 font-medium mb-4">
             Capítulo Estudiantil de Ingeniería Informática
           </p>
 
-          <p class="animate-fade-in-up delay-300 text-lg text-neutral-600 mb-10 leading-relaxed">
+          <p class="text-lg text-neutral-600 mb-10 leading-relaxed">
             Únete a la principal red de estudiantes y profesionales de la computación.
             Potencia tu carrera, participa en proyectos reales y conecta con el mundo tecnológico.
           </p>
 
-          <div class="animate-fade-in-up delay-400 flex flex-col sm:flex-row justify-center items-center gap-4">
+          <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
             <Button href={`${baseUrl}beneficios`} variant="primary" size="lg">
               Explorar Beneficios
               <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -51,22 +51,3 @@ const baseUrl = rawBaseUrl.endsWith('/') ? rawBaseUrl : `${rawBaseUrl}/`;
   </Container>
 </section>
 
-<style>
-  .animate-fade-in-up {
-    animation: fadeInUp 0.8s ease-out forwards;
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  .delay-100 { animation-delay: 100ms; }
-  .delay-200 { animation-delay: 200ms; }
-  .delay-300 { animation-delay: 300ms; }
-  .delay-400 { animation-delay: 400ms; }
-  .delay-500 { animation-delay: 500ms; }
-  
-  @keyframes fadeInUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-</style>
