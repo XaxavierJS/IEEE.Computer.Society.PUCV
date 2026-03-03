@@ -22,11 +22,13 @@ const structuredData = {
 			'@type': 'Organization',
 			'@id': `${siteUrl.toString()}#organization`,
 			name: 'IEEE Computer Society PUCV',
+			alternateName: 'IEEE CS PUCV - Ingeniería Informática PUCV',
 			url: siteUrl.toString(),
 			logo: ogImageUrl,
 			sameAs: [
 				'https://www.instagram.com/ieee.pucv.cs/',
-				'https://discord.gg/hjfejWFEW4'
+				'https://discord.gg/hjfejWFEW4',
+				'https://www.inf.ucv.cl/'
 			]
 		},
 		{
@@ -46,6 +48,7 @@ const structuredData = {
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="description" content={description} />
+		<meta name="keywords" content="IEEE, IEEE Computer Society, PUCV, Ingeniería Informática PUCV, Informática PUCV, Valparaíso" />
 		<meta name="google-site-verification" content="_y6CkfaKkN0B4K5_QoI9mzektzU1IxKC_l8kLdQsiio" />
 		<link rel="canonical" href={canonicalUrl} />
 		<meta name="robots" content="index,follow" />
