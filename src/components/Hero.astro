@@ -37,15 +37,26 @@ const { hero } = landingContent;
             {hero.description}
           </p>
 
-          <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-            <Button href={`${baseUrl}beneficios`} variant="primary" size="lg">
-              {hero.ctaPrimary}
-              <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            </Button>
-            <Button href="#nosotros" variant="outline" size="lg">
-              {hero.ctaSecondary}
+          <div class="flex flex-col items-center gap-4">
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+              <Button href={`${baseUrl}beneficios`} variant="primary" size="lg">
+                {hero.ctaPrimary}
+                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </Button>
+              <Button href="#nosotros" variant="outline" size="lg">
+                {hero.ctaSecondary}
+              </Button>
+            </div>
+
+            <Button
+              href="https://kserver.tail056a77.ts.net/"
+              variant="secondary"
+              size="lg"
+              class="mt-2 border-2 border-ieee-orange ring-2"
+            >
+              Guia para mechones
             </Button>
           </div>
     </div>
