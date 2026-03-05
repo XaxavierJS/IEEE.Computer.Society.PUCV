@@ -8,7 +8,7 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   // Configuración para GitHub Pages
   output: 'static',
-  site: 'https://ieeepucv.computer',
+  site: 'https://www.ieeepucv.computer',
 
   vite: {
     plugins: [tailwindcss()]

@@ -8,10 +8,10 @@ interface Props {
 
 const { 
 	title = 'IEEE Computer Society PUCV',
-	description = 'Capítulo Estudiantil de IEEE Computer Society en la Pontificia Universidad Católica de Valparaíso. Innovación, Comunidad y Tecnología.'
+	description = 'Capítulo Estudiantil de IEEE Computer Society en la Pontificia Universidad Católica de Valparaíso. Ingeniería Informática y Civil Informática PUCV, innovación, comunidad y tecnología.'
 } = Astro.props;
 
-const siteUrl = Astro.site ?? new URL('https://ieeepucv.computer');
+const siteUrl = Astro.site ?? new URL('https://www.ieeepucv.computer');
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
 const ogImageUrl = new URL('assets/logocs.webp', siteUrl).toString();
 
@@ -35,6 +35,7 @@ const structuredData = {
 			'@type': 'WebSite',
 			'@id': `${siteUrl.toString()}#website`,
 			url: siteUrl.toString(),
+			alternateName: 'IEEE CS PUCV',
 			name: 'IEEE Computer Society PUCV',
 			description
 		}
@@ -48,7 +49,7 @@ const structuredData = {
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="description" content={description} />
-		<meta name="keywords" content="IEEE, IEEE Computer Society, PUCV, Ingeniería Informática PUCV, Informática PUCV, Valparaíso" />
+		<meta name="keywords" content="IEEE, IEEE Computer Society, IEEE PUCV, Computer Society, Ingeniería Informática PUCV, Civil Informática PUCV, Informática PUCV, Valparaíso" />
 		<meta name="google-site-verification" content="_y6CkfaKkN0B4K5_QoI9mzektzU1IxKC_l8kLdQsiio" />
 		<link rel="canonical" href={canonicalUrl} />
 		<meta name="robots" content="index,follow" />
