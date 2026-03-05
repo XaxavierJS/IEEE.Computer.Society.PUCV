@@ -256,7 +256,8 @@ const categories: Array<{ id: BenefitCategoryId; title: string; description: str
     idAttribute: 'data-category-id',
     defaultId: 'cloud-dev',
     queryParam: 'cat',
-    scrollTargetSelector: 'section[class*="bg-neutral-50"]'
+    scrollTargetSelector: 'section[class*="bg-neutral-50"]',
+    tablistLabel: 'Categorías de beneficios'
   });
 
   setupFilterTabs({
@@ -265,6 +266,7 @@ const categories: Array<{ id: BenefitCategoryId; title: string; description: str
     idAttribute: 'data-document-type-id',
     defaultId: 'reglamento',
     queryParam: 'docs',
-    scrollTargetSelector: '#documentos'
+    scrollTargetSelector: '#documentos',
+    tablistLabel: 'Categorías de documentos'
   });
 </script>

@@ -24,6 +24,13 @@ const structuredData = {
 			name: 'IEEE Computer Society PUCV',
 			alternateName: 'IEEE CS PUCV - Ingeniería Informática PUCV',
 			url: siteUrl.toString(),
+			foundingDate: '2024-08',
+			areaServed: 'CL',
+			address: {
+				'@type': 'PostalAddress',
+				addressLocality: 'Valparaíso',
+				addressCountry: 'CL'
+			},
 			logo: ogImageUrl,
 			sameAs: [
 				'https://www.instagram.com/ieee.pucv.cs/',
@@ -70,12 +77,14 @@ const structuredData = {
 		<meta property="og:site_name" content="IEEE Computer Society PUCV" />
 		<meta property="og:locale" content="es_CL" />
 		<meta property="og:type" content="website" />
+		<meta property="og:image:alt" content="IEEE Computer Society PUCV - Capítulo Estudiantil" />
 
 		<!-- Twitter -->
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:title" content={title} />
 		<meta name="twitter:description" content={description} />
 		<meta name="twitter:image" content={ogImageUrl} />
+		<meta name="twitter:site" content="@ieee.pucv.cs" />
 		
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>

@@ -1,9 +1,11 @@
 ---
 import Container from './ui/Container.astro';
 import Button from './ui/Button.astro';
+import landingContent from '../data/landing-content.json';
 
 const rawBaseUrl = import.meta.env.BASE_URL;
 const baseUrl = rawBaseUrl.endsWith('/') ? rawBaseUrl : `${rawBaseUrl}/`;
+const { hero } = landingContent;
 ---
 
 <section id="inicio" class="relative py-20 lg:py-32 overflow-hidden bg-gradient-to-b from-neutral-50 via-neutral-50 to-white">
@@ -19,32 +21,31 @@ const baseUrl = rawBaseUrl.endsWith('/') ? rawBaseUrl : `${rawBaseUrl}/`;
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-ieee-orange opacity-75"></span>
               <span class="relative inline-flex rounded-full h-2 w-2 bg-ieee-orange"></span>
             </span>
-            Innovación, Comunidad y Tecnología
+            {hero.badge}
           </div>
 
           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6 leading-tight">
-            IEEE Computer Society
-            <span class="text-ieee-orange"> PUCV</span>
+            {hero.title}
+            <span class="text-ieee-orange"> {hero.titleHighlight}</span>
           </h1>
 
           <p class="text-xl lg:text-2xl text-neutral-500 font-medium mb-4">
-            Capítulo Estudiantil de Ingeniería Informática y Civil Informática PUCV
+            {hero.subtitle}
           </p>
 
           <p class="text-lg text-neutral-600 mb-10 leading-relaxed">
-            Únete a la principal red de estudiantes y profesionales de la computación.
-            Potencia tu carrera, participa en proyectos reales y conecta con el mundo tecnológico.
+            {hero.description}
           </p>
 
           <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
             <Button href={`${baseUrl}beneficios`} variant="primary" size="lg">
-              Explorar Beneficios
+              {hero.ctaPrimary}
               <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </Button>
             <Button href="#nosotros" variant="outline" size="lg">
-              Conoce el Capítulo
+              {hero.ctaSecondary}
             </Button>
           </div>
     </div>

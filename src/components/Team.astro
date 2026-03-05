@@ -2,9 +2,11 @@
 import Container from './ui/Container.astro';
 import Card from './ui/Card.astro';
 import team from '../data/team.json';
+import landingContent from '../data/landing-content.json';
 
 const rawBaseUrl = import.meta.env.BASE_URL;
 const baseUrl = rawBaseUrl.endsWith('/') ? rawBaseUrl : `${rawBaseUrl}/`;
+const { team: teamContent } = landingContent;
 
 const sortedMembers = team.sort((a, b) => a.order - b.order);
 ---
@@ -14,13 +16,13 @@ const sortedMembers = team.sort((a, b) => a.order - b.order);
     <!-- Header -->
     <div class="text-center max-w-3xl mx-auto mb-16">
       <span class="text-ieee-orange font-semibold text-sm uppercase tracking-wider">
-        Nuestro Equipo
+        {teamContent.badge}
       </span>
       <h2 class="text-3xl lg:text-5xl font-bold text-neutral-900 mt-4 mb-6">
-        <span class="text-ieee-orange">Directiva</span> 2025
+        <span class="text-ieee-orange">{teamContent.titleHighlight}</span> {teamContent.titleSuffix}
       </h2>
       <p class="text-lg text-neutral-600">
-        Conoce al equipo que lidera el capítulo estudiantil de IEEE Computer Society en la PUCV.
+        {teamContent.description}
       </p>
     </div>
 

@@ -2,40 +2,16 @@
 import Container from './ui/Container.astro';
 import Card from './ui/Card.astro';
 import Badge from './ui/Badge.astro';
+import landingContent from '../data/landing-content.json';
 
 const rawBaseUrl = import.meta.env.BASE_URL;
 const baseUrl = rawBaseUrl.endsWith('/') ? rawBaseUrl : `${rawBaseUrl}/`;
+const { activities: activitiesContent } = landingContent;
 
-const activities = [
-  {
-    icon: 'code',
-    title: 'Workshops',
-    description: 'Talleres prácticos de programación, herramientas y tecnologías emergentes con expertos de la industria.',
-    color: 'orange',
-    image: `${baseUrl}assets/Activities/design-thinking-clase.jpeg`
-  },
-  {
-    icon: 'presentation',
-    title: 'Charlas Técnicas',
-    description: 'Presentaciones sobre tendencias tecnológicas, investigación y experiencias profesionales del sector.',
-    color: 'blue',
-    image: `${baseUrl}assets/Activities/design-thinking.jpeg`
-  },
-  {
-    icon: 'trophy',
-    title: 'Hackathones',
-    description: 'Competencias de desarrollo donde pondrás a prueba tus habilidades y creatividad en equipo.',
-    color: 'orange',
-    image: `${baseUrl}assets/Galeria/ieeextreme-2024.jpeg`
-  },
-  {
-    icon: 'users',
-    title: 'Networking',
-    description: 'Eventos sociales para conectar con profesionales, empresas y otros estudiantes del área.',
-    color: 'blue',
-    image: `${baseUrl}assets/Activities/Networking.jpg`
-  }
-];
+const activities = activitiesContent.items.map((item) => ({
+  ...item,
+  image: `${baseUrl}${item.imagePath}`
+}));
 
 const icons: Record<string, string> = {
   code: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4',
@@ -50,24 +26,19 @@ const icons: Record<string, string> = {
     <!-- Header -->
     <div class="text-center max-w-3xl mx-auto mb-16">
       <span class="text-ieee-orange font-semibold text-sm uppercase tracking-wider">
-        Actividades
+        {activitiesContent.badge}
       </span>
       <h2 class="text-3xl lg:text-5xl font-bold text-neutral-900 mt-4 mb-6 ">
-        <span class="text-ieee-orange"> ¿Qué hacemos? </span>
+        <span class="text-ieee-orange"> {activitiesContent.title} </span>
       </h2>
       <p class="text-lg text-neutral-600">
-        Organizamos diversas actividades para impulsar tu desarrollo académico y profesional 
-        en el mundo de la tecnología.
+        {activitiesContent.description}
       </p>
     </div>
 
-    <!-- Meeting badge -->
     <div class="flex justify-center mb-12">
       <Badge variant="orange" class="text-base px-6 py-2">
-        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-        </svg>
-        Reuniones los Jueves
+        {activitiesContent.semesterBadge}
       </Badge>
     </div>
 
@@ -117,14 +88,14 @@ const icons: Record<string, string> = {
         </svg>
       </div>
       <h3 class="text-xl font-bold text-neutral-900 mb-2">Síguenos en Instagram</h3>
-      <p class="text-neutral-600 mb-4">Entérate de nuestras últimas actividades y eventos</p>
+      <p class="text-neutral-600 mb-4">{activitiesContent.instagramDescription}</p>
       <a 
         href="https://www.instagram.com/ieee.pucv.cs/" 
         target="_blank" 
         rel="noopener noreferrer"
         class="inline-flex items-center gap-2 text-ieee-orange hover:text-ieee-orange-dark font-semibold transition-colors"
       >
-        @ieee.pucv.cs
+        {activitiesContent.instagramHandle}
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
         </svg>

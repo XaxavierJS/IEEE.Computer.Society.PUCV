@@ -1,9 +1,11 @@
 ---
 import Container from './ui/Container.astro';
 import Card from './ui/Card.astro';
+import landingContent from '../data/landing-content.json';
 
 const rawBaseUrl = import.meta.env.BASE_URL;
 const baseUrl = rawBaseUrl.endsWith('/') ? rawBaseUrl : `${rawBaseUrl}/`;
+const { about } = landingContent;
 ---
 
 <section id="nosotros" class="py-20 lg:py-28 bg-white">
@@ -12,27 +14,23 @@ const baseUrl = rawBaseUrl.endsWith('/') ? rawBaseUrl : `${rawBaseUrl}/`;
       <!-- Left content -->
       <div>
         <span class="text-ieee-orange font-semibold text-sm uppercase tracking-wider">
-          Sobre Nosotros
+          {about.badge}
         </span>
         <h2 class="text-3xl lg:text-5xl font-bold text-neutral-900 mt-4 mb-6 leading-tight">
-          ¿Qué es IEEE 
-          <span class="text-ieee-orange">Computer Society</span>?
+          {about.titlePrefix} 
+          <span class="text-ieee-orange">{about.titleHighlight}</span>?
         </h2>
         
         <div class="space-y-4 text-neutral-600 leading-relaxed">
           <p>
-            <strong class="text-neutral-900">IEEE Computer Society</strong> es la comunidad líder mundial 
-            de profesionales de la computación. Con más de <strong class="text-ieee-orange">486,000 miembros</strong> 
-            en más de 157 países, impulsamos la innovación tecnológica y el avance de la profesión.
+            {about.paragraph1}
           </p>
           <p>
-            En <strong class="text-neutral-900">PUCV</strong>, nuestro capítulo estudiantil conecta a 
-            estudiantes apasionados por la tecnología, ofreciendo oportunidades de aprendizaje, 
-            networking y desarrollo profesional.
+            {about.paragraph2}
           </p>
           <p>
             Somos parte de la <a href="https://www.inf.ucv.cl/" target="_blank" rel="noopener noreferrer" class="text-ieee-orange hover:text-ieee-orange-dark font-semibold underline underline-offset-2">Escuela de Ingeniería Informática PUCV</a>,
-            incluyendo el entorno de Ingeniería Civil Informática PUCV, fortaleciendo el vínculo entre formación académica, investigación y comunidad tecnológica.
+            {about.paragraph3Suffix}
           </p>
         </div>
 
@@ -45,11 +43,11 @@ const baseUrl = rawBaseUrl.endsWith('/') ? rawBaseUrl : `${rawBaseUrl}/`;
               </svg>
             </div>
             <div>
-              <h3 class="font-semibold text-neutral-900">Capítulo Estudiantil PUCV</h3>
+              <h3 class="font-semibold text-neutral-900">{about.infoBoxTitle}</h3>
               <p class="text-sm text-neutral-500 mt-1">
-                Parte de Ingeniería Informática y Civil Informática PUCV, conectando teoría con práctica profesional.
+                {about.infoBoxDescription}
               </p>
-            <p class="text-sm text-ieee-orange mt-2 font-medium">Fundado en agosto de 2024</p> 
+            <p class="text-sm text-ieee-orange mt-2 font-medium">{about.foundedText}</p> 
             </div>
           </div>
         </div>
@@ -71,28 +69,18 @@ const baseUrl = rawBaseUrl.endsWith('/') ? rawBaseUrl : `${rawBaseUrl}/`;
           />
           <div class="absolute inset-0 bg-gradient-to-t "></div>
           <div class="absolute bottom-4 left-4 right-4 text-white">
-            <p class="text-sm font-medium">Edificio IBC - Escuela de Ingeniería Informática</p>
+            <p class="text-sm font-medium">{about.campusImageCaption}</p>
           </div>
         </div>
 
         <!-- Stats grid -->
         <div class="grid grid-cols-2 gap-4">
-          <Card class="p-4 text-center" hover={true}>
-            <div class="text-2xl lg:text-3xl font-bold text-ieee-orange">Global</div>
-            <div class="text-xs text-neutral-500 mt-1">Presencia mundial</div>
-          </Card>
-          <Card class="p-4 text-center" hover={true}>
-            <div class="text-2xl lg:text-3xl font-bold text-ieee-blue">Comunidad</div>
-            <div class="text-xs text-neutral-500 mt-1">Red de contactos</div>
-          </Card>
-          <Card class="p-4 text-center" hover={true}>
-            <div class="text-2xl lg:text-3xl font-bold text-neutral-700">Innovación</div>
-            <div class="text-xs text-neutral-500 mt-1">Nuevas tecnologías</div>
-          </Card>
-          <Card class="p-4 text-center" hover={true}>
-            <div class="text-2xl lg:text-3xl font-bold text-ieee-orange">Crecimiento</div>
-            <div class="text-xs text-neutral-500 mt-1">Desarrollo profesional</div>
-          </Card>
+          {about.stats.map((stat) => (
+            <Card class="p-4 text-center" hover={true}>
+              <div class={`text-2xl lg:text-3xl font-bold ${stat.valueClass}`}>{stat.value}</div>
+              <div class="text-xs text-neutral-500 mt-1">{stat.label}</div>
+            </Card>
+          ))}
         </div>
       </div>
     </div>
