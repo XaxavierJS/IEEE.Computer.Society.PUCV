@@ -58,7 +58,9 @@ const { about } = landingContent;
         <!-- IBC Photo -->
         <div class="relative overflow-hidden rounded-2xl shadow-xl">
           <img 
-            src={`${baseUrl}assets/About/IBC.webp`}
+            src={`${baseUrl}assets/About/IBC-768.webp`}
+            srcset={`${baseUrl}assets/About/IBC-768.webp 768w, ${baseUrl}assets/About/IBC.webp 1280w`}
+            sizes="(max-width: 1024px) 100vw, 50vw"
             alt="Edificio IBC - Escuela de Ingeniería Informática PUCV"
             width="1600"
             height="900"

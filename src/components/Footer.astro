@@ -1,9 +1,11 @@
 ---
 import Container from './ui/Container.astro';
 import { navLinks } from '../data/navLinks';
+import landingContent from '../data/landing-content.json';
 
 const rawBaseUrl = import.meta.env.BASE_URL;
 const baseUrl = rawBaseUrl.endsWith('/') ? rawBaseUrl : `${rawBaseUrl}/`;
+const { footer } = landingContent;
 
 const currentYear = new Date().getFullYear();
 
@@ -33,7 +35,9 @@ const socialLinks = [
       <div class="lg:col-span-2">
         <a href="#inicio" class="flex items-center gap-3 mb-4">
           <img
-            src={`${baseUrl}assets/Footer/BlancoCompleto.webp`}
+            src={`${baseUrl}assets/Footer/BlancoCompleto-480.webp`}
+            srcset={`${baseUrl}assets/Footer/BlancoCompleto-480.webp 480w, ${baseUrl}assets/Footer/BlancoCompleto.webp 900w`}
+            sizes="(max-width: 1024px) 240px, 320px"
             alt="IEEE Computer Society PUCV"
             width="640"
             height="180"
@@ -43,8 +47,7 @@ const socialLinks = [
           />
         </a>
         <p class="text-neutral-400 max-w-md leading-relaxed">
-          Capítulo Estudiantil de IEEE Computer Society en la Pontificia Universidad Católica 
-          de Valparaíso. Conectando estudiantes apasionados por la tecnología.
+          {footer.description}
         </p>
         
         <!-- Social links -->
@@ -67,7 +70,7 @@ const socialLinks = [
 
       <!-- Quick links -->
       <div>
-        <h3 class="font-bold text-white mb-4">Enlaces rápidos</h3>
+        <h3 class="font-bold text-white mb-4">{footer.quickLinksTitle}</h3>
         <ul class="space-y-3">
           {navLinks.map(link => (
             <li>
@@ -84,7 +87,7 @@ const socialLinks = [
 
       <!-- Contact -->
       <div>
-        <h3 class="font-bold text-white mb-4">Contacto</h3>
+        <h3 class="font-bold text-white mb-4">{footer.contactTitle}</h3>
         <ul class="space-y-3 text-neutral-400">
           <li class="flex items-center gap-3">
             <svg class="w-5 h-5 text-ieee-orange flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -99,13 +102,13 @@ const socialLinks = [
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
-            <span>PUCV, Valparaíso, Chile</span>
+            <span>{footer.location}</span>
           </li>
           <li class="flex items-center gap-3">
             <svg class="w-5 h-5 text-ieee-orange flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
-            <span>Actividades durante todo el semestre</span>
+            <span>{footer.calendarText}</span>
           </li>
         </ul>
       </div>
@@ -114,14 +117,14 @@ const socialLinks = [
     <!-- Bottom bar -->
     <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
       <p class="text-neutral-500 text-sm text-center md:text-left">
-        © {currentYear} IEEE Computer Society PUCV. Todos los derechos reservados.
+        © {currentYear} IEEE Computer Society PUCV. {footer.rightsText}
       </p>
       <div class="flex items-center gap-2 text-neutral-500 text-sm">
-        <span>Hecho con</span>
+        <span>{footer.madeWithPrefix}</span>
         <svg class="w-4 h-4 text-ieee-orange" fill="currentColor" viewBox="0 0 24 24">
           <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
         </svg>
-        <span>por IEEE CS PUCV</span>
+        <span>{footer.madeWithSuffix}</span>
       </div>
     </div>
   </Container>

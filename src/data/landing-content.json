@@ -81,6 +81,85 @@
     "instagramDescription": "Entérate de nuestras últimas actividades y eventos",
     "instagramHandle": "@ieee.pucv.cs"
   },
+  "gallery": {
+    "badge": "Experiencias",
+    "titlePrefix": "Nuestras",
+    "titleHighlight": "Actividades",
+    "titleSuffix": "en Acción",
+    "description": "Conoce algunas de las experiencias que hemos vivido como capítulo, conectando con la comunidad IEEE a nivel nacional e internacional.",
+    "items": [
+      {
+        "thumbPath": "assets/Galeria/reunion-cs-768.jpg",
+        "fullImagePath": "assets/Galeria/reunion-cs.jpg",
+        "imageAlt": "Reunión semanal IEEE CS PUCV",
+        "title": "Reuniones del Capítulo",
+        "modalDescription": "Nos juntamos semanalmente para planificar actividades, compartir conocimiento y fortalecer nuestra comunidad.",
+        "cardDescription": "Nos juntamos semanalmente para planificar actividades, compartir conocimiento y fortalecer nuestra comunidad.",
+        "badgeText": "Comunidad",
+        "badgeClass": "bg-ieee-orange"
+      },
+      {
+        "thumbPath": "assets/Galeria/rnr-768.jpg",
+        "fullImagePath": "assets/Galeria/rnr.jpg",
+        "imageAlt": "Reunión Nacional de Ramas IEEE Chile",
+        "title": "RNR Chile",
+        "modalDescription": "Reunión Nacional de Ramas Estudiantiles IEEE Chile, evento anual de networking, capacitación y conexión entre capítulos de todo el país.",
+        "cardDescription": "Evento nacional de networking, capacitación y conexión entre capítulos IEEE del país.",
+        "badgeText": "Evento Nacional",
+        "badgeClass": "bg-ieee-blue"
+      },
+      {
+        "thumbPath": "assets/Galeria/ieeextreme-2024-768.jpeg",
+        "fullImagePath": "assets/Galeria/ieeextreme-2024.jpeg",
+        "imageAlt": "Equipo PUCV en IEEEXtreme 18.0",
+        "title": "IEEEXtreme 18.0",
+        "modalDescription": "Competencia global de programación de 24 horas donde equipos de hasta 3 estudiantes IEEE resuelven problemas algorítmicos contra miles de equipos de todo el mundo.",
+        "cardDescription": "Competencia global de programación de 24 horas contra miles de equipos del mundo.",
+        "badgeText": "Competencia Internacional",
+        "badgeClass": "bg-ieee-orange"
+      },
+      {
+        "thumbPath": "assets/Galeria/imagen-salida-768.jpg",
+        "fullImagePath": "assets/Galeria/imagen-salida.jpg",
+        "imageAlt": "Visita técnica a planta solar Copec Flux",
+        "title": "PMGD Copec Flux",
+        "modalDescription": "Visita técnica a planta solar La Independencia junto a PES y WIE Chile. Exploramos el rol de las plantas fotovoltaicas en la transición energética.",
+        "cardDescription": "Visita técnica a planta solar La Independencia junto a PES y WIE Chile.",
+        "badgeText": "Salida a Terreno",
+        "badgeClass": "bg-green-500"
+      },
+      {
+        "thumbPath": "assets/Galeria/semifinal-768.jpg",
+        "fullImagePath": "assets/Galeria/semifinal.JPG",
+        "imageAlt": "Semifinal Design Thinking",
+        "title": "Semifinal Design Thinking",
+        "modalDescription": "Competencia de innovación con metodología Design Thinking.",
+        "cardDescription": "Competencia de innovación con metodología Design Thinking.",
+        "badgeText": "Innovación",
+        "badgeClass": "bg-purple-500"
+      },
+      {
+        "thumbPath": "assets/Galeria/charla-colegio-768.jpeg",
+        "fullImagePath": "assets/Galeria/charla-colegio.jpeg",
+        "imageAlt": "Charla en colegio",
+        "title": "Charlas en Colegios",
+        "modalDescription": "Llevamos la tecnología y la ingeniería a estudiantes de enseñanza media, inspirando a las nuevas generaciones.",
+        "cardDescription": "Llevamos tecnología e ingeniería a estudiantes de enseñanza media.",
+        "badgeText": "Outreach",
+        "badgeClass": "bg-yellow-400 text-neutral-900"
+      },
+      {
+        "thumbPath": "assets/Galeria/final-design-thinking-768.jpeg",
+        "fullImagePath": "assets/Galeria/final-design-thinking.jpeg",
+        "imageAlt": "Final Exposoftware - Categoría Escolar",
+        "title": "Final Exposoftware",
+        "modalDescription": "Final de Exposoftware en la categoría escolar, impulsando la innovación desde la educación media.",
+        "cardDescription": "Impulsando la innovación desde la educación media.",
+        "badgeText": "Exposoftware",
+        "badgeClass": "bg-pink-500"
+      }
+    ]
+  },
   "join": {
     "badge": "Únete",
     "titlePrefix": "Sé parte de",
@@ -164,5 +243,15 @@
     "titleHighlight": "Directiva",
     "titleSuffix": "del Capítulo",
     "description": "Conoce al equipo que lidera el capítulo estudiantil de IEEE Computer Society en la PUCV."
+  },
+  "footer": {
+    "description": "Capítulo Estudiantil de IEEE Computer Society en la Pontificia Universidad Católica de Valparaíso. Conectando estudiantes apasionados por la tecnología.",
+    "quickLinksTitle": "Enlaces rápidos",
+    "contactTitle": "Contacto",
+    "location": "PUCV, Valparaíso, Chile",
+    "calendarText": "Actividades durante todo el semestre",
+    "rightsText": "Todos los derechos reservados.",
+    "madeWithPrefix": "Hecho con",
+    "madeWithSuffix": "por IEEE CS PUCV"
   }
 }

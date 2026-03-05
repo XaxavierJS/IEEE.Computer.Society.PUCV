@@ -65,8 +65,9 @@ const structuredData = {
 		<link rel="icon" type="image/webp" sizes="256x256" href={`${import.meta.env.BASE_URL}assets/logocs-icon.webp`} />
 		
 		<!-- Inter Font -->
-		<link rel="preconnect" href="https://rsms.me/" />
-		<link rel="preload" href="https://rsms.me/inter/inter.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+		<link rel="dns-prefetch" href="//rsms.me" />
+		<link rel="preconnect" href="https://rsms.me" crossorigin />
+		<link rel="preload" href="https://rsms.me/inter/inter.css" as="style" crossorigin onload="this.onload=null;this.rel='stylesheet'" />
 		<noscript><link rel="stylesheet" href="https://rsms.me/inter/inter.css" /></noscript>
 		
 		<!-- Open Graph -->

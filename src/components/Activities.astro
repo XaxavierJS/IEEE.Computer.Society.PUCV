@@ -10,7 +10,8 @@ const { activities: activitiesContent } = landingContent;
 
 const activities = activitiesContent.items.map((item) => ({
   ...item,
-  image: `${baseUrl}${item.imagePath}`
+  image: `${baseUrl}${item.imagePath}`,
+  imageThumb: `${baseUrl}${item.imagePath.replace(/(\.[^.]+)$/u, '-768$1')}`
 }));
 
 const icons: Record<string, string> = {
@@ -49,7 +50,9 @@ const icons: Record<string, string> = {
           <!-- Image -->
           <div class="relative h-40 overflow-hidden">
             <img 
-              src={activity.image}
+              src={activity.imageThumb}
+              srcset={`${activity.imageThumb} 768w, ${activity.image} 1280w`}
+              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
               alt={activity.title}
               width="1280"
               height="720"
