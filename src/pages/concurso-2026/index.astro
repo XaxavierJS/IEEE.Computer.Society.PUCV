@@ -10,6 +10,8 @@ import contestData from '../../data/concurso-2026.json';
 
 const rawBaseUrl = import.meta.env.BASE_URL;
 const baseUrl = rawBaseUrl.endsWith('/') ? rawBaseUrl : `${rawBaseUrl}/`;
+const applicationFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSdU28D0HWLJCcMSbP5BkmWZrDr3njwAeBlCz5GLCAL1EyrxVQ/viewform?usp=dialog';
+const contestDocumentUrl = 'https://docs.google.com/document/d/14d4ar3qu62nnOBzITlaXRKcsQ1UVxoZUZxPbC8k9SG0/edit?usp=sharing';
 
 const { hero, about, objectives, requirements, methodology, timeline, evaluation, prizes, benefits, impact, faq, contact } = contestData;
 
@@ -106,13 +108,13 @@ const eventSchema = {
           </p>
 
           <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-            <Button href="#postular" variant="primary" size="lg">
+            <Button href={applicationFormUrl} variant="primary" size="lg">
               {hero.ctaPrimary}
               <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </Button>
-            <Button href="#sobre" variant="outline" size="lg">
+            <Button href={contestDocumentUrl} variant="outline" size="lg">
               {hero.ctaSecondary}
             </Button>
           </div>
@@ -205,6 +207,12 @@ const eventSchema = {
 
         <div class="max-w-3xl mx-auto bg-ieee-blue/5 border border-ieee-blue/20 rounded-xl p-5 text-center">
           <p class="text-neutral-700 text-sm">{requirements.note}</p>
+          <a
+            href={contestDocumentUrl}
+            class="mt-3 inline-flex text-sm font-semibold text-ieee-blue hover:text-ieee-blue-dark transition-colors"
+          >
+            Ver documento oficial del concurso
+          </a>
         </div>
       </Container>
     </section>
@@ -381,7 +389,7 @@ const eventSchema = {
             Miles de grandes ideas empezaron con alguien que dijo "¿y si...?". Que esa persona seas tú.
           </p>
           <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-            <Button href="#postular" variant="primary" size="lg">
+            <Button href={applicationFormUrl} variant="primary" size="lg">
               Postular mi equipo
               <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
