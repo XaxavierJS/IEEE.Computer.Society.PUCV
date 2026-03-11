@@ -5,13 +5,22 @@ import { navLinks } from '../data/navLinks';
 const rawBaseUrl = import.meta.env.BASE_URL;
 const baseUrl = rawBaseUrl.endsWith('/') ? rawBaseUrl : `${rawBaseUrl}/`;
 
-const currentPath = Astro.url.pathname;
+const normalizePath = (path: string) => {
+  if (!path) return '/';
+  const trimmed = path.endsWith('/') && path.length > 1 ? path.slice(0, -1) : path;
+  return trimmed || '/';
+};
+
+const currentPath = normalizePath(Astro.url.pathname);
+const emphasizedLabels = new Set(['Beneficios', 'Concurso 2026']);
 
 // Helper to determine if a link is active based on the current path
 const isActive = (href: string) => {
-  if (href === '/#inicio' && (currentPath === '/' || currentPath === '')) return true;
-  if (href.startsWith('/beneficios') && currentPath.includes('/beneficios')) return true;
-  return currentPath === href;
+  const normalizedHref = normalizePath(href);
+  if (normalizedHref === '/#inicio' && currentPath === '/') return true;
+  if (normalizedHref.startsWith('/beneficios') && currentPath.startsWith('/beneficios')) return true;
+  if (normalizedHref.startsWith('/concurso-2026') && currentPath.startsWith('/concurso-2026')) return true;
+  return currentPath === normalizedHref;
 };
 ---
 
@@ -38,14 +47,19 @@ const isActive = (href: string) => {
       <div class="hidden lg:flex items-center gap-6">
         {navLinks.map((link) => {
           const active = isActive(link.href);
+          const emphasized = emphasizedLabels.has(link.label);
+
+          const desktopLinkClass = active
+            ? 'text-ieee-orange'
+            : emphasized
+              ? 'text-ieee-orange hover:text-ieee-orange-dark'
+              : 'text-neutral-600 hover:text-ieee-orange';
+
           return (
             <a 
               href={link.href} 
-              class={`text-sm font-medium transition-colors ${
-                active 
-                  ? 'text-ieee-orange' 
-                  : 'text-neutral-600 hover:text-ieee-orange'
-              }`}
+              aria-current={active ? 'page' : undefined}
+              class={`text-sm font-medium transition-colors ${desktopLinkClass}`}
             >
               {link.label}
             </a>
@@ -82,14 +96,19 @@ const isActive = (href: string) => {
       <div class="py-4 space-y-1">
         {navLinks.map((link) => {
           const active = isActive(link.href);
+          const emphasized = emphasizedLabels.has(link.label);
+
+          const mobileLinkClass = active
+            ? 'bg-ieee-orange/10 text-ieee-orange'
+            : emphasized
+              ? 'text-ieee-orange hover:bg-ieee-orange/10 hover:text-ieee-orange-dark'
+              : 'text-neutral-700 hover:bg-neutral-50 hover:text-ieee-orange';
+
           return (
             <a 
               href={link.href} 
-              class={`block py-3 px-4 rounded-lg font-medium transition-colors mobile-link ${
-                active 
-                  ? 'bg-ieee-orange/10 text-ieee-orange' 
-                  : 'text-neutral-700 hover:bg-neutral-50 hover:text-ieee-orange'
-              }`}
+              aria-current={active ? 'page' : undefined}
+              class={`block py-3 px-4 rounded-lg font-medium transition-colors mobile-link ${mobileLinkClass}`}
             >
               {link.label}
             </a>

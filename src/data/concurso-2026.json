@@ -1,0 +1,163 @@
+{
+  "hero": {
+    "badge": "Convocatoria Abierta 2026",
+    "title": "Concurso de Emprendimiento",
+    "titleHighlight": "e Innovación 2026",
+    "subtitle": "¿Y si la próxima gran app la creas tú?",
+    "description": "Tienes una idea, nosotros te damos las herramientas. Aprende Design Thinking, construye un prototipo real en Thunkable y presenta tu solución ante un jurado de verdad. Todo en modalidad híbrida, con mentoría personalizada y con la Gran Final en la ExpoSoftware PUCV.",
+    "hook": "No necesitas saber programar. Solo necesitas ganas de cambiar algo.",
+    "ctaPrimary": "Postular equipo",
+    "ctaSecondary": "Ver bases completas"
+  },
+  "about": {
+    "badge": "¿Qué es?",
+    "title": "Innovación desde",
+    "titleHighlight": "el aula al prototipo",
+    "description": "Imagina tomar un problema que te importa, como la contaminación en tu barrio, la falta de acceso a educación, o la salud mental de tus compañeros y convertirlo en una app funcional que pueda hacer la diferencia. Eso es exactamente lo que harás aquí.",
+    "descriptionExtra": "Este concurso es una iniciativa de la Escuela de Ingeniería Informática de la PUCV que busca empoderar a estudiantes de toda la Región de Valparaíso, conectando el talento escolar con el ecosistema universitario a través de tecnología, emprendimiento y mentoría real.",
+    "highlights": [
+      {
+        "icon": "lightbulb",
+        "title": "Innovación práctica",
+        "description": "Transita desde identificar un problema real hasta crear un prototipo funcional de app móvil."
+      },
+      {
+        "icon": "globe",
+        "title": "100% accesible",
+        "description": "Formación online vía Mattermost, descentralizando el acceso sin barreras geográficas."
+      },
+      {
+        "icon": "university",
+        "title": "Vinculación universitaria",
+        "description": "Integración directa con el ecosistema de Ingeniería Informática PUCV y la ExpoSoftware."
+      }
+    ]
+  },
+  "objectives": {
+    "badge": "Objetivos",
+    "title": "¿Qué buscamos",
+    "titleHighlight": "lograr?",
+    "intro": "No se trata solo de hacer una app. Se trata de que pienses diferente, trabajes en equipo, enfrentes desafíos reales y descubras de lo que eres capaz cuando alguien confía en tu potencial.",
+    "general": "Promover el desarrollo de pensamiento crítico, innovación y alfabetización digital en estudiantes de la Región de Valparaíso, mediante Design Thinking y prototipado de apps móviles en Thunkable.",
+    "specific": [
+      "Facilitar el manejo práctico de las fases del Design Thinking: Empatizar, Definir, Idear, Prototipar y Testear.",
+      "Fomentar la colaboración y trabajo en equipo a distancia con herramientas profesionales como Mattermost.",
+      "Desarrollar un prototipo funcional de app móvil que resuelva problemáticas reales.",
+      "Potenciar habilidades de comunicación efectiva mediante programación por bloques y preparación de un Pitch."
+    ]
+  },
+  "requirements": {
+    "badge": "Participantes",
+    "title": "¿Quién puede",
+    "titleHighlight": "participar?",
+    "intro": "Si estás en el colegio y tienes curiosidad por la tecnología, este concurso es para ti. No importa si nunca has programado, lo único que necesitas es motivación y ganas de aprender algo nuevo.",
+    "target": "Estudiantes de 7° básico a 4° medio de la Región de Valparaíso.",
+    "items": [
+      { "icon": "users", "text": "Equipos de 2 a 4 personas" },
+      { "icon": "laptop", "text": "Computador con acceso a internet" },
+      { "icon": "calendar", "text": "Disponibilidad sábados 17:00 hrs + taller semanal" },
+      { "icon": "check", "text": "Asistencia mínima del 70% para acceder a la semifinal" }
+    ],
+    "note": "¿No tienes equipo? Nosotros te asignamos uno. Postula de forma individual o grupal mediante el formulario."
+  },
+  "methodology": {
+    "badge": "Metodología",
+    "title": "¿Cómo",
+    "titleHighlight": "funciona?",
+    "description": "Un ciclo intensivo de 2 meses (abril–mayo) que combina clases teóricas de Design Thinking los sábados con talleres de acompañamiento semanal liderados por monitores especializados.",
+    "descriptionExtra": "Cada semana avanzarás un paso más: desde entender a tus usuarios hasta tener una app funcionando en tu celular. Tendrás un monitor asignado que te acompañará en todo el proceso, resolviendo dudas y guiándote para que tu equipo llegue a la meta.",
+    "pillars": [
+      { "icon": "sparkles", "title": "Design Thinking", "description": "Metodología de innovación en 5 fases: Empatizar, Definir, Idear, Prototipar y Testear." },
+      { "icon": "code", "title": "Thunkable", "description": "Plataforma no-code para crear apps móviles con programación visual por bloques." },
+      { "icon": "chat", "title": "Mattermost", "description": "Entorno colaborativo con canales privados, foros de soporte y mentoría directa." }
+    ]
+  },
+  "timeline": {
+    "badge": "Cronograma",
+    "title": "Fechas",
+    "titleHighlight": "clave",
+    "intro": "Dos meses que pueden cambiarte la perspectiva. Desde el primer sábado vas a estar creando, colaborando y aprendiendo cosas que no te enseñan en el colegio.",
+    "events": [
+      { "date": "4 abril", "title": "Lanzamiento", "description": "Bienvenida, conformación de equipos y elección de temática: Medio Ambiente, Educación o Salud." },
+      { "date": "11 abr – 2 may", "title": "Empatizar, Definir e Idear", "description": "Investigación de usuarios, lluvia de ideas, filtros MoSCoW, MVP y Modelo Canvas." },
+      { "date": "9 – 23 may", "title": "Prototipar", "description": "Diseño de flujos de usuario, interfaz visual y programación por bloques en Thunkable." },
+      { "date": "30 mayo", "title": "Testear y Pitch", "description": "Validación con usuarios y taller intensivo de presentación para la semifinal." },
+      { "date": "Antes del 18 jun", "title": "Semifinal presencial", "description": "Pitch en dependencias de la PUCV. Los 3 mejores equipos clasifican a la final." },
+      { "date": "18 junio", "title": "Gran Final — ExpoSoftware", "description": "Presentación en stand exclusivo ante jurado de gala. Se definen los ganadores." }
+    ]
+  },
+  "evaluation": {
+    "badge": "Evaluación",
+    "title": "¿Cómo se",
+    "titleHighlight": "evalúa?",
+    "phases": [
+      {
+        "number": "1",
+        "title": "Semifinal",
+        "subtitle": "Presencial en PUCV",
+        "description": "Los equipos presentan su solución en formato Pitch. Un jurado de profesores de la Escuela de Informática selecciona a los 3 mejores proyectos.",
+        "detail": "Requisito: 70% de asistencia mínima. Tutores del concurso no evalúan."
+      },
+      {
+        "number": "2",
+        "title": "Gran Final",
+        "subtitle": "ExpoSoftware — 18 de junio",
+        "description": "Los 3 equipos finalistas presentan en un stand exclusivo dentro de la ExpoSoftware, evaluados por un jurado de gala para definir el podio."
+      }
+    ]
+  },
+  "prizes": {
+    "badge": "Premios",
+    "title": "¿Qué se",
+    "titleHighlight": "gana?",
+    "intro": "Más allá del premio económico, lo que te llevas es una experiencia que no se compra: haber creado algo desde cero, haber presentado ante un jurado real y haber demostrado que los jóvenes sí pueden innovar.",
+    "items": [
+      { "icon": "trophy", "title": "Equipo ganador", "description": "$100.000 CLP a libre disposición del equipo." },
+      { "icon": "certificate", "title": "Certificado", "description": "Certificado de participación para cada integrante que complete el concurso y participe en la semifinal." },
+      { "icon": "star", "title": "Experiencia universitaria", "description": "Vinculación directa con la comunidad STEM de Ingeniería Informática PUCV." }
+    ]
+  },
+  "benefits": {
+    "badge": "Beneficios extras",
+    "title": "Apoyo",
+    "titleHighlight": "académico gratuito",
+    "description": "Sabemos que la enseñanza media puede ser exigente. Por eso, además del concurso, tendrás acceso gratuito a clases voluntarias de matemáticas, física y programación impartidas por estudiantes universitarios. No son obligatorias, pero están ahí para ti si quieres aprovecharlas.",
+    "descriptionExtra": "Es nuestra forma de decirte: estamos contigo más allá del concurso."
+  },
+  "impact": {
+    "badge": "Impacto",
+    "title": "¿Por qué",
+    "titleHighlight": "importa?",
+    "intro": "En un mundo donde la tecnología lo transforma todo, los jóvenes no pueden quedarse solo mirando. Este concurso existe para que pases de consumir tecnología a crearla, y para demostrar que la innovación no tiene edad.",
+    "items": [
+      { "icon": "map", "title": "Descentralización", "description": "Acceso a herramientas de vanguardia sin barreras geográficas para toda la Región de Valparaíso." },
+      { "icon": "cpu", "title": "Alfabetización digital", "description": "Los estudiantes pasan de ser consumidores a creadores de tecnología." },
+      { "icon": "link", "title": "Vinculación STEM temprana", "description": "Conexión directa con la Escuela de Ingeniería Informática PUCV." },
+      { "icon": "rocket", "title": "Habilidades siglo XXI", "description": "Trabajo en equipo remoto, resiliencia ante problemas técnicos y comunicación efectiva." }
+    ]
+  },
+  "faq": {
+    "badge": "Preguntas frecuentes",
+    "title": "Resolvemos",
+    "titleHighlight": "tus dudas",
+    "items": [
+      { "question": "¿Quiénes pueden participar?", "answer": "Estudiantes de 7° básico a 4° medio de la Región de Valparaíso, organizados en equipos de 2 a 4 personas." },
+      { "question": "¿Cómo me postulo?", "answer": "A través de un formulario de Google que se entregará a los colegios. Puedes postular individualmente (te asignaremos equipo) o con tu grupo ya formado." },
+      { "question": "¿Cuál es la modalidad?", "answer": "Híbrida: clases y talleres online por Mattermost durante abril-mayo, semifinal y final presenciales en PUCV." },
+      { "question": "¿Necesito saber programar?", "answer": "No. Se usa Thunkable, una plataforma de programación visual por bloques que no requiere experiencia previa." },
+      { "question": "¿Cuánto dura el concurso?", "answer": "La formación va del 4 de abril al 30 de mayo (sábados + talleres semanales). La semifinal es antes del 18 de junio y la final el 18 de junio." },
+      { "question": "¿Cuál es el premio?", "answer": "$100.000 CLP para el equipo ganador, más certificados de participación para todos los que lleguen a semifinal." },
+      { "question": "¿Con quién me contacto?", "answer": "Javier Retamal (javier.retamal.f@mail.pucv.cl) o Franco O'kinggton (franco.valdebenito.o@mail.pucv.cl)." }
+    ]
+  },
+  "contact": {
+    "badge": "Contacto",
+    "title": "¿Tienes",
+    "titleHighlight": "dudas?",
+    "description": "No te quedes con la duda. Si tienes preguntas sobre el concurso, los requisitos, las fechas o cualquier otra cosa, escríbenos un correo y te responderemos lo antes posible. Estamos aquí para ayudarte a dar el primer paso.",
+    "people": [
+      { "name": "Javier Retamal", "role": "Encargado", "email": "javier.retamal.f@mail.pucv.cl" },
+      { "name": "Franco O'kinggton", "role": "Encargado", "email": "franco.valdebenito.o@mail.pucv.cl" }
+    ]
+  }
+}
