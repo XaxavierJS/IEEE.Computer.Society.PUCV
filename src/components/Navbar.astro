@@ -48,8 +48,11 @@ const isActive = (href: string) => {
         {navLinks.map((link) => {
           const active = isActive(link.href);
           const emphasized = emphasizedLabels.has(link.label);
+          const isHomeLink = link.href === '/#inicio';
 
-          const desktopLinkClass = active
+          const desktopLinkClass = active && isHomeLink
+            ? 'text-neutral-600 hover:text-ieee-orange'
+            : active
             ? 'text-ieee-orange'
             : emphasized
               ? 'text-ieee-orange hover:text-ieee-orange-dark'
@@ -97,8 +100,11 @@ const isActive = (href: string) => {
         {navLinks.map((link) => {
           const active = isActive(link.href);
           const emphasized = emphasizedLabels.has(link.label);
+          const isHomeLink = link.href === '/#inicio';
 
-          const mobileLinkClass = active
+          const mobileLinkClass = active && isHomeLink
+            ? 'text-neutral-700 hover:bg-neutral-50 hover:text-ieee-orange'
+            : active
             ? 'bg-ieee-orange/10 text-ieee-orange'
             : emphasized
               ? 'text-ieee-orange hover:bg-ieee-orange/10 hover:text-ieee-orange-dark'

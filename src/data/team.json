@@ -1,66 +1,58 @@
 [
   {
-    "name": "Victor",
+    "name": "Victor Guilarte",
     "role": "Presidente",
-    "photo": "/assets/Team/placeholder-avatar.svg",
-    "linkedin": "https://linkedin.com/in/",
+    "photo": "/assets/Team/Victor.jpeg",
+    "linkedin": "https://www.linkedin.com/in/victor-guilarte-39a2b1100/",
     "order": 1,
     "_id": "presidente"
   },
   {
-    "name": "Por definir",
+    "name": "Camila Ramirez",
     "role": "Vicepresidente",
-    "photo": "/assets/Team/placeholder-avatar.svg",
+    "photo": "/assets/Team/Camila.jpeg",
     "linkedin": "https://linkedin.com/in/",
     "order": 2,
     "_id": "vicepresidente"
   },
   {
-    "name": "Por definir",
+    "name": "Ignacio Ruiz",
     "role": "Tesorero",
-    "photo": "/assets/Team/placeholder-avatar.svg",
+    "photo": "/assets/Team/IgnacioRuizArancibia.jpeg",
     "linkedin": "https://linkedin.com/in/",
     "order": 3,
     "_id": "tesorero"
   },
   {
-    "name": "Por definir",
+    "name": "Alejandro Lanas",
     "role": "Secretario",
-    "photo": "/assets/Team/placeholder-avatar.svg",
-    "linkedin": "https://linkedin.com/in/",
+    "photo": "/assets/Team/Alejandro.jpeg",
+    "linkedin": "https://www.linkedin.com/in/alejandro-lanas-e-364285232/",
     "order": 4,
     "_id": "secretario"
   },
   {
-    "name": "Por definir",
+    "name": "Eduardo Sandoval",
     "role": "Relaciones Exteriores",
-    "photo": "/assets/Team/placeholder-avatar.svg",
-    "linkedin": "https://linkedin.com/in/",
+    "photo": "/assets/Team/EduardoSandoval.jpeg",
+    "linkedin": "https://www.linkedin.com/in/eduardo-sandoval-romero-632505369/",
     "order": 5,
     "_id": "relaciones-exteriores"
   },
   {
-    "name": "Por definir",
+    "name": "Paulina Muñoz",
     "role": "Web Master",
-    "photo": "/assets/Team/placeholder-avatar.svg",
-    "linkedin": "https://linkedin.com/in/",
+    "photo": "/assets/Team/Paula.jpeg",
+    "linkedin": "https://www.linkedin.com/in/paulina-mu%C3%B1oz-chavarr%C3%ADa-4700923a9/",
     "order": 6,
     "_id": "webmaster-1"
   },
   {
-    "name": "Por definir",
+    "name": "Eva Ponce",
     "role": "Web Master",
-    "photo": "/assets/Team/placeholder-avatar.svg",
-    "linkedin": "https://linkedin.com/in/",
+    "photo": "/assets/Team/EvaPonceFernández.jpeg",
+    "linkedin": "https://www.linkedin.com/in/eva-ponce-fernandez-4912962b2/",
     "order": 7,
     "_id": "webmaster-2"
-  },
-  {
-    "name": "Por definir",
-    "role": "Web Master",
-    "photo": "/assets/Team/placeholder-avatar.svg",
-    "linkedin": "https://linkedin.com/in/",
-    "order": 8,
-    "_id": "webmaster-3"
   }
 ]

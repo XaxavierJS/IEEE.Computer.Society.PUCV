@@ -64,7 +64,7 @@
       },
       {
         "icon": "trophy",
-        "title": "Hackathons",
+        "title": "Hackathon",
         "description": "Competencias de desarrollo donde pondrás a prueba tus habilidades y creatividad en equipo.",
         "color": "orange",
         "imagePath": "assets/Galeria/ieeextreme-2024.jpeg"
@@ -82,11 +82,11 @@
     "instagramHandle": "@ieee.pucv.cs"
   },
   "gallery": {
-    "badge": "Experiencias",
+    "badge": "Galería",
     "titlePrefix": "Nuestras",
     "titleHighlight": "Actividades",
     "titleSuffix": "en Acción",
-    "description": "Conoce algunas de las experiencias que hemos vivido como capítulo, conectando con la comunidad IEEE a nivel nacional e internacional.",
+    "description": "Conoce algunas actividades que hemos vivido como capítulo, conectando con la comunidad IEEE a nivel nacional e internacional.",
     "items": [
       {
         "thumbPath": "assets/Galeria/reunion-cs-768.jpg",
@@ -145,7 +145,7 @@
         "title": "Charlas en Colegios",
         "modalDescription": "Llevamos la tecnología y la ingeniería a estudiantes de enseñanza media, inspirando a las nuevas generaciones.",
         "cardDescription": "Llevamos tecnología e ingeniería a estudiantes de enseñanza media.",
-        "badgeText": "Outreach",
+        "badgeText": "Vinculación",
         "badgeClass": "bg-yellow-400 text-neutral-900"
       },
       {
@@ -184,7 +184,7 @@
       {
         "icon": "community",
         "title": "Comunidad activa",
-        "description": "Eventos sociales, hackathons y proyectos colaborativos"
+        "description": "Eventos sociales, hackathon y proyectos colaborativos"
       }
     ],
     "steps": [
