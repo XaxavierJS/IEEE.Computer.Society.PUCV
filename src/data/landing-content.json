@@ -12,7 +12,7 @@
     "badge": "Sobre Nosotros",
     "titlePrefix": "¿Qué es IEEE",
     "titleHighlight": "Computer Society",
-    "paragraph1": "IEEE Computer Society es la comunidad líder mundial de profesionales de la computación. Con más de 486,000 miembros en más de 157 países, impulsamos la innovación tecnológica y el avance de la profesión.",
+    "paragraph1": "IEEE Computer Society es la comunidad líder mundial de profesionales de la computación. Su red global de capítulos y miembros impulsa la innovación tecnológica y el avance de la profesión.",
     "paragraph2": "En PUCV, nuestro capítulo estudiantil conecta a estudiantes apasionados por la tecnología, ofreciendo oportunidades de aprendizaje, networking y desarrollo profesional para la comunidad de Valparaíso y de todo Chile.",
     "paragraph3Suffix": "incluyendo el entorno de Ingeniería Civil Informática PUCV, fortaleciendo el vínculo entre formación académica, investigación y comunidad tecnológica.",
     "infoBoxTitle": "Capítulo Estudiantil PUCV",
@@ -23,7 +23,7 @@
       {
         "value": "Global",
         "label": "Presencia mundial",
-        "valueClass": "text-ieee-orange"
+        "valueClass": "text-ieee-orange-text"
       },
       {
         "value": "Comunidad",
@@ -38,7 +38,7 @@
       {
         "value": "Crecimiento",
         "label": "Desarrollo profesional",
-        "valueClass": "text-ieee-orange"
+        "valueClass": "text-ieee-orange-text"
       }
     ]
   },
@@ -96,7 +96,7 @@
         "modalDescription": "Nos juntamos semanalmente para planificar actividades, compartir conocimiento y fortalecer nuestra comunidad.",
         "cardDescription": "Nos juntamos semanalmente para planificar actividades, compartir conocimiento y fortalecer nuestra comunidad.",
         "badgeText": "Comunidad",
-        "badgeClass": "bg-ieee-orange"
+        "badgeClass": "bg-ieee-orange text-neutral-900"
       },
       {
         "thumbPath": "assets/Galeria/rnr-768.jpg",
@@ -116,7 +116,7 @@
         "modalDescription": "Competencia global de programación de 24 horas donde equipos de hasta 3 estudiantes IEEE resuelven problemas algorítmicos contra miles de equipos de todo el mundo.",
         "cardDescription": "Competencia global de programación de 24 horas contra miles de equipos del mundo.",
         "badgeText": "Competencia Internacional",
-        "badgeClass": "bg-ieee-orange"
+        "badgeClass": "bg-ieee-orange text-neutral-900"
       },
       {
         "thumbPath": "assets/Galeria/imagen-salida-768.jpg",
@@ -126,7 +126,7 @@
         "modalDescription": "Visita técnica a planta solar La Independencia junto a PES y WIE Chile. Exploramos el rol de las plantas fotovoltaicas en la transición energética.",
         "cardDescription": "Visita técnica a planta solar La Independencia junto a PES y WIE Chile.",
         "badgeText": "Salida a Terreno",
-        "badgeClass": "bg-green-500"
+        "badgeClass": "bg-green-700"
       },
       {
         "thumbPath": "assets/Galeria/semifinal-768.jpg",
@@ -136,7 +136,7 @@
         "modalDescription": "Competencia de innovación con metodología Design Thinking.",
         "cardDescription": "Competencia de innovación con metodología Design Thinking.",
         "badgeText": "Innovación",
-        "badgeClass": "bg-purple-500"
+        "badgeClass": "bg-purple-700"
       },
       {
         "thumbPath": "assets/Galeria/charla-colegio-768.jpeg",
@@ -156,7 +156,7 @@
         "modalDescription": "Final de Exposoftware en la categoría escolar, impulsando la innovación desde la educación media.",
         "cardDescription": "Impulsando la innovación desde la educación media.",
         "badgeText": "Exposoftware",
-        "badgeClass": "bg-pink-500"
+        "badgeClass": "bg-pink-700"
       }
     ]
   },
@@ -251,7 +251,7 @@
     "location": "PUCV, Valparaíso, Chile",
     "calendarText": "Actividades durante todo el semestre",
     "rightsText": "Todos los derechos reservados.",
-    "madeWithPrefix": "Hecho con",
-    "madeWithSuffix": "por IEEE CS PUCV"
+    "madeWithPrefix": "Hecho con cariño",
+    "madeWithSuffix": "por el equipo de IEEE CS PUCV"
   }
 }

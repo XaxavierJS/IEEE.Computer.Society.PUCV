@@ -9,6 +9,9 @@
   --color-ieee-orange-dark: #C85F18;
   /* Hover: más sobrio y con mejor contraste */
 
+  --color-ieee-orange-text: #A8470B;
+  /* Naranja accesible para texto sobre fondos claros (contraste >= 4.5:1; el naranja oficial queda para fondos y adornos) */
+
   --color-ieee-blue: #00629B;
   /* PMS 3015 */
   --color-ieee-blue-dark: #004F7C;

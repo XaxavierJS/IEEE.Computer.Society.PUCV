@@ -66,9 +66,9 @@
     {
       "categoryId": "cloud-dev",
       "title": "Appwrite Education Program",
-      "description": "Acceso al plan Education de Appwrite Cloud para backend de proyectos durante la etapa estudiantil.",
+      "description": "Seis meses de Appwrite Cloud con recursos Pro para estudiantes verificados en GitHub Education (fuente: appwrite.com/education, revisado 2026-10-07).",
       "access": "Obtén verificación en GitHub Education y registra tu cuenta en el programa de Appwrite Education.",
-      "url": "https://appwrite.io/students",
+      "url": "https://appwrite.com/education",
       "verification": "third_party",
       "_id": "appwrite-education-program"
     }

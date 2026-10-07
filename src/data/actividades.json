@@ -1,0 +1,116 @@
+[
+  {
+    "slug": "reuniones-capitulo",
+    "title": "Reuniones del Capítulo",
+    "category": "Comunidad",
+    "date": null,
+    "summary": "Nos juntamos semanalmente para planificar actividades, compartir conocimiento y fortalecer nuestra comunidad.",
+    "description": "Nos juntamos semanalmente para planificar actividades, compartir conocimiento y fortalecer nuestra comunidad.",
+    "image": "assets/Galeria/reunion-cs.jpg",
+    "thumb": "assets/Galeria/reunion-cs-768.jpg",
+    "imageAlt": "Reunión semanal IEEE CS PUCV",
+    "results": [],
+    "link": null,
+    "highlights": []
+  },
+  {
+    "slug": "rnr-chile",
+    "title": "RNR Chile",
+    "category": "Evento Nacional",
+    "date": null,
+    "summary": "Evento nacional de networking, capacitación y conexión entre capítulos IEEE del país.",
+    "description": "Reunión Nacional de Ramas Estudiantiles IEEE Chile, evento anual de networking, capacitación y conexión entre capítulos de todo el país.",
+    "image": "assets/Galeria/rnr.jpg",
+    "thumb": "assets/Galeria/rnr-768.jpg",
+    "imageAlt": "Asistentes de distintas ramas IEEE posando en el auditorio durante la Reunión Nacional de Ramas, con una charla proyectada al fondo",
+    "results": [],
+    "link": null,
+    "highlights": [
+      "Encuentro anual de ramas y capítulos estudiantiles IEEE de Chile.",
+      "Incluye charlas y espacios de networking entre capítulos de todo el país.",
+      "El capítulo PUCV participó junto a otras ramas estudiantiles."
+    ],
+    "related": {
+      "label": "Cómo unirte a la comunidad IEEE",
+      "href": "#unete"
+    }
+  },
+  {
+    "slug": "ieeextreme-18",
+    "title": "IEEEXtreme 18.0",
+    "category": "Competencia Internacional",
+    "date": "2024-10",
+    "summary": "Competencia global de programación de 24 horas contra miles de equipos del mundo.",
+    "description": "Competencia global de programación de 24 horas donde equipos de hasta 3 estudiantes IEEE resuelven problemas algorítmicos contra miles de equipos de todo el mundo.",
+    "image": "assets/Galeria/ieeextreme-2024.jpeg",
+    "thumb": "assets/Galeria/ieeextreme-2024-768.jpeg",
+    "imageAlt": "Integrantes del equipo PUCV posando en grupo frente al edificio universitario durante IEEEXtreme 18.0",
+    "results": [],
+    "link": null,
+    "highlights": [
+      "Participación de estudiantes PUCV en la competencia global de programación de 24 horas.",
+      "Equipos de hasta 3 estudiantes miembros IEEE resuelven problemas algorítmicos junto a equipos de todo el mundo.",
+      "Próxima edición: IEEEXtreme 20.0, 31 de octubre de 2026 (ver Oportunidades IEEE)."
+    ],
+    "related": {
+      "label": "Inscripción IEEEXtreme 20.0",
+      "href": "oportunidades"
+    }
+  },
+  {
+    "slug": "pmgd-copec-flux",
+    "title": "PMGD Copec Flux",
+    "category": "Salida a Terreno",
+    "date": null,
+    "summary": "Visita técnica a planta solar La Independencia junto a PES y WIE Chile.",
+    "description": "Visita técnica a planta solar La Independencia junto a PES y WIE Chile. Exploramos el rol de las plantas fotovoltaicas en la transición energética.",
+    "image": "assets/Galeria/imagen-salida.jpg",
+    "thumb": "assets/Galeria/imagen-salida-768.jpg",
+    "imageAlt": "Visita técnica a planta solar Copec Flux",
+    "results": [],
+    "link": null,
+    "highlights": []
+  },
+  {
+    "slug": "semifinal-design-thinking",
+    "title": "Semifinal Design Thinking",
+    "category": "Innovación",
+    "date": null,
+    "summary": "Competencia de innovación con metodología Design Thinking.",
+    "description": "Competencia de innovación con metodología Design Thinking.",
+    "image": "assets/Galeria/semifinal.JPG",
+    "thumb": "assets/Galeria/semifinal-768.jpg",
+    "imageAlt": "Semifinal Design Thinking",
+    "results": [],
+    "link": null,
+    "highlights": []
+  },
+  {
+    "slug": "charlas-colegios",
+    "title": "Charlas en Colegios",
+    "category": "Vinculación",
+    "date": null,
+    "summary": "Llevamos tecnología e ingeniería a estudiantes de enseñanza media.",
+    "description": "Llevamos la tecnología y la ingeniería a estudiantes de enseñanza media, inspirando a las nuevas generaciones.",
+    "image": "assets/Galeria/charla-colegio.jpeg",
+    "thumb": "assets/Galeria/charla-colegio-768.jpeg",
+    "imageAlt": "Charla en colegio",
+    "results": [],
+    "link": null,
+    "highlights": []
+  },
+  {
+    "slug": "final-exposoftware",
+    "title": "Final Exposoftware",
+    "category": "Exposoftware",
+    "date": null,
+    "summary": "Impulsando la innovación desde la educación media.",
+    "description": "Final de Exposoftware en la categoría escolar, impulsando la innovación desde la educación media.",
+    "image": "assets/Galeria/final-design-thinking.jpeg",
+    "thumb": "assets/Galeria/final-design-thinking-768.jpeg",
+    "imageAlt": "Final Exposoftware - Categoría Escolar",
+    "results": [],
+    "link": null,
+    "highlights": []
+  }
+]

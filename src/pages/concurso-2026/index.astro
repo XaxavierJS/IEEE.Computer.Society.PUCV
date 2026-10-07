@@ -13,6 +13,8 @@ const baseUrl = rawBaseUrl.endsWith('/') ? rawBaseUrl : `${rawBaseUrl}/`;
 const applicationFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSdU28D0HWLJCcMSbP5BkmWZrDr3njwAeBlCz5GLCAL1EyrxVQ/viewform?usp=dialog';
 const contestDocumentUrl = 'https://docs.google.com/document/d/14d4ar3qu62nnOBzITlaXRKcsQ1UVxoZUZxPbC8k9SG0/edit?usp=sharing';
 
+const isOpen = (contestData.hero as { status?: string }).status === 'open';
+
 const { hero, about, objectives, requirements, methodology, timeline, evaluation, prizes, benefits, impact, faq, contact } = contestData;
 
 const iconPaths: Record<string, string> = {
@@ -73,7 +75,7 @@ const eventSchema = {
   description="Participa en el Concurso de Emprendimiento e Innovación 2026 de IEEE CS PUCV. Crea una app con Design Thinking y Thunkable. Equipos de 7° a 4° medio, Región de Valparaíso."
 >
   <Navbar />
-  <main>
+  <main id="contenido">
 
     <!-- ═══════ HERO ═══════ -->
     <section class="relative py-20 lg:py-32 overflow-hidden bg-gradient-to-b from-neutral-50 via-neutral-50 to-white">
@@ -82,7 +84,7 @@ const eventSchema = {
 
       <Container class="relative z-10">
         <div class="max-w-4xl mx-auto text-center">
-          <div class="inline-flex items-center gap-2 bg-ieee-orange/10 text-ieee-orange px-4 py-2 rounded-full text-sm font-medium mb-8">
+          <div class="inline-flex items-center gap-2 bg-ieee-orange/10 text-ieee-orange-text px-4 py-2 rounded-full text-sm font-medium mb-8">
             <span class="relative flex h-2 w-2">
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-ieee-orange opacity-75"></span>
               <span class="relative inline-flex rounded-full h-2 w-2 bg-ieee-orange"></span>
@@ -92,7 +94,7 @@ const eventSchema = {
 
           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6 leading-tight">
             {hero.title}
-            <span class="text-ieee-orange"> {hero.titleHighlight}</span>
+            <span class="text-ieee-orange-text"> {hero.titleHighlight}</span>
           </h1>
 
           <p class="text-xl lg:text-2xl text-neutral-600 font-medium mb-4 leading-relaxed">
@@ -103,21 +105,24 @@ const eventSchema = {
             {hero.description}
           </p>
 
-          <p class="text-base text-ieee-orange font-semibold mb-10">
+          <p class="text-base text-ieee-orange-text font-semibold mb-10">
             {hero.hook}
           </p>
 
           <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-            <Button href={applicationFormUrl} variant="primary" size="lg">
+            <Button href={isOpen ? applicationFormUrl : contestDocumentUrl} variant="primary" size="lg">
               {hero.ctaPrimary}
               <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </Button>
-            <Button href={contestDocumentUrl} variant="outline" size="lg">
-              {hero.ctaSecondary}
+            <Button href={isOpen ? contestDocumentUrl : '#contacto'} variant="outline" size="lg">
+              {isOpen ? hero.ctaSecondary : 'Consultar próxima convocatoria'}
             </Button>
           </div>
+          {!isOpen && (
+            <p class="mt-6 text-sm text-neutral-600" role="status">{hero.closedNote}</p>
+          )}
         </div>
       </Container>
     </section>
@@ -126,9 +131,9 @@ const eventSchema = {
     <section id="sobre" class="py-20 lg:py-28 bg-white">
       <Container>
         <div class="text-center max-w-3xl mx-auto mb-16">
-          <span class="text-ieee-orange font-semibold text-sm uppercase tracking-wider">{about.badge}</span>
+          <span class="text-ieee-orange-text font-semibold text-sm uppercase tracking-wider">{about.badge}</span>
           <h2 class="text-3xl lg:text-5xl font-bold text-neutral-900 mt-4 mb-6">
-            {about.title} <span class="text-ieee-orange">{about.titleHighlight}</span>
+            {about.title} <span class="text-ieee-orange-text">{about.titleHighlight}</span>
           </h2>
           <p class="text-lg text-neutral-600 leading-relaxed">{about.description}</p>
           <p class="text-base text-neutral-500 mt-4 leading-relaxed">{about.descriptionExtra}</p>
@@ -138,7 +143,7 @@ const eventSchema = {
           {about.highlights.map((item) => (
             <Card class="p-6 text-center" hover={true}>
               <div class="w-12 h-12 bg-ieee-orange/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <svg class="w-6 h-6 text-ieee-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-6 h-6 text-ieee-orange-text" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={iconPaths[item.icon]} />
                 </svg>
               </div>
@@ -154,9 +159,9 @@ const eventSchema = {
     <section class="py-20 lg:py-28 bg-neutral-50">
       <Container>
         <div class="text-center max-w-3xl mx-auto mb-12">
-          <span class="text-ieee-orange font-semibold text-sm uppercase tracking-wider">{objectives.badge}</span>
+          <span class="text-ieee-orange-text font-semibold text-sm uppercase tracking-wider">{objectives.badge}</span>
           <h2 class="text-3xl lg:text-5xl font-bold text-neutral-900 mt-4 mb-6">
-            {objectives.title} <span class="text-ieee-orange">{objectives.titleHighlight}</span>
+            {objectives.title} <span class="text-ieee-orange-text">{objectives.titleHighlight}</span>
           </h2>
           <p class="text-lg text-neutral-600 leading-relaxed">{objectives.intro}</p>
         </div>
@@ -169,7 +174,7 @@ const eventSchema = {
           <div class="space-y-4">
             {objectives.specific.map((item, i) => (
               <div class="flex items-start gap-4 bg-white border border-neutral-200 rounded-xl p-5">
-                <span class="flex-shrink-0 w-8 h-8 bg-ieee-orange/10 text-ieee-orange font-bold rounded-lg flex items-center justify-center text-sm">
+                <span class="flex-shrink-0 w-8 h-8 bg-ieee-orange/10 text-ieee-orange-text font-bold rounded-lg flex items-center justify-center text-sm">
                   {i + 1}
                 </span>
                 <p class="text-neutral-700 leading-relaxed">{item}</p>
@@ -184,9 +189,9 @@ const eventSchema = {
     <section class="py-20 lg:py-28 bg-white">
       <Container>
         <div class="text-center max-w-3xl mx-auto mb-12">
-          <span class="text-ieee-orange font-semibold text-sm uppercase tracking-wider">{requirements.badge}</span>
+          <span class="text-ieee-orange-text font-semibold text-sm uppercase tracking-wider">{requirements.badge}</span>
           <h2 class="text-3xl lg:text-5xl font-bold text-neutral-900 mt-4 mb-6">
-            {requirements.title} <span class="text-ieee-orange">{requirements.titleHighlight}</span>
+            {requirements.title} <span class="text-ieee-orange-text">{requirements.titleHighlight}</span>
           </h2>
           <p class="text-lg text-neutral-600 leading-relaxed mb-3">{requirements.intro}</p>
           <p class="text-xl text-neutral-700 font-medium">{requirements.target}</p>
@@ -196,7 +201,7 @@ const eventSchema = {
           {requirements.items.map((item) => (
             <Card class="p-5 flex items-start gap-4" hover={true}>
               <div class="w-10 h-10 bg-ieee-orange/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                <svg class="w-5 h-5 text-ieee-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-5 h-5 text-ieee-orange-text" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={iconPaths[item.icon]} />
                 </svg>
               </div>
@@ -221,9 +226,9 @@ const eventSchema = {
     <section class="py-20 lg:py-28 bg-neutral-50">
       <Container>
         <div class="text-center max-w-3xl mx-auto mb-16">
-          <span class="text-ieee-orange font-semibold text-sm uppercase tracking-wider">{methodology.badge}</span>
+          <span class="text-ieee-orange-text font-semibold text-sm uppercase tracking-wider">{methodology.badge}</span>
           <h2 class="text-3xl lg:text-5xl font-bold text-neutral-900 mt-4 mb-6">
-            {methodology.title} <span class="text-ieee-orange">{methodology.titleHighlight}</span>
+            {methodology.title} <span class="text-ieee-orange-text">{methodology.titleHighlight}</span>
           </h2>
           <p class="text-lg text-neutral-600">{methodology.description}</p>
           <p class="text-base text-neutral-500 mt-4 leading-relaxed">{methodology.descriptionExtra}</p>
@@ -233,7 +238,7 @@ const eventSchema = {
           {methodology.pillars.map((pillar) => (
             <Card class="p-6 text-center" hover={true}>
               <div class="w-12 h-12 bg-ieee-orange/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <svg class="w-6 h-6 text-ieee-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-6 h-6 text-ieee-orange-text" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={iconPaths[pillar.icon]} />
                 </svg>
               </div>
@@ -250,9 +255,9 @@ const eventSchema = {
     <section id="cronograma" class="py-20 lg:py-28 bg-white">
       <Container>
         <div class="text-center max-w-3xl mx-auto mb-16">
-          <span class="text-ieee-orange font-semibold text-sm uppercase tracking-wider">{timeline.badge}</span>
+          <span class="text-ieee-orange-text font-semibold text-sm uppercase tracking-wider">{timeline.badge}</span>
           <h2 class="text-3xl lg:text-5xl font-bold text-neutral-900 mt-4 mb-6">
-            {timeline.title} <span class="text-ieee-orange">{timeline.titleHighlight}</span>
+            {timeline.title} <span class="text-ieee-orange-text">{timeline.titleHighlight}</span>
           </h2>
           <p class="text-lg text-neutral-600 leading-relaxed">{timeline.intro}</p>
         </div>
@@ -278,18 +283,18 @@ const eventSchema = {
     <section class="py-20 lg:py-28 bg-neutral-50">
       <Container>
         <div class="text-center max-w-3xl mx-auto mb-12">
-          <span class="text-ieee-orange font-semibold text-sm uppercase tracking-wider">{evaluation.badge}</span>
+          <span class="text-ieee-orange-text font-semibold text-sm uppercase tracking-wider">{evaluation.badge}</span>
           <h2 class="text-3xl lg:text-5xl font-bold text-neutral-900 mt-4 mb-6">
-            {evaluation.title} <span class="text-ieee-orange">{evaluation.titleHighlight}</span>
+            {evaluation.title} <span class="text-ieee-orange-text">{evaluation.titleHighlight}</span>
           </h2>
         </div>
 
         <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {evaluation.phases.map((phase) => (
             <Card class="p-8" hover={true}>
-              <span class="text-5xl font-bold text-ieee-orange">{phase.number}</span>
+              <span class="text-5xl font-bold text-ieee-orange-text">{phase.number}</span>
               <h3 class="text-2xl font-bold text-neutral-900 mt-3">{phase.title}</h3>
-              <p class="text-ieee-orange font-medium text-sm mt-1">{phase.subtitle}</p>
+              <p class="text-ieee-orange-text font-medium text-sm mt-1">{phase.subtitle}</p>
               <p class="text-neutral-600 mt-4 leading-relaxed">{phase.description}</p>
               {phase.detail && (
                 <p class="mt-3 text-sm text-neutral-500 italic">{phase.detail}</p>
@@ -304,9 +309,9 @@ const eventSchema = {
     <section class="py-20 lg:py-28 bg-white">
       <Container>
         <div class="text-center max-w-3xl mx-auto mb-16">
-          <span class="text-ieee-orange font-semibold text-sm uppercase tracking-wider">{prizes.badge}</span>
+          <span class="text-ieee-orange-text font-semibold text-sm uppercase tracking-wider">{prizes.badge}</span>
           <h2 class="text-3xl lg:text-5xl font-bold text-neutral-900 mt-4 mb-6">
-            {prizes.title} <span class="text-ieee-orange">{prizes.titleHighlight}</span>
+            {prizes.title} <span class="text-ieee-orange-text">{prizes.titleHighlight}</span>
           </h2>
           <p class="text-lg text-neutral-600 leading-relaxed">{prizes.intro}</p>
         </div>
@@ -315,7 +320,7 @@ const eventSchema = {
           {prizes.items.map((item) => (
             <Card class="p-6 text-center" hover={true}>
               <div class="w-12 h-12 bg-ieee-orange/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <svg class="w-6 h-6 text-ieee-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-6 h-6 text-ieee-orange-text" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={iconPaths[item.icon]} />
                 </svg>
               </div>
@@ -350,9 +355,9 @@ const eventSchema = {
     <section class="py-20 lg:py-28 bg-white">
       <Container>
         <div class="text-center max-w-3xl mx-auto mb-16">
-          <span class="text-ieee-orange font-semibold text-sm uppercase tracking-wider">{impact.badge}</span>
+          <span class="text-ieee-orange-text font-semibold text-sm uppercase tracking-wider">{impact.badge}</span>
           <h2 class="text-3xl lg:text-5xl font-bold text-neutral-900 mt-4 mb-6">
-            {impact.title} <span class="text-ieee-orange">{impact.titleHighlight}</span>
+            {impact.title} <span class="text-ieee-orange-text">{impact.titleHighlight}</span>
           </h2>
           <p class="text-lg text-neutral-600 leading-relaxed">{impact.intro}</p>
         </div>
@@ -361,7 +366,7 @@ const eventSchema = {
           {impact.items.map((item) => (
             <Card class="p-6 flex items-start gap-4" hover={true}>
               <div class="w-10 h-10 bg-ieee-orange/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                <svg class="w-5 h-5 text-ieee-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-5 h-5 text-ieee-orange-text" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={iconPaths[item.icon]} />
                 </svg>
               </div>
@@ -380,7 +385,7 @@ const eventSchema = {
       <Container>
         <div class="max-w-3xl mx-auto text-center">
           <h2 class="text-3xl lg:text-4xl font-bold text-neutral-900 mb-4">
-            ¿Listo para dar <span class="text-ieee-orange">el paso?</span>
+            ¿Listo para dar <span class="text-ieee-orange-text">el paso?</span>
           </h2>
           <p class="text-lg text-neutral-600 mb-4 leading-relaxed">
             Este concurso no es solo una competencia — es la oportunidad de descubrir que puedes crear algo que importa. No necesitas experiencia previa, solo curiosidad y un equipo con ganas.
@@ -389,8 +394,8 @@ const eventSchema = {
             Miles de grandes ideas empezaron con alguien que dijo "¿y si...?". Que esa persona seas tú.
           </p>
           <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-            <Button href={applicationFormUrl} variant="primary" size="lg">
-              Postular mi equipo
+            <Button href={isOpen ? applicationFormUrl : '#contacto'} variant="primary" size="lg">
+              {isOpen ? 'Postular mi equipo' : 'Consultar próxima convocatoria'}
               <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
@@ -408,9 +413,9 @@ const eventSchema = {
       <Container>
         <div class="max-w-4xl mx-auto">
           <div class="text-center mb-10">
-            <span class="text-ieee-orange font-semibold text-sm uppercase tracking-wider">{faq.badge}</span>
+            <span class="text-ieee-orange-text font-semibold text-sm uppercase tracking-wider">{faq.badge}</span>
             <h2 class="text-3xl lg:text-5xl font-bold text-neutral-900 mt-4 mb-4">
-              {faq.title} <span class="text-ieee-orange">{faq.titleHighlight}</span>
+              {faq.title} <span class="text-ieee-orange-text">{faq.titleHighlight}</span>
             </h2>
           </div>
 
@@ -419,7 +424,7 @@ const eventSchema = {
               <details class="bg-white border border-neutral-200 rounded-xl p-5 group min-w-0">
                 <summary class="cursor-pointer list-none font-semibold text-neutral-900 pr-8 relative">
                   {item.question}
-                  <span class="absolute right-0 top-0 text-ieee-orange transition-transform group-open:rotate-45">+</span>
+                  <span class="absolute right-0 top-0 text-ieee-orange-text transition-transform group-open:rotate-45">+</span>
                 </summary>
                 <p class="mt-3 text-neutral-600 leading-relaxed break-words [overflow-wrap:anywhere]">{item.answer}</p>
               </details>
@@ -433,9 +438,9 @@ const eventSchema = {
     <section id="contacto" class="py-20 lg:py-28 bg-white">
       <Container>
         <div class="text-center max-w-3xl mx-auto mb-12">
-          <span class="text-ieee-orange font-semibold text-sm uppercase tracking-wider">{contact.badge}</span>
+          <span class="text-ieee-orange-text font-semibold text-sm uppercase tracking-wider">{contact.badge}</span>
           <h2 class="text-3xl lg:text-5xl font-bold text-neutral-900 mt-4 mb-6">
-            {contact.title} <span class="text-ieee-orange">{contact.titleHighlight}</span>
+            {contact.title} <span class="text-ieee-orange-text">{contact.titleHighlight}</span>
           </h2>
           <p class="text-lg text-neutral-600 leading-relaxed">{contact.description}</p>
         </div>
@@ -444,7 +449,7 @@ const eventSchema = {
           {contact.people.map((person) => (
             <Card class="p-6 text-center w-full sm:w-auto sm:min-w-[280px]" hover={true}>
               <div class="w-12 h-12 bg-ieee-orange/10 rounded-xl flex items-center justify-center mx-auto mb-3">
-                <svg class="w-6 h-6 text-ieee-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-6 h-6 text-ieee-orange-text" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={iconPaths.envelope} />
                 </svg>
               </div>
@@ -452,7 +457,7 @@ const eventSchema = {
               <p class="text-sm text-neutral-500 mb-2">{person.role}</p>
               <a
                 href={`mailto:${person.email}`}
-                class="text-sm text-ieee-orange hover:text-ieee-orange-dark font-medium transition-colors break-all"
+                class="text-sm text-ieee-orange-text hover:text-ieee-orange-dark font-medium transition-colors break-all"
               >
                 {person.email}
               </a>

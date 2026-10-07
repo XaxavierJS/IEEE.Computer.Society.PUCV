@@ -1,0 +1,52 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import Container from '../../components/ui/Container.astro';
+import Badge from '../../components/ui/Badge.astro';
+import activities from '../../data/actividades.json';
+
+export function getStaticPaths() {
+	return activities.map((a) => ({ params: { slug: a.slug }, props: { a } }));
+}
+
+const { a } = Astro.props;
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+---
+
+<Layout title={`${a.title} | IEEE CS PUCV`} description={a.summary}>
+	<Navbar />
+	<main id="contenido">
+		<article class="py-16 lg:py-20">
+			<Container>
+				<nav aria-label="Migas de pan" class="text-sm text-neutral-700 mb-6">
+					<a class="underline" href={`${base}actividades`}>Actividades</a> / <span aria-current="page">{a.title}</span>
+				</nav>
+				<Badge variant="blue">{a.category}</Badge>
+				<h1 class="text-3xl lg:text-5xl font-bold text-neutral-900 mt-3 mb-2">{a.title}</h1>
+				{a.date && <p class="text-neutral-700 mb-6"><time datetime={a.date}>{a.date}</time></p>}
+				<img src={`${base}${a.image}`} alt={a.imageAlt} class="w-full max-w-3xl rounded-2xl my-6" loading="eager" decoding="async" />
+				<div class="max-w-3xl space-y-4 text-lg text-neutral-700">
+					<p>{a.description}</p>
+					{a.highlights && a.highlights.length > 0 && (
+						<>
+							<h2 class="text-2xl font-bold text-neutral-900">Qué hicimos</h2>
+							<ul class="list-disc pl-6">{a.highlights.map((h: string) => <li>{h}</li>)}</ul>
+						</>
+					)}
+					{a.results.length > 0 && (
+						<>
+							<h2 class="text-2xl font-bold text-neutral-900">Resultados</h2>
+							<ul class="list-disc pl-6">{a.results.map((r: string) => <li>{r}</li>)}</ul>
+						</>
+					)}
+				</div>
+				<p class="mt-8 flex flex-wrap gap-6">
+					{a.related && <a class="underline text-ieee-blue font-medium" href={`${base}${a.related.href}`}>{a.related.label}</a>}
+					<a class="underline text-ieee-blue font-medium" href={`${base}#unete`}>Quiero participar en próximas actividades</a>
+				</p>
+			</Container>
+		</article>
+	</main>
+	<Footer />
+</Layout>

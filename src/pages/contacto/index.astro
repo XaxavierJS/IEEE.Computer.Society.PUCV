@@ -1,0 +1,39 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import Container from '../../components/ui/Container.astro';
+import Card from '../../components/ui/Card.astro';
+
+const channels = [
+	{ name: 'Correo', value: 'ieee.computersociety.pucv@gmail.com', href: 'mailto:ieee.computersociety.pucv@gmail.com', note: 'Para consultas, alianzas y sumarte al equipo.' },
+	{ name: 'Instagram', value: '@ieee.pucv.cs', href: 'https://www.instagram.com/ieee.pucv.cs/', note: 'Novedades y convocatorias.' },
+	{ name: 'WhatsApp', value: 'Grupo de la comunidad', href: 'https://chat.whatsapp.com/I4EO42P4Ip3CDlaZT4hFAn', note: 'Avisos de reuniones y actividades.' },
+	{ name: 'Discord', value: 'Servidor del capítulo', href: 'https://discord.gg/hjfejWFEW4', note: 'Conversación técnica y proyectos.' },
+];
+---
+
+<Layout title="Contacto | IEEE Computer Society PUCV" description="Cómo contactar a IEEE Computer Society PUCV: correo, Instagram, WhatsApp y Discord.">
+	<Navbar />
+	<main id="contenido">
+		<section class="py-16 lg:py-20 bg-neutral-50">
+			<Container>
+				<span class="text-ieee-orange-text font-semibold text-sm uppercase tracking-wider">Contacto</span>
+				<h1 class="text-3xl lg:text-5xl font-bold text-neutral-900 mt-3 mb-4">Hablemos</h1>
+				<p class="text-lg text-neutral-700 max-w-2xl mb-10">Capítulo Estudiantil IEEE Computer Society, Pontificia Universidad Católica de Valparaíso, Chile.</p>
+				<ul class="grid gap-6 md:grid-cols-2">
+					{channels.map((c) => (
+						<li>
+							<Card class="p-6 h-full" hover={false}>
+								<h2 class="text-xl font-bold text-neutral-900">{c.name}</h2>
+								<p class="text-neutral-700 mt-1">{c.note}</p>
+								<a class="inline-block mt-3 font-semibold text-ieee-blue underline break-all" href={c.href} {...(c.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>{c.value}</a>
+							</Card>
+						</li>
+					))}
+				</ul>
+			</Container>
+		</section>
+	</main>
+	<Footer />
+</Layout>

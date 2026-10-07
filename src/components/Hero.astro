@@ -16,7 +16,7 @@ const { hero } = landingContent;
 
   <Container class="relative z-10">
     <div class="max-w-4xl mx-auto text-center">
-          <div class="inline-flex items-center gap-2 bg-ieee-orange/10 text-ieee-orange px-4 py-2 rounded-full text-sm font-medium mb-8">
+          <div class="inline-flex items-center gap-2 bg-ieee-orange/10 text-ieee-orange-text px-4 py-2 rounded-full text-sm font-medium mb-8">
             <span class="relative flex h-2 w-2">
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-ieee-orange opacity-75"></span>
               <span class="relative inline-flex rounded-full h-2 w-2 bg-ieee-orange"></span>
@@ -26,7 +26,7 @@ const { hero } = landingContent;
 
           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6 leading-tight">
             {hero.title}
-            <span class="text-ieee-orange"> {hero.titleHighlight}</span>
+            <span class="text-ieee-orange-text"> {hero.titleHighlight}</span>
           </h1>
 
           <p class="text-xl lg:text-2xl text-neutral-500 font-medium mb-4">
@@ -49,6 +49,13 @@ const { hero } = landingContent;
                 {hero.ctaSecondary}
               </Button>
             </div>
+
+            <nav aria-label="Accesos rápidos" class="flex flex-wrap justify-center gap-3 mt-2">
+              <a class="underline font-medium text-neutral-800 hover:text-ieee-orange" href={`${baseUrl}actividades`}>Próximos eventos</a>
+              <a class="underline font-medium text-neutral-800 hover:text-ieee-orange" href={`${baseUrl}oportunidades`}>Oportunidades abiertas</a>
+              <a class="underline font-medium text-neutral-800 hover:text-ieee-orange" href="#unete">Cómo unirme</a>
+              <a class="underline font-medium text-neutral-800 hover:text-ieee-orange" href="mailto:ieee.computersociety.pucv@gmail.com">Contacto</a>
+            </nav>
 
             <Button
               href="https://kserver.tail056a77.ts.net/"

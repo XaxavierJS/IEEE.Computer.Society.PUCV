@@ -15,11 +15,11 @@ const sortedMembers = team.sort((a, b) => a.order - b.order);
   <Container>
     <!-- Header -->
     <div class="text-center max-w-3xl mx-auto mb-16">
-      <span class="text-ieee-orange font-semibold text-sm uppercase tracking-wider">
+      <span class="text-ieee-orange-text font-semibold text-sm uppercase tracking-wider">
         {teamContent.badge}
       </span>
       <h2 class="text-3xl lg:text-5xl font-bold text-neutral-900 mt-4 mb-6">
-        <span class="text-ieee-orange">{teamContent.titleHighlight}</span> {teamContent.titleSuffix}
+        <span class="text-ieee-orange-text">{teamContent.titleHighlight}</span> {teamContent.titleSuffix}
       </h2>
       <p class="text-lg text-neutral-600">
         {teamContent.description}
@@ -45,7 +45,7 @@ const sortedMembers = team.sort((a, b) => a.order - b.order);
 
           <!-- Info -->
           <h3 class="font-bold text-neutral-900 text-lg mb-1">{member.name}</h3>
-          <p class="text-sm text-ieee-orange font-medium mb-3">{member.role}</p>
+          <p class="text-sm text-ieee-orange-text font-medium mb-3">{member.role}</p>
 
           <!-- LinkedIn -->
           {member.linkedin && member.linkedin !== 'https://linkedin.com/in/' && (

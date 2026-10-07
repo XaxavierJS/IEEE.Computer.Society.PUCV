@@ -1,12 +1,14 @@
 {
   "hero": {
-    "badge": "Convocatoria Abierta 2026",
+    "status": "closed",
+    "badge": "Edición 2026 finalizada",
     "title": "Concurso de Emprendimiento",
     "titleHighlight": "e Innovación 2026",
     "subtitle": "¿Y si la próxima gran app la creas tú?",
     "description": "Tienes una idea, nosotros te damos las herramientas. Aprende Design Thinking, construye un prototipo real en Thunkable y presenta tu solución ante un jurado de verdad. Todo en modalidad híbrida, con mentoría personalizada y con la Gran Final en la ExpoSoftware PUCV.",
     "hook": "No necesitas saber programar. Solo necesitas ganas de cambiar algo.",
-    "ctaPrimary": "Postular equipo",
+    "ctaPrimary": "Ver bases de la edición 2026",
+    "closedNote": "Las postulaciones de la edición 2026 están cerradas. Escríbenos para conocer la próxima convocatoria.",
     "ctaSecondary": "Ver bases completas"
   },
   "about": {

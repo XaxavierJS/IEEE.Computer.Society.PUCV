@@ -1,0 +1,68 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import Container from '../../components/ui/Container.astro';
+import Card from '../../components/ui/Card.astro';
+import Badge from '../../components/ui/Badge.astro';
+import activities from '../../data/actividades.json';
+import opportunities from '../../data/oportunidades.json';
+import { formatDate } from '../../lib/opportunities';
+
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+const today = new Date().toISOString().slice(0, 10);
+// Upcoming = official IEEE events with a future date; chapter-specific events are added to actividades.json via `upcoming: true`.
+const upcoming = opportunities.filter((o) => 'eventDate' in o && (o as { eventDate: string }).eventDate >= today);
+---
+
+<Layout
+	title="Actividades | IEEE Computer Society PUCV"
+	description="Próximos eventos y archivo de actividades de IEEE Computer Society PUCV: competencias, visitas técnicas, charlas y vinculación."
+>
+	<Navbar />
+	<main id="contenido">
+		<section class="py-16 lg:py-20 bg-neutral-50">
+			<Container>
+				<span class="text-ieee-orange-text font-semibold text-sm uppercase tracking-wider">Actividades</span>
+				<h1 class="text-3xl lg:text-5xl font-bold text-neutral-900 mt-3 mb-10">Próximos eventos y archivo</h1>
+
+				<h2 class="text-2xl font-bold text-neutral-900 mb-4">Próximos eventos</h2>
+				{upcoming.length > 0 ? (
+					<ul class="grid gap-4 md:grid-cols-2 mb-12">
+						{upcoming.map((o) => (
+							<li>
+								<Card class="p-6" hover={false}>
+									<Badge variant="orange"><time datetime={(o as { eventDate: string }).eventDate}>{formatDate((o as { eventDate: string }).eventDate)}</time></Badge>
+									<h3 class="text-lg font-bold mt-3">{o.name}</h3>
+									<p class="text-sm text-neutral-700 mt-1">{o.benefit}</p>
+									<a class="inline-block mt-3 text-ieee-blue underline font-medium" href={`${base}oportunidades`}>Requisitos e inscripción</a>
+								</Card>
+							</li>
+						))}
+					</ul>
+				) : (
+					<p class="mb-12 text-neutral-700">No hay eventos programados por ahora. Síguenos en <a class="underline text-ieee-blue" href="https://www.instagram.com/ieee.pucv.cs/">Instagram</a>.</p>
+				)}
+
+				<h2 class="text-2xl font-bold text-neutral-900 mb-4">Archivo de actividades</h2>
+				<ul class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+					{activities.map((a) => (
+						<li>
+							<a href={`${base}actividades/${a.slug}`} class="block h-full rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-ieee-orange">
+								<Card class="h-full">
+									<img src={`${base}${a.thumb}`} alt={a.imageAlt} width="768" height="512" loading="lazy" decoding="async" class="w-full aspect-[3/2] object-cover" />
+									<div class="p-5">
+										<Badge variant="blue">{a.category}</Badge>
+										<h3 class="text-lg font-bold mt-3">{a.title}</h3>
+										<p class="text-sm text-neutral-700 mt-1">{a.summary}</p>
+									</div>
+								</Card>
+							</a>
+						</li>
+					))}
+				</ul>
+			</Container>
+		</section>
+	</main>
+	<Footer />
+</Layout>

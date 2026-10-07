@@ -30,6 +30,13 @@ interface DocumentItem {
   _id: string;
 }
 
+const originOf = (b: BenefitItem) => {
+  if (b.categoryId === 'ieee') return { label: 'IEEE', cls: 'bg-ieee-blue/10 text-ieee-blue' };
+  if (/\(PUCV\)/.test(b.title) || /(^|\.)(pucv|daepucv|estudiantespucv|vivesaludpucv)\.cl|dsic\.pucv\.cl/.test(new URL(b.url).hostname))
+    return { label: 'PUCV', cls: 'bg-ieee-orange/10 text-ieee-orange-text' };
+  return { label: 'Externo', cls: 'bg-neutral-100 text-neutral-700' };
+};
+
 const totalBenefits = Object.values(benefits).flat().length;
 const benefitsByCategory = benefits as Record<BenefitCategoryId, BenefitItem[]>;
 const documentsByType = documents as Record<string, DocumentItem[]>;
@@ -96,13 +103,13 @@ const categories: Array<{ id: BenefitCategoryId; title: string; description: str
   description="Explora beneficios académicos y profesionales para estudiantes PUCV e IEEE Computer Society: software, cursos, recursos y documentos oficiales."
 >
   <Navbar />
-  <main>
+  <main id="contenido">
     <!-- Categorías y Beneficios -->
     <section class="py-10 lg:py-14 bg-neutral-50">
       <Container class="relative">
         <div class="max-w-6xl mx-auto">
           <div class="text-center mb-8 lg:mb-10">
-            <span class="inline-flex items-center gap-2 bg-ieee-orange/10 text-ieee-orange px-4 py-2 rounded-full text-sm font-medium mb-5">
+            <span class="inline-flex items-center gap-2 bg-ieee-orange/10 text-ieee-orange-text px-4 py-2 rounded-full text-sm font-medium mb-5">
               Beneficios para la comunidad estudiantil
             </span>
             <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4">
@@ -147,12 +154,10 @@ const categories: Array<{ id: BenefitCategoryId; title: string; description: str
                         {categoryBenefits.map((benefit) => (
                           <div class="bg-white border border-neutral-200 rounded-xl p-6 hover:shadow-lg transition-shadow hover:border-ieee-orange/30">
                             <div class="flex items-start justify-between mb-4">
-                              <h4 class="text-lg font-semibold text-neutral-900">{benefit.title}</h4>
-                              {benefit.verification && (
-                                <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-ieee-orange/10 text-ieee-orange">
-                                  Verificado
-                                </span>
-                              )}
+                              <h3 class="text-lg font-semibold text-neutral-900">{benefit.title}</h3>
+                              <span class={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${originOf(benefit).cls}`}>
+                                <span class="sr-only">Origen: </span>{originOf(benefit).label}
+                              </span>
                             </div>
                             <p class="text-neutral-600 mb-4">{benefit.description}</p>
                             <div class="text-sm text-neutral-500 mb-4">
@@ -162,7 +167,7 @@ const categories: Array<{ id: BenefitCategoryId; title: string; description: str
                               href={benefit.url} 
                               target="_blank" 
                               rel="noopener noreferrer"
-                              class="inline-flex items-center text-ieee-orange hover:text-ieee-orange-dark font-medium"
+                              class="inline-flex items-center text-ieee-orange-text hover:text-ieee-orange-dark font-medium"
                             >
                               Solicitar beneficio
                               <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -192,9 +197,9 @@ const categories: Array<{ id: BenefitCategoryId; title: string; description: str
     <section class="py-16 lg:py-24 bg-white" id="documentos">
       <Container>
         <div class="text-center max-w-3xl mx-auto mb-12">
-          <span class="text-ieee-orange font-semibold text-sm uppercase tracking-wider">Documentos</span>
+          <span class="text-ieee-orange-text font-semibold text-sm uppercase tracking-wider">Documentos</span>
           <h2 class="text-3xl lg:text-5xl font-bold text-neutral-900 mt-4 mb-4">
-            Todos los <span class="text-ieee-orange">documentos</span>
+            Todos los <span class="text-ieee-orange-text">documentos</span>
           </h2>
           <p class="text-lg text-neutral-600">
             Reglamentos, instructivos y links oficiales para acceder a convenios y recursos.

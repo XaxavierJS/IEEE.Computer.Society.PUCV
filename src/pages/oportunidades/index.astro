@@ -1,0 +1,123 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import Container from '../../components/ui/Container.astro';
+import Card from '../../components/ui/Card.astro';
+import Badge from '../../components/ui/Badge.astro';
+import Button from '../../components/ui/Button.astro';
+import data from '../../data/oportunidades.json';
+import { getStatus, formatDate, typeLabels, type Opportunity } from '../../lib/opportunities';
+
+const now = new Date();
+const items = (data as Opportunity[])
+  .map((item) => ({ ...item, status: getStatus(item, now) }))
+  .sort((a, b) => Number(a.status === 'closed') - Number(b.status === 'closed'));
+
+const openCount = items.filter((i) => i.status === 'open').length;
+const lastReview = items.map((i) => i.reviewed).sort().at(-1)!;
+const filters = [{ id: 'all', label: 'Todas' }, ...Object.entries(typeLabels).map(([id, label]) => ({ id, label }))];
+---
+
+<Layout
+	title="Oportunidades IEEE | IEEE Computer Society PUCV"
+	description="Becas, premios, competencias y membresía IEEE y Computer Society para estudiantes: requisitos, fechas, estado y fuente oficial."
+>
+	<Navbar />
+	<main id="contenido">
+		<section class="py-16 lg:py-20 bg-neutral-50">
+			<Container>
+				<div class="max-w-3xl">
+					<span class="text-ieee-orange-text font-semibold text-sm uppercase tracking-wider">Oportunidades IEEE</span>
+					<h1 class="text-3xl lg:text-5xl font-bold text-neutral-900 mt-3 mb-4">Becas, competencias y programas para estudiantes</h1>
+					<p class="text-lg text-neutral-600">
+						Reunimos convocatorias oficiales de IEEE y Computer Society. Cada ficha indica requisitos, estado, fecha y enlace a la fuente.
+						Hoy hay <strong>{openCount}</strong> oportunidades abiertas o permanentes. Última revisión: {formatDate(lastReview)}.
+					</p>
+				</div>
+
+				<div class="mt-8 flex flex-wrap gap-2" role="group" aria-label="Filtrar por tipo" id="opp-filters">
+					{filters.map((f, i) => (
+						<button type="button" data-filter={f.id} aria-pressed={i === 0 ? 'true' : 'false'}
+							class="opp-filter px-4 py-2 rounded-xl border-2 border-neutral-300 bg-white text-neutral-800 font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-ieee-orange aria-pressed:border-ieee-orange aria-pressed:bg-ieee-orange/10">
+							{f.label}
+						</button>
+					))}
+					<label class="ml-auto flex items-center gap-2 text-neutral-700 text-sm">
+						<input type="checkbox" id="only-open" class="h-4 w-4 accent-ieee-orange" checked />
+						Solo abiertas
+					</label>
+				</div>
+
+				<p id="opp-count" class="sr-only" role="status" aria-live="polite"></p>
+
+				<ul class="mt-8 grid gap-6 md:grid-cols-2" id="opp-list">
+					{items.map((item) => (
+						<li data-type={item.type} data-status={item.status}>
+							<Card class="p-6 h-full flex flex-col" hover={false}>
+								<div class="flex flex-wrap gap-2 mb-3">
+									<Badge variant="blue">{typeLabels[item.type]}</Badge>
+									<Badge variant={item.status === 'open' ? 'orange' : 'default'}>
+										{item.status === 'open' ? 'Abierta' : 'Cerrada'}
+									</Badge>
+								</div>
+								<h2 class="text-xl font-bold text-neutral-900">{item.name}</h2>
+								<p class="text-sm text-neutral-600 mb-4">Organiza: {item.organizer}</p>
+								<dl class="space-y-2 text-sm text-neutral-700 flex-1">
+									<div><dt class="font-semibold inline">Quién puede: </dt><dd class="inline">{item.eligibility}</dd></div>
+									<div><dt class="font-semibold inline">Beneficio: </dt><dd class="inline">{item.benefit}</dd></div>
+									{item.eventDate && <div><dt class="font-semibold inline">Fecha del evento: </dt><dd class="inline"><time datetime={item.eventDate}>{formatDate(item.eventDate)}</time></dd></div>}
+									<div>
+										<dt class="font-semibold inline">Cierre: </dt>
+										<dd class="inline">
+											{item.deadline ? <time datetime={item.deadline}>{formatDate(item.deadline)}</time> : item.deadlineNote}
+										</dd>
+									</div>
+								</dl>
+								<p class="text-xs text-neutral-600 mt-4">
+									Fuente: <a class="underline" href={item.sourceUrl} target="_blank" rel="noopener noreferrer">{new URL(item.sourceUrl).hostname}</a>
+									· Revisado: <time datetime={item.reviewed}>{formatDate(item.reviewed)}</time>
+								</p>
+								<div class="mt-4">
+									<Button href={item.url} variant="outline" size="sm">
+										{item.status === 'open' ? 'Ver convocatoria' : 'Ver detalle'}<span class="sr-only"> de {item.name} (se abre en una pestaña nueva)</span>
+									</Button>
+								</div>
+							</Card>
+						</li>
+					))}
+				</ul>
+				<p id="opp-empty" class="hidden mt-8 text-neutral-700">No hay oportunidades con estos filtros.</p>
+			</Container>
+		</section>
+	</main>
+	<Footer />
+</Layout>
+
+<script>
+	const buttons = Array.from(document.querySelectorAll<HTMLButtonElement>('.opp-filter'));
+	const onlyOpen = document.getElementById('only-open') as HTMLInputElement;
+	const rows = Array.from(document.querySelectorAll<HTMLElement>('#opp-list > li'));
+	const empty = document.getElementById('opp-empty')!;
+	const live = document.getElementById('opp-count')!;
+	let type = 'all';
+
+	function apply() {
+		let shown = 0;
+		rows.forEach((li) => {
+			const ok = (type === 'all' || li.dataset.type === type) && (!onlyOpen.checked || li.dataset.status === 'open');
+			li.hidden = !ok;
+			if (ok) shown++;
+		});
+		empty.classList.toggle('hidden', shown > 0);
+		live.textContent = `${shown} oportunidades mostradas`;
+	}
+
+	buttons.forEach((b) => b.addEventListener('click', () => {
+		type = b.dataset.filter ?? 'all';
+		buttons.forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+		apply();
+	}));
+	onlyOpen.addEventListener('change', apply);
+	apply();
+</script>
